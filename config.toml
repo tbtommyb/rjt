@@ -1,0 +1,92 @@
+languageCode = "en-uk"
+title = "Roland Johnson Transformations"
+baseurl = "http://example.org/"
+theme = "hugo-freelancer-theme"
+
+[params]
+
+  # You can use Markdown syntax for urls [text](//url.to/source) for
+  # most longer texts.
+
+  # To provide some metadata for search engines feel free to add a few
+  # information about you and your website.
+  name = "Roland Johnson"
+  description = "Roland Johnson personal trainer"
+
+  # Since this template is static, the contact form uses www.formspree.io as a
+  # proxy. The form makes a POST request to their servers to send the actual
+  # email. Visitors can send up to a 1000 emails each month for free.
+  #
+  # What you need to do for the setup?
+  #
+  # - set your email address under 'email' below
+  # - upload the generated site to your server
+  # - send a dummy email youself to confirm your account
+  # - click the confirm link in the email from www.formspree.io
+  # - you're done. Happy mailing!
+  email = "tbtommyb@gmail.com"
+
+  # Custom assets
+  custom_css = []
+  custom_js  = []
+
+  [params.navigation]
+    brand = "RJ Transformations"
+
+  [params.header]
+    # Copy your own image into './static/img/'' if you wish
+    image = "profile.png"
+    name = "Roland Johnson"
+    subtitle = "Your personal trainer"
+
+  [params.testimonial]
+    title = "Testimonials"
+
+  [params.testimonial.modal]
+    client = "Client"
+    date = "Date"
+    category = "Category"
+    buttontext = "Close"
+
+  [params.video]
+    title = "Latest videos"
+
+  [params.about]
+    title = "About me"
+
+    left = "I'm committed to helping you achieve your goals. I'm a qualified personal trainer and experienced in delivering results for people."
+    right = "Whether it's get fit, lose fat or some other target, I used tried and tested methods that get the best out of you."
+
+  [params.contact]
+    title = "Contact"
+
+    # 'error' defines error messages for invalid inputs
+    [params.contact.form.name]
+      text = "Name"
+      error = "Please enter your name."
+
+    [params.contact.form.email]
+      text = "Email address"
+      error = "Please enter your email address."
+
+    [params.contact.form.phone]
+      text = "Phone number (optional)"
+
+    [params.contact.form.message]
+      text = "Message"
+      error = "Please enter a message."
+
+    [params.contact.form.button]
+      text = "Send"
+
+  [params.footer]
+    copyright = "Powered by [Hugo](//gohugo.io)."
+
+    [params.footer.social]
+      title = "Connect with me"
+      # All icons using Fontawesome's icon font. Look at fortawesome.github.io/Font-Awesome/icons/
+      # for more icons. The icons are represented by their corresponding
+      # CSS class.
+      [[params.footer.social.networks]]
+        icon = "fa-twitter"
+        link = "//github.com/spf13/hugo"
