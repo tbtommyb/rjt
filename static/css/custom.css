@@ -1,0 +1,29 @@
+.profile-img {
+  border: 6px solid #0368F9;
+  border-radius: 100px;
+  box-sizing: content-box;
+  width: 200px;
+}
+
+.testimonial-item p::before {
+  font-size: 3em;
+  font-style: cursive;
+  line-height: .5em;
+  content: '"';
+}
+
+blockquote {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+blockquote:nth-child(even) {
+  text-align: left;
+}
+
+blockquote:nth-child(odd) {
+  text-align: right;
+}
+
+/* bright blue: #0368F9 */
