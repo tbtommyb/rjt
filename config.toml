@@ -37,7 +37,7 @@ theme = "hugo-freelancer-theme"
     # Copy your own image into './static/img/'' if you wish
     image = "profile.jpg"
     name = "Roland Johnson"
-    subtitle = "Your personal trainer"
+    subtitle = "Personal training and body transformations"
 
   [params.testimonial]
     title = "Testimonials"
