@@ -22,7 +22,7 @@ a:focus,
 a:active,
 a.active {
     outline: 0;
-    color: #CC0000;
+    color: #0368F9;
 }
 
 h1,
@@ -43,7 +43,8 @@ h6 {
 header {
     text-align: center;
     color: #fff;
-    background: #CC0000;
+    background-image: url("/img/blurred-header.jpg");
+    background-size: cover;
 }
 
 header .container {
@@ -142,7 +143,7 @@ section h2 {
 
 section.success {
     color: #fff;
-    background: #CC0000;
+    background: #0368F9;
 }
 
 section.success a,
@@ -235,7 +236,7 @@ section.success a.active {
 .btn-outline:active,
 .btn-outline.active {
     border: solid 2px #fff;
-    color: #CC0000;
+    color: #0368F9;
     background: #fff;
 }
 
@@ -288,7 +289,7 @@ section.success a.active {
 }
 
 .floating-label-form-group-with-focus label {
-    color: #CC0000;
+    color: #0368F9;
 }
 
 form .row:first-child .floating-label-form-group {
@@ -314,7 +315,7 @@ footer .footer-col {
 
 footer .footer-below {
     padding: 25px 0;
-    background-color: #8e0000;
+    background-color: #0346a5;
 }
 
 .btn-social {

@@ -1,0 +1,24 @@
+{{ "<!-- Video Grid Section -->" | safeHTML }}
+<section id="video">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>{{ with .Site.Params.video.title }}{{.}}{{end}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            {{ range $.Site.Data.videos }}
+            <div class="col-sm-4 video-item">
+                <a href="#videoModal{{ .modalID }}" class="video-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <i class="fa fa-search-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="img/videos/{{ .img }}" class="img-responsive">
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
