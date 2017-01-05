@@ -1,8 +1,15 @@
 .profile-img {
-  border: 6px solid #0368F9;
   border-radius: 100px;
   box-sizing: content-box;
   width: 200px;
+}
+
+.bordered {
+  border: 6px solid  #0368F9;
+}
+
+.about-img {
+  max-width: 220px;
 }
 
 .testimonial-item p::before {
@@ -24,6 +31,10 @@ blockquote:nth-child(even) {
 
 blockquote:nth-child(odd) {
   text-align: right;
+}
+
+section h2 {
+  margin-bottom: 1em;
 }
 
 /* bright blue: #0368F9 */

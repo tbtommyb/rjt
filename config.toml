@@ -34,7 +34,6 @@ theme = "hugo-freelancer-theme"
     brand = "RJ Transformations"
 
   [params.header]
-    # Copy your own image into './static/img/'' if you wish
     image = "profile.jpg"
     name = "Roland Johnson"
     subtitle = "Personal training and body transformations"
@@ -53,9 +52,11 @@ theme = "hugo-freelancer-theme"
 
   [params.about]
     title = "About me"
-
-    left = "I'm committed to helping you achieve your goals. I'm a qualified personal trainer and experienced in delivering results for people."
-    right = "Whether it's get fit, lose fat or some other target, I used tried and tested methods that get the best out of you."
+    image = "img/about.jpg"
+    paragraphs = [
+      "I'm committed to helping you achieve your goals. I'm a qualified personal trainer and experienced in delivering results for people. Whether it's get fit, lose fat or some other target, I used tried and tested methods that get the best out of you.",
+      "I'm committed to helping you achieve your goals. I'm a qualified personal trainer and experienced in delivering results for people. Whether it's get fit, lose fat or some other target, I used tried and tested methods that get the best out of you."
+    ]
 
   [params.contact]
     title = "Contact"
