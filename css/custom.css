@@ -4,15 +4,31 @@
   width: 200px;
 }
 
+.videos-row {
+  margin: 2em 0;
+}
+
 .bordered {
   border: 6px solid  #0368F9;
+}
+
+.round {
+  border-radius: 50%;
 }
 
 .about-img {
   max-width: 220px;
 }
 
-.testimonial-item p::before {
+.testimonial-img {
+  max-width: 150px;
+}
+
+.testimonial-item h1 {
+  padding: 0 20px;
+}
+
+.testimonial-item p:nth-of-type(1):before {
   font-size: 3em;
   font-family: cursive;
   line-height: .5em;
@@ -29,8 +45,16 @@ blockquote:nth-child(even) {
   text-align: left;
 }
 
+blockquote:nth-child(even) .testimonial-img {
+  float: left;
+}
+
 blockquote:nth-child(odd) {
   text-align: right;
+}
+
+blockquote:nth-child(odd) .testimonial-img {
+  float: right;
 }
 
 section h2 {
