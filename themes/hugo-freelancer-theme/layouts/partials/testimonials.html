@@ -8,11 +8,11 @@
         </div>
         <div class="row">
             {{ range $.Site.Data.testimonials }}
-            <blockquote class="col-lg-8 testimonial-item">
-                <h1>{{ .name }}</h1>
-                <p>{{ .text }}</p>
-            </blockquote>
-            <img src="img/{{.img}}" class="col-lg-4 round testimonial-img bordered img-responsive"/>
+                <blockquote class="col-lg-8 testimonial-item">
+                    <h1>{{ .name }}</h1>
+                        <img src="img/{{.img}}" class="col-lg-4 round testimonial-img bordered img-responsive"/>
+                    <p>{{ .text }}</p>
+                </blockquote>
             {{ end }}
         </div>
     </div>
