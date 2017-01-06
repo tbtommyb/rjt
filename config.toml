@@ -10,7 +10,7 @@ theme = "hugo-freelancer-theme"
 
   # To provide some metadata for search engines feel free to add a few
   # information about you and your website.
-  name = "Roland Johnson"
+  name = "RJ Transformations | Roland Johnson"
   description = "Roland Johnson personal trainer"
 
   # Since this template is static, the contact form uses www.formspree.io as a
@@ -41,12 +41,6 @@ theme = "hugo-freelancer-theme"
   [params.testimonial]
     title = "Testimonials"
 
-  [params.testimonial.modal]
-    client = "Client"
-    date = "Date"
-    category = "Category"
-    buttontext = "Close"
-
   [params.videos]
     title = "Latest videos"
     youtube = ["GX89ddvhOvk", "GX89ddvhOvk"]
@@ -56,8 +50,8 @@ theme = "hugo-freelancer-theme"
     title = "About me"
     image = "img/about.jpg"
     paragraphs = [
-      "I'm committed to helping you achieve your goals. I'm a qualified personal trainer and experienced in delivering results for people. Whether it's get fit, lose fat or some other target, I used tried and tested methods that get the best out of you.",
-      "I'm committed to helping you achieve your goals. I'm a qualified personal trainer and experienced in delivering results for people. Whether it's get fit, lose fat or some other target, I used tried and tested methods that get the best out of you."
+      "I can help you make the transformation of your dreams. I'm an experienced personal trainer with a track record of helping people achieve their goals. Whether it's to bulk up, lose weight or get fit, I have tried-and-tested ways to get the best out of you.",
+      "Check out my latest videos and some testimonials from some clients below. If you're interested in a free, no-commitment introductory session then get in touch wtih me below."
     ]
 
   [params.contact]
