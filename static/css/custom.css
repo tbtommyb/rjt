@@ -4,6 +4,10 @@
   width: 200px;
 }
 
+.videos-row {
+  margin: 2em 0;
+}
+
 .bordered {
   border: 6px solid  #0368F9;
 }
@@ -12,9 +16,13 @@
   max-width: 220px;
 }
 
+.testimonial-img {
+  max-width: 150px;
+}
+
 .testimonial-item p::before {
   font-size: 3em;
-  font-style: cursive;
+  font-family: cursive;
   line-height: .5em;
   content: '"';
 }
