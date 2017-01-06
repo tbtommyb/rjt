@@ -7,10 +7,10 @@
             </div>
         </div>
     <div class="row">
-        <div class="col-lg-4">
-            <img class="img-responsive round about-img bordered" src="{{ .Site.Params.about.image}}"/>
+        <div class="col-lg-4 col-md-4 col col-sm-12">
+            <img class="img-responsive center-block round about-img bordered" src="{{ .Site.Params.about.image}}"/>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-8 col-md-8 col-sm-12">
             {{ range .Site.Params.about.paragraphs }}
             <p>{{ . | markdownify }}</p>
             {{ end }}
