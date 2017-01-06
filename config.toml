@@ -47,8 +47,10 @@ theme = "hugo-freelancer-theme"
     category = "Category"
     buttontext = "Close"
 
-  [params.video]
+  [params.videos]
     title = "Latest videos"
+    youtube = ["GX89ddvhOvk", "GX89ddvhOvk"]
+    instagram = ["BO5tsnlB23a", "BO3gcftgXHg"]
 
   [params.about]
     title = "About me"
