@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="footer-col col-md-12">
-                    <h3>{{ with .Site.Params.footer.social.title }}{{.}}{{ end }}</h3>
+                    <h3>{{ .Site.Params.footer.social.title }}</h3>
                     <ul class="list-inline">
                         {{ range .Site.Params.footer.social.networks }}
                             <li>

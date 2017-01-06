@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>{{ with .Site.Params.testimonial.title }}{{.}}{{end}}</h2>
+                <h2>{{ .Site.Params.testimonial.title }}</h2>
             </div>
         </div>
         <div class="row">
@@ -12,7 +12,7 @@
                 <h1>{{ .name }}</h1>
                 <p>{{ .text }}</p>
             </blockquote>
-            <img src="img/{{.img}}" class="col-lg-4 profile-img img-responsive"/>
+            <img src="img/{{.img}}" class="col-lg-4 testimonial-img bordered img-responsive"/>
             {{ end }}
         </div>
     </div>
