@@ -82,19 +82,13 @@ blockquote {
   border: none;
 }
 
-blockquote:nth-child(even) {
+.testimonial-item:nth-child(odd) {
   text-align: left;
-}
-
-blockquote:nth-child(even) .testimonial-img {
   float: left;
 }
 
-blockquote:nth-child(odd) {
+.testimonial-item:nth-child(even) {
   text-align: right;
-}
-
-blockquote:nth-child(odd) .testimonial-img {
   float: right;
 }
 
