@@ -3,21 +3,27 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>{{ .Site.Params.testimonial.title }}</h2>
+                <h2 class="text-shadow">{{ .Site.Params.testimonial.title }}</h2>
             </div>
         </div>
-        <div class="row">
-            {{ range sort .Site.Data.testimonials "weight" }}
-                <blockquote class="col-lg-12 testimonial-item">
-                    <h1>{{ .name }}</h1>
+        {{ range sort .Site.Data.testimonials "weight" }}
+            <div class="row testimonial-item">
+                <h1 class="text-shadow">{{ .name }}</h1>
+                {{ if isset . "img" }}
+                    <img src="img/{{.img}}" class="col-xs-2 round shadowed img-responsive"/>
+                {{ end }}
+                <blockquote
                     {{ if isset . "img" }}
-                        <img src="img/{{.img}}" class="col-lg-4 round testimonial-img bordered img-responsive"/>
+                        class="col-xs-10"
+                    {{ else }}
+                        class="col-xs-12"
                     {{ end }}
+                    >
                     {{ range .paras }}
                         <p>{{ . }}</p>
                     {{ end }}
                 </blockquote>
-            {{ end }}
-        </div>
+            </div>
+        {{ end }}
     </div>
 </section>
