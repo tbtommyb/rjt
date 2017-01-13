@@ -10,11 +10,11 @@
             <div class="row testimonial-item">
                 <h1 class="text-shadow">{{ .name }}</h1>
                 {{ if isset . "img" }}
-                    <img src="img/{{.img}}" class="col-xs-2 round shadowed img-responsive"/>
+                    <img src="img/{{.img}}" class="col-sm-2 col-xs-12 round shadowed img-responsive"/>
                 {{ end }}
                 <blockquote
                     {{ if isset . "img" }}
-                        class="col-xs-10"
+                        class="col-sm-10 col-xs-12"
                     {{ else }}
                         class="col-xs-12"
                     {{ end }}
