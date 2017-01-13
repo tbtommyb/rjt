@@ -8,14 +8,14 @@
         </div>
         <div class="row videos-row">
             {{ range .Site.Params.videos.youtube }}
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
                     {{ partial "youtube.html" . }}
                 </div>
             {{ end }}
         </div>
         <div class="row videos-row">
             {{ range .Site.Params.videos.instagram }}
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
                     {{ partial "instagram.html" . }}
                 </div>
             {{ end }}
