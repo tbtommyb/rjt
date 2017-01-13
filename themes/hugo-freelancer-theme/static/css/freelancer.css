@@ -22,7 +22,7 @@ a:focus,
 a:active,
 a.active {
     outline: 0;
-    color: #0368F9;
+    color: #206ddc;
 }
 
 h1,
@@ -57,31 +57,11 @@ header img {
     margin: 0 auto 20px;
 }
 
-header .intro-text .name {
-    display: block;
-    text-transform: uppercase;
-    font-family: "Martel Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 2em;
-    font-weight: 700;
-}
-
-header .intro-text .skills {
-    font-size: 1.25em;
-    font-weight: 300;
-}
 
 @media(min-width:768px) {
     header .container {
         padding-top: 200px;
         padding-bottom: 100px;
-    }
-
-    header .intro-text .name {
-        font-size: 4.75em;
-    }
-
-    header .intro-text .skills {
-        font-size: 1.75em;
     }
 }
 
@@ -143,7 +123,8 @@ section h2 {
 
 section.success {
     color: #fff;
-    background: #0368F9;
+    background: #206ddc;
+    box-shadow: 1px 1px 3px #000000;
 }
 
 section.success a,
@@ -236,7 +217,7 @@ section.success a.active {
 .btn-outline:active,
 .btn-outline.active {
     border: solid 2px #fff;
-    color: #0368F9;
+    color: #206ddc;
     background: #fff;
 }
 
@@ -289,7 +270,7 @@ section.success a.active {
 }
 
 .floating-label-form-group-with-focus label {
-    color: #0368F9;
+    color: #206ddc;
 }
 
 form .row:first-child .floating-label-form-group {
@@ -315,7 +296,7 @@ footer .footer-col {
 
 footer .footer-below {
     padding: 25px 0;
-    background-color: #0346a5;
+    background-color: #0248ad;
 }
 
 .btn-social {
