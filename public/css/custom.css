@@ -39,7 +39,7 @@ header {
   }
 
   .intro-text--subtitle {
-    font-size: 2em;
+    font-size: 1.6em;
   }
 }
 
@@ -55,6 +55,11 @@ section.success h2 {
 
 .videos-row {
   margin: 2em 0;
+}
+
+.video {
+  margin-top: .2em;
+  margin-bottom: .2em;
 }
 
 /* Testimonials */
@@ -82,12 +87,12 @@ blockquote {
   border: none;
 }
 
-.testimonial-item:nth-child(odd) {
+.testimonial-item:nth-child(even) {
   text-align: left;
   float: left;
 }
 
-.testimonial-item:nth-child(even) {
+.testimonial-item:nth-child(odd) {
   text-align: right;
   float: right;
 }
