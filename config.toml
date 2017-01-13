@@ -34,7 +34,6 @@ theme = "hugo-freelancer-theme"
     brand = "RJ Transformations"
 
   [params.header]
-    image = "profile.jpg"
     subtitle = "Personal training and body transformations"
 
   [params.testimonial]
