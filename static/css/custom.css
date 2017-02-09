@@ -1,4 +1,4 @@
-/* bright blue: #206ddc */
+/* bright blue: #428fff */
 /* dark blue: #0248ad */
 
 /* Sections */
@@ -122,7 +122,7 @@ blockquote {
 /* Buttons */
 
 .btn {
-  background-color: #206ddc;
+  background-color: #428fff;
   color: #ffffff;
   transition: background-color 0.2s ease;
 }
