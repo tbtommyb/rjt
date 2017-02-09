@@ -1,6 +1,10 @@
 /* bright blue: #428fff */
 /* dark blue: #0248ad */
 
+p {
+  letter-spacing: .5px;
+}
+
 /* Sections */
 
 header {
