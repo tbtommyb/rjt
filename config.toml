@@ -40,7 +40,7 @@ theme = "hugo-freelancer-theme"
     title = "Testimonials"
 
   [params.videos]
-    title = "Latest videos"
+    title = "My latest videos"
     youtube = ["GX89ddvhOvk", "GX89ddvhOvk"]
     instagram = ["BO5tsnlB23a", "BO3gcftgXHg"]
 
@@ -53,7 +53,7 @@ theme = "hugo-freelancer-theme"
     ]
 
   [params.contact]
-    title = "Contact"
+    title = "Contact me"
 
     # 'error' defines error messages for invalid inputs
     [params.contact.form.name]
