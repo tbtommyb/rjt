@@ -80,19 +80,15 @@ section.success h2 {
 }
 
 blockquote {
-  padding: 0;
+  padding: 0 0 1em 0;
   margin: 0;
   border: none;
 }
 
-.testimonial-item:nth-child(even) {
-  text-align: left;
-  float: left;
-}
-
-.testimonial-item:nth-child(odd) {
-  text-align: right;
-  float: right;
+.testimonial-break {
+  display: block;
+  color: #ffffff;
+  width: 200px;
 }
 
 /* Footer */
