@@ -5,6 +5,12 @@ p {
   letter-spacing: .5px;
 }
 
+@media(max-width: 500px) {
+  p {
+    text-align: left;
+  }
+}
+
 /* Sections */
 
 header {
@@ -42,7 +48,7 @@ header {
   }
 
   .intro-text--title h2 {
-    font-size: 1.9em;
+    font-size: 1.8em;
   }
 
   .intro-text--subtitle {
