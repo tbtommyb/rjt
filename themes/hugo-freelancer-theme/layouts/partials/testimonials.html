@@ -6,14 +6,14 @@
                 <h2 class="text-shadow">{{ .Site.Params.testimonial.title }}</h2>
             </div>
         </div>
-        {{ range sort .Site.Data.testimonials "weight" }}
+        {{ range sort .Site.Data.testimonials.items "weight" }}
             <div class="row testimonial-item">
                 <h1 class="text-shadow">{{ .name }}</h1>
-                {{ if isset . "img" }}
+                {{ if .img }}
                     <img src="img/{{.img}}" class="col-sm-2 col-xs-12 round shadowed img-responsive"/>
                 {{ end }}
                 <blockquote
-                    {{ if isset . "img" }}
+                    {{ if .img }}
                         class="col-sm-10 col-xs-12"
                     {{ else }}
                         class="col-xs-12"

@@ -1,0 +1,19 @@
+items:
+  - name: "Julie"
+    weight: 2
+    img: "testimonials/julie_small.jpg"
+    paras: [
+      "I started training with Roland over 6 months ago. At first I was quite skeptical about having a personal trainer but I have completely changed my mind!",
+      "Roland pushes me in a way that I would never be able to do  myself. I have seen real changes in my body over the past few months, I am fitter and I genuinely feel healthier and happier with my body.",
+      "Finally, Roland has managed to make going to the gym a happy time in my week. It's no longer a chore to work out! Thank you for everything!"
+    ]
+  - name: "Simon"
+    weight: 3
+    paras: [
+      "I started training with Roland in April 2016. I'm in my mid thirties and was far from the best shape of my life.", 
+      "Since training with him I have seen significant and consistent improvements in my strength, fitness and physique. I haven't had a single session where I haven't felt like I've worked hard and achieved something. Not only does he keep me motivated and focused but he explains what we're doing and why, so it's easy to see the value in everything.",
+      "Throughout the training I've also gained a far better understanding of my diet and how to adjust it to see the best results. On top of all this he's a really good guy. If you want a fun, professional and hard working PT, and real results, I can't recommend Roland enough."
+    ]
+  - name: "Tina"
+    weight: 1
+    paras: ["Roland has helped make exercise - and especially strength training - something I really enjoy and want to keep getting better at. He's a great motivator and always fun to train with."]
