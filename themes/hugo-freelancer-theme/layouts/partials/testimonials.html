@@ -6,7 +6,7 @@
                 <h2 class="text-shadow">{{ .Site.Params.testimonial.title }}</h2>
             </div>
         </div>
-        {{ range sort .Site.Data.testimonials.items "weight" }}
+        {{ range .Site.Data.testimonials.items }}
             <div class="row testimonial-item">
                 <h1 class="text-shadow">{{ .name }}</h1>
                 {{ if .img }}
