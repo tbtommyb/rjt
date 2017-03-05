@@ -63,9 +63,7 @@ theme = "hugo-freelancer-theme"
 
     [params.footer.social]
       title = "Connect with me"
-      # All icons using Fontawesome's icon font. Look at fortawesome.github.io/Font-Awesome/icons/
-      # for more icons. The icons are represented by their corresponding
-      # CSS class.
+
       [[params.footer.social.networks]]
-        icon = "fa-twitter"
-        link = "//github.com/spf13/hugo"
+        icon = "fa-instagram"
+        link = "https://www.instagram.com/rjtransformations/"
