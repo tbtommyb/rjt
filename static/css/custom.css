@@ -79,26 +79,37 @@ section.success h2 {
 /* Testimonials */
 
 .testimonial-item img {
-  max-width: 150px;
   display: inline-block;
   padding: 0;
 }
 
-.testimonial-item h1 {
-  padding: 0 15px;
-  text-transform: none;
+.testimonial-item__name {
+  text-align: right;
+  font-style: italic;
+  padding: 0;
+  margin: 0 .2em 0;
+}
+
+.testimonial-item__name:before {
+  content: "- ";
 }
 
 blockquote {
-  padding: 0 0 1em 0;
+  padding: 0;
   margin: 0;
   border: none;
+}
+
+blockquote p {
+  font-size: 1em;
 }
 
 .testimonial-break {
   display: block;
   color: #ffffff;
   width: 200px;
+  margin-top: 3em;
+  margin-bottom: 3em;
 }
 
 /* Footer */
@@ -116,6 +127,10 @@ blockquote {
 
 .round {
   border-radius: 50%;
+}
+
+.rounded {
+  border-radius: 2%;
 }
 
 .shadowed {
