@@ -1,6 +1,6 @@
 languageCode = "en-uk"
 title = "Roland Johnson Transformations"
-baseURL = "https://tbtommyb.github.io/rjt/public/"
+baseURL = "http://www.rjtransformations.co.uk/"
 theme = "hugo-freelancer-theme"
 
 [params]
