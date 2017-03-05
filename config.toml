@@ -5,25 +5,9 @@ theme = "hugo-freelancer-theme"
 
 [params]
 
-  # You can use Markdown syntax for urls [text](//url.to/source) for
-  # most longer texts.
-
-  # To provide some metadata for search engines feel free to add a few
-  # information about you and your website.
   name = "RJ Transformations | Roland Johnson"
   description = "Roland Johnson personal trainer"
 
-  # Since this template is static, the contact form uses www.formspree.io as a
-  # proxy. The form makes a POST request to their servers to send the actual
-  # email. Visitors can send up to a 1000 emails each month for free.
-  #
-  # What you need to do for the setup?
-  #
-  # - set your email address under 'email' below
-  # - upload the generated site to your server
-  # - send a dummy email youself to confirm your account
-  # - click the confirm link in the email from www.formspree.io
-  # - you're done. Happy mailing!
   email = "rjtransformations@outlook.com"
 
   # Custom assets
@@ -41,8 +25,8 @@ theme = "hugo-freelancer-theme"
 
   [params.videos]
     title = "My latest videos"
-    youtube = ["GX89ddvhOvk", "GX89ddvhOvk"]
-    instagram = ["BO5tsnlB23a", "BO3gcftgXHg"]
+    youtube = []
+    instagram = ["BISfT2KDjQp", "BI-Kz2wD1z0", "BNM39AsF9HR", "BL0yY9BlPv3"]
 
   [params.about]
     title = "About me"
