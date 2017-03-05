@@ -8,23 +8,28 @@
         </div>
         {{ range .Site.Data.testimonials.items }}
             <div class="row testimonial-item">
-                <h1 class="text-shadow">{{ .name }}</h1>
                 {{ if .img }}
-                    <img src="img/{{.img}}" class="col-sm-2 col-xs-12 round shadowed img-responsive"/>
+                    <a href="img/{{.img}}">
+                        <img src="img/{{.img}}" class="col-sm-4 col-xs-12 shadowed rounded img-responsive"/>
+                    </a>
                 {{ end }}
-                <blockquote
+                <div
                     {{ if .img }}
-                        class="col-sm-10 col-xs-12"
+                        class="col-sm-8 col-xs-12"
                     {{ else }}
                         class="col-xs-12"
+                    {{ end }} >
+                    <blockquote>
+                        {{ range .paras }}
+                            <p>{{ . }}</p>
+                        {{ end }}
+                    </blockquote>
+                    {{ if .name}}
+                        <p class="testimonial-item__name">{{ .name }}</p>
                     {{ end }}
-                    >
-                    {{ range .paras }}
-                        <p>{{ . }}</p>
-                    {{ end }}
-                </blockquote>
-                <hr class="testimonial-break">
+                </div>
             </div>
+            <hr class="testimonial-break">
         {{ end }}
     </div>
 </section>
