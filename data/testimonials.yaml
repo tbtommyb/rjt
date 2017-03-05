@@ -13,18 +13,18 @@ items:
       "With hard work we managed to break her plateau of being a \"cardio bunny\" to a weight training and HIIT machine!",
       "To anyone that thinks squats, deadlifts and overhead presses will make a woman bulky, I hope these pictures will help bury that myth!"
     ]
+  - name: "Julie"
+    paras: [
+      "I started training with Roland over 6 months ago. At first I was quite skeptical about having a personal trainer but I have completely changed my mind!",
+      "Roland pushes me in a way that I would never be able to do  myself. I have seen real changes in my body over the past few months, I am fitter and I genuinely feel healthier and happier with my body.",
+      "Finally, Roland has managed to make going to the gym a happy time in my week. It's no longer a chore to work out! Thank you for everything!"
+    ]
   - name: "Georgia"
     img: "testimonials/georgia.jpg"
     paras: [
       "Roland is a top quality personal trainer!",
       "I am into my fourth month of being trained by Roland and I am very happy with the results so far.",
       "I would highly recommend Roland if you are serious about transforming your body."
-    ]
-  - name: "Julie"
-    paras: [
-      "I started training with Roland over 6 months ago. At first I was quite skeptical about having a personal trainer but I have completely changed my mind!",
-      "Roland pushes me in a way that I would never be able to do  myself. I have seen real changes in my body over the past few months, I am fitter and I genuinely feel healthier and happier with my body.",
-      "Finally, Roland has managed to make going to the gym a happy time in my week. It's no longer a chore to work out! Thank you for everything!"
     ]
   - name: "Simon"
     paras: [
