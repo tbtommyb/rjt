@@ -1,10 +1,6 @@
 /* bright blue: #428fff */
 /* dark blue: #0248ad */
 
-p {
-  letter-spacing: .5px;
-}
-
 @media(max-width: 500px) {
   p {
     text-align: left;
@@ -19,22 +15,25 @@ header {
 
 .intro-text--title {
   text-transform: uppercase;
-  font-family: 'Martel Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .intro-text--title h1 {
   font-size: 8em;
   font-weight: 700;
+  font-family: 'Martel Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
+
 }
 
 .intro-text--title h2 {
   font-size: 4em;
   font-weight: 900;
+  font-family: 'Martel Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .intro-text--subtitle {
   font-size: 2.5em;
-  font-weight: bold;
+  font-weight: 700;
+  font-family: 'Martel Sans', Helvetica, Arial, sans-serif;
 }
 
 @media(max-width:768px) {
@@ -59,6 +58,7 @@ header {
 section h2 {
   margin-bottom: 1em;
   font-weight: bold;
+  font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
 }
 
 section.success h2 {
