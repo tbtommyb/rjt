@@ -59,7 +59,6 @@ theme = "hugo-freelancer-theme"
       text = "Send"
 
   [params.footer]
-    copyright = "Built by [Tom Barrett](//tbtommyb.github.io) | Powered by [Hugo](//gohugo.io)."
 
     [params.footer.social]
       title = "Connect with me"
