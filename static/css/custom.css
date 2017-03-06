@@ -1,5 +1,5 @@
-/* bright blue: #428fff */
-/* dark blue: #0248ad */
+/* main blue: #214AAE */
+/* dark blue: #11348a */
 
 @media(max-width: 500px) {
   p {
@@ -145,13 +145,13 @@ blockquote p {
 /* Buttons */
 
 .btn {
-  background-color: #428fff;
+  background-color: #214AAE;
   color: #ffffff;
   transition: background-color 0.2s ease;
 }
 
 .btn:hover {
-  background-color: #0248ad;
+  background-color: #11348a;
 }
 
 .btn:active {

@@ -23,7 +23,7 @@ a:focus,
 a:active,
 a.active {
     outline: 0;
-    color: #428fff;
+    color: #214AAE;
 }
 
 h1,
@@ -124,7 +124,7 @@ section h2 {
 
 section.success {
     color: #fff;
-    background: #428fff;
+    background: #214AAE;
     box-shadow: 1px 1px 3px #000000;
 }
 
@@ -180,7 +180,7 @@ section.success a.active {
 .btn-outline:active,
 .btn-outline.active {
     border: solid 2px #fff;
-    color: #428fff;
+    color: #214AAE;
     background: #fff;
 }
 
@@ -233,7 +233,7 @@ section.success a.active {
 }
 
 .floating-label-form-group-with-focus label {
-    color: #428fff;
+    color: #214AAE;
 }
 
 form .row:first-child .floating-label-form-group {
