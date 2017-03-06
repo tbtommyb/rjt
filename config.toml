@@ -33,7 +33,7 @@ theme = "hugo-freelancer-theme"
     image = "img/about.jpg"
     paragraphs = [
       "I can help you make the transformation of your dreams. I'm an experienced personal trainer with a track record of helping people achieve their goals. Whether it's to bulk up, lose weight or get fit, I have tried-and-tested ways to get the best out of you.",
-      "Check out my latest videos and some testimonials from some clients below. If you're interested in a free, no-commitment introductory session then get in touch with me below."
+      "Check out my latest videos and some testimonials from clients below. If you're interested in a free, no-commitment introductory session then get in touch with me below."
     ]
 
   [params.contact]
