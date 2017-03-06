@@ -79,6 +79,12 @@ section.success h2 {
   color: #ffffff;
 }
 
+@media(max-width: 500px) {
+  section h2 {
+    font-size: 1.6em;
+  }
+}
+
 /* Videos */
 
 .videos-row {
@@ -90,6 +96,12 @@ section.success h2 {
   margin-bottom: .2em;
 }
 
+@media(max-width: 400px) {
+  .video {
+    margin: .2em 0 .2em -2em;
+    max-width: 300px;
+  }
+}
 /* Testimonials */
 
 .testimonial-item img {
