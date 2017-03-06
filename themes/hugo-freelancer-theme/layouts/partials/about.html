@@ -12,7 +12,7 @@
         </div>
         <div class="col-sm-8 col-xs-12">
             {{ range .Site.Params.about.paragraphs }}
-            <p class="centered">{{ . | markdownify }}</p>
+            <p>{{ . | markdownify }}</p>
             {{ end }}
         </div>
     </div>
