@@ -58,7 +58,7 @@ header {
 section h2 {
   margin-bottom: 1em;
   font-weight: bold;
-  font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Martel Sans', Helvetica, Arial, sans-serif;
 }
 
 section.success h2 {
@@ -140,6 +140,10 @@ blockquote p {
 
 .text-shadow {
   text-shadow: 1px 1px 3px #000000;
+}
+
+.centered {
+  text-align: center;
 }
 
 /* Buttons */
