@@ -1,6 +1,14 @@
 /* main blue: #214AAE */
 /* dark blue: #11348a */
 
+/* Fonts */
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/fonts/proximanova-bold-webfont.eot');
+  src: url('/fonts/proximanova-bold-webfont.svg#svgFontName') format('svg');
+}
+
 @media(max-width: 500px) {
   p {
     text-align: left;
@@ -27,13 +35,15 @@ header {
 .intro-text--title h2 {
   font-size: 4em;
   font-weight: 900;
+  letter-spacing: .18em;
   font-family: 'Martel Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .intro-text--subtitle {
   font-size: 2.5em;
   font-weight: 700;
-  font-family: 'Martel Sans', Helvetica, Arial, sans-serif;
+  letter-spacing: .16em;
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
 }
 
 @media(max-width:768px) {
@@ -57,8 +67,9 @@ header {
 
 section h2 {
   margin-bottom: 1em;
+  letter-spacing: .2em;
   font-weight: bold;
-  font-family: 'Martel Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
 }
 
 section.success h2 {
