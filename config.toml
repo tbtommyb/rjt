@@ -47,15 +47,15 @@ theme = "hugo-freelancer-theme"
     nav = "The offer"
     paragraphs = [
       "### Standard package",
-      "8 sessions twice a week for the length of a month - *£350*",
+      "8 sessions twice a week for the length of a month — *£350*",
       "<br/>",
       "### Premium package",
-      "12 session three times a week for the length of a month - *£460*",
+      "12 session three times a week for the length of a month — *£460*",
       "<br/>All packages include nutritional advice and a personalised training program for faster results!<br/>",
       "<br/>",
       "### Individual sessions",
-      "One hour session - *£50*",
-      "Thirty minute session - *£25*"
+      "One hour session — *£50*",
+      "Thirty minute session — *£25*"
     ]
 
   [params.contact]
