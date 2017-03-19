@@ -134,7 +134,8 @@ section.success a:focus,
 section.success a:active,
 section.success a.active {
     outline: 0;
-    color: #000000;
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 @media(max-width:767px) {
