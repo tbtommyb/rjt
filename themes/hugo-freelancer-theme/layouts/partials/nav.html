@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#page-top">{{ .Site.Params.navigation.brand }}</a>
+            <a class="navbar-brand" href="/">{{ .Site.Params.navigation.brand }}</a>
         </div>
         {{ "<!-- Collect the nav links, forms, and other content for toggling -->" | safeHTML }}
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -17,22 +17,11 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-                <li class="page-scroll">
-                    <a href="#about">{{ .Site.Params.about.nav }}</a>
-                </li>
-                <li class="page-scroll">
-		    <a href="#offer">{{ .Site.Params.offer.nav }}</a>
-		</li>
-                <li class="page-scroll">
-                    <a href="#testimonial">{{ .Site.Params.testimonial.nav }}</a>
-                </li>
-                <li class="page-scroll">
-                    <a href="#videos">{{ .Site.Params.videos.nav }}</a>
-                </li>
-
-                <li class="page-scroll">
-                    <a href="#contact">{{ .Site.Params.contact.nav }}</a>
-                </li>
+                {{ range .Site.Menus.main }}
+                    <li class="">
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                {{ end }}
             </ul>
         </div>
         {{ "<!-- /.navbar-collapse -->" | safeHTML }}

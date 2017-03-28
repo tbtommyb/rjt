@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body id="page-top" class="index">
+
+    {{ partial "nav.html" . }}
+
+    {{ "<!-- Videos Section -->" | safeHTML }}
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2>{{ .Title }}</h2>
+          </div>
+        </div>
+        <div class="row videos-row">
+          {{ range .Site.Data.videos.youtube }}
+            <div class="video col-lg-4 col-sm-6">
+              {{ partial "youtube.html" . }}
+            </div>
+          {{ end }}
+        </div>
+        <div class="row videos-row">
+          {{ range .Site.Data.videos.instagram }}
+            <div class="video col-lg-4 col-sm-6">
+              {{ partial "instagram.html" . }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+
+    {{ partial "footer.html" . }}
+    {{ partial "js.html" . }}
+
+  </body>
+</html>
+
+

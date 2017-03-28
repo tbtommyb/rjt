@@ -1,7 +1,28 @@
 languageCode = "en-uk"
 title = "Roland Johnson Transformations"
-baseURL = "http://www.rjtransformations.co.uk/"
+baseURL = "http://www.rjtransformations.co.uk"
 theme = "hugo-freelancer-theme"
+
+[[menu.main]]
+  name = "About"
+  url = "/index.html#about"
+  weight = 1
+[[menu.main]]
+  name = "Packages"
+  url = "/packages"
+  weight = 2
+[[menu.main]]
+  name = "Testimonials"
+  url = "/testimonials"
+  weight = 3
+[[menu.main]]
+  name = "Videos"
+  url = "/videos"
+  weight = 4
+[[menu.main]]
+  name = "Contact"
+  url = "/index.html#contact"
+  weight = 5
 
 [params]
 
@@ -22,45 +43,25 @@ theme = "hugo-freelancer-theme"
 
   [params.testimonial]
     title = "Testimonials"
-    nav = "Testimonials"
 
   [params.videos]
     title = "My latest videos"
-    nav = "Videos"
     youtube = []
-    instagram = ["BISfT2KDjQp", "BI-Kz2wD1z0", "BNM39AsF9HR", "BL0yY9BlPv3"]
+    instagram = []
 
   [params.about]
     title = "About me"
-    nav = "About"
     image = "img/about.jpg"
     paragraphs = [
       "Do you want to be leaner? Fitter? Stronger? I'm here to help you achieve your goals.",
       "Train with me and you'll push boundaries you didn't even know you had. I'll guide you through a series of positive changes that will stay with you for the long-term.",
       "Every session is fun and goal-orientated, leaving you knowing you've worked hard — and smart.",
       "I offer one-to-one training in Energie Fitness, Bethnal Green, and personalised online training and diet packages to clients around the world.",
-      "Check out [what my clients say](#testimonial) and [get in touch](#contact) with me for a free consultation to start your journey."
-    ]
-
-  [params.offer]
-    title = "What I offer"
-    nav = "The offer"
-    paragraphs = [
-      "### Standard package",
-      "8 sessions twice a week for the length of a month — *£350*",
-      "<br/>",
-      "### Premium package",
-      "12 session three times a week for the length of a month — *£460*",
-      "<br/>All packages include nutritional advice and a personalised training program for faster results!<br/>",
-      "<br/>",
-      "### Individual sessions",
-      "One hour session — *£50*",
-      "Thirty minute session — *£25*"
+      "Check out [what my clients say](/testimonials) and [get in touch](/index.html#contact) with me for a free consultation to start your journey."
     ]
 
   [params.contact]
     title = "Contact me"
-    nav = "Contact"
 
     # 'error' defines error messages for invalid inputs
     [params.contact.form.name]

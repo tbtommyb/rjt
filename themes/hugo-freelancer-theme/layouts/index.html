@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-    <head>
-        {{ partial "head.html" . }}
-    </head>
-    <body id="page-top" class="index">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body id="page-top" class="index">
 
-        {{ partial "nav.html" . }}
+    {{ partial "nav.html" . }}
 
-        {{ partial "header.html" . }}
-        {{ partial "about.html" . }}
-	{{ partial "offer.html" . }}
-        {{ partial "testimonials.html" . }}
-        {{ partial "videos.html" . }}
-        {{ partial "contact.html" . }}
+    {{ partial "header.html" . }}
+    {{ partial "about.html" . }}
+    {{ partial "contact.html" . }}
 
-        {{ partial "footer.html" . }}
-        {{ partial "js.html" . }}
+    {{ partial "footer.html" . }}
+    {{ partial "js.html" . }}
 
-    </body>
+  </body>
 </html>

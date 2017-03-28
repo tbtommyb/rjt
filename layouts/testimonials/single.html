@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body id="page-top" class="index">
+
+    {{ partial "nav.html" . }}
+
+    {{ "<!-- Testimonial Grid Section -->" | safeHTML }}
+    <section class="success" id="testimonial">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="text-shadow">{{ .Title }}</h2>
+          </div>
+        </div>
+        {{ range .Site.Data.testimonials.items }}
+          <div class="row testimonial-item">
+            {{ if .img }}
+              <a href="/img/{{.img}}">
+                <img src="/img/{{.img}}" class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2 shadowed rounded img-responsive"/>
+              </a>
+            {{ end }}
+            <div
+              {{ if .img }}
+                class="col-sm-8 col-xs-12"
+              {{ else }}
+                class="col-xs-12"
+              {{ end }} >
+              <blockquote>
+                {{ range .paras }}
+                    <p>{{ . }}</p>
+                {{ end }}
+              </blockquote>
+              {{ if .name}}
+                <p class="testimonial-item__name">{{ .name }}</p>
+              {{ end }}
+            </div>
+          </div>
+          <hr class="testimonial-break">
+        {{ end }}
+      </div>
+    </section>
+
+    {{ partial "footer.html" . }}
+    {{ partial "js.html" . }}
+
+  </body>
+</html>
+
+
