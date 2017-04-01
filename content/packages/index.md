@@ -4,20 +4,24 @@ title = "Packages"
 draft = false
 +++
 
-# What I offer
+My packages are designed to deliver results quickly while fitting around your busy life. All packages include nutritional advice and a personalised training program for faster results! Check out my [testimonials](/testimonials) to see what you can achieve.
 
-### Standard package
+<br/>
 
-8 sessions twice a week for the length of a month — *£350*
+#### Standard package
 
-### Premium package
+8 sessions twice a week for the length of a month.
 
-12 session three times a week for the length of a month — *£460*
+<br/>
 
-All packages include nutritional advice and a personalised training program for faster results!
+#### Premium package
 
-### Individual sessions
+12 session three times a week for the length of a month.
 
-One hour session — *£50*
+<br/>
 
-Thirty minute session — *£25*
+Individual sessions of sixty minutes and thirty minutes are also available. Please get in touch with me and I can tailor a package to meet your needs.
+
+<br/>
+<div class="col-sm-6 col-xs-12 col-sm-offset-3">
+<a href="/#contact" class="btn centered highlight">Book your free consultation</a></div>
