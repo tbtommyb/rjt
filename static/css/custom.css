@@ -194,24 +194,15 @@ blockquote p {
     border: 2px solid white;
 }
 
+.btn.dark-btn:hover,
 .btn.enquire-btn:hover {
     background-color: rgba(17, 52, 138, .6);
 }
 
-.btn.para-btn {
+.btn.dark-btn {
     background-color: transparent;
     color: rgb(23, 23, 23);
     border: 2px solid rgb(23, 23, 23);
-}
-
-.btn.submit-btn {
-    background-color: rgba(17,52,138, .6);
-    color: white;
-    border: 2px solid white;
-}
-
-.btn.submit-btn:hover {
-    background-color: rgb(17, 52, 138);
 }
 
 .btn:active {
