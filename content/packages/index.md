@@ -24,4 +24,4 @@ Individual sessions of sixty minutes and thirty minutes are also available. Plea
 
 <br/>
 <div class="col-sm-6 col-xs-12 col-sm-offset-3">
-<a href="/#contact" class="btn centered highlight">Book your free consultation</a></div>
+<a href="/#contact" class="btn centered shadowed highlight">Book your free consultation</a></div>
