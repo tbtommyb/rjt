@@ -9,6 +9,10 @@
   src: url('/fonts/proximanova-bold-webfont.svg#svgFontName') format('svg');
 }
 
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 @media(max-width: 500px) {
   p {
     text-align: left;
@@ -41,6 +45,7 @@ header {
   font-weight: 400;
   letter-spacing: .18em;
   font-family: 'Martel Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: .8em 0 1em 0;
 }
 
 .intro-text--subtitle {
@@ -51,6 +56,15 @@ header {
   letter-spacing: .16em;
   text-transform: uppercase;
   font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
+}
+
+.btn.enquire-btn {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  background-color: rgba(150, 150, 150, 0.6);
+  border: 2px solid white;
+  border-radius: 0 !important;
+  letter-spacing: 1.2px;
 }
 
 @media(max-width:768px) {
@@ -72,15 +86,8 @@ header {
   }
 }
 
-section h2 {
-  margin-bottom: 1em;
-  letter-spacing: .2em;
-  font-weight: bold;
-  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
-}
-
 section.success h2 {
-  color: #ffffff;
+  color: rgb(23, 23, 23);
 }
 
 @media(max-width: 500px) {
@@ -183,10 +190,10 @@ blockquote p {
   color: #ffffff;
   transition: background-color 0.2s ease;
   text-decoration: none !important;
-}
+]}
 
 .btn:hover {
-  background-color: #11348a;
+  background-color: rgba(17,52,138, .6)
 }
 
 .btn:active {
@@ -194,7 +201,6 @@ blockquote p {
 }
 
 .btn.centered {
-  display: block;
   margin: 0 auto;
 }
 
