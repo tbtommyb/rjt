@@ -198,6 +198,12 @@ blockquote p {
     background-color: rgba(17, 52, 138, .6);
 }
 
+.btn.para-btn {
+    background-color: transparent;
+    color: rgb(23, 23, 23);
+    border: 2px solid rgb(23, 23, 23);
+}
+
 .btn.submit-btn {
     background-color: rgba(17,52,138, .6);
     color: white;
