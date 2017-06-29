@@ -30,15 +30,15 @@ header {
 }
 
 .intro-text--title h1 {
-  font-size: 8em;
-  font-weight: 700;
+  font-size: 6em;
+  font-weight: 500;
   font-family: 'Martel Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
 
 }
 
 .intro-text--title h2 {
-  font-size: 4em;
-  font-weight: 900;
+  font-size: 3em;
+  font-weight: 400;
   letter-spacing: .18em;
   font-family: 'Martel Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
 }
