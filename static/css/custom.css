@@ -58,14 +58,6 @@ header {
   font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
 }
 
-.btn.enquire-btn {
-  font-size: 1.5em;
-  text-transform: uppercase;
-  background-color: rgba(150, 150, 150, 0.6);
-  border: 2px solid white;
-  border-radius: 0 !important;
-  letter-spacing: 1.2px;
-}
 
 @media(max-width:768px) {
   header .container {
@@ -186,14 +178,34 @@ blockquote p {
 /* Buttons */
 
 .btn {
-  background-color: #214AAE;
-  color: #ffffff;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  background-color: rgba(150, 150, 150, 0.6);
+  border: 2px solid rgb(230, 230, 230);
+  border-radius: 0 !important;
+  letter-spacing: 2.6px;
   transition: background-color 0.2s ease;
   text-decoration: none !important;
-]}
+}
 
-.btn:hover {
-  background-color: rgba(17,52,138, .6)
+.btn.enquire-btn {
+    background-color: rgba(150, 150, 150, 0.6);
+    color: white;
+    border: 2px solid white;
+}
+
+.btn.enquire-btn:hover {
+    background-color: rgba(17, 52, 138, .6);
+}
+
+.btn.submit-btn {
+    background-color: rgba(17,52,138, .6);
+    color: white;
+    border: 2px solid white;
+}
+
+.btn.submit-btn:hover {
+    background-color: rgb(17, 52, 138);
 }
 
 .btn:active {
@@ -201,13 +213,8 @@ blockquote p {
 }
 
 .btn.centered {
+    display: block;
   margin: 0 auto;
-}
-
-.btn.highlight {
-  background-color: #fb890f;
-  color: #214AAE;
-  font-size: 1.2em;
 }
 
 /* Images */
