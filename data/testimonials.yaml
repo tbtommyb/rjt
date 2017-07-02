@@ -7,7 +7,8 @@ items:
       "He taught me loads of new exercises I didn't know about as well as ones I could do at home. He's a genuinely fantastic motivator who helped me push myself to the next level.",
       "Suffice to say I would recommend him to anyone looking for a very personalised and personable PT!"
     ]
-  - img: "testimonials/leah.jpg"
+  - name: "Leah"
+    img: "testimonials/leah.jpg"
     paras: [
       "A massive congratulations to Leah for her 2 year fat loss journey.",
       "With hard work we managed to break her plateau of being a \"cardio bunny\" to a weight training and HIIT machine!",

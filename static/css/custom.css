@@ -149,14 +149,11 @@ section.success h2 {
 }
 
 .testimonial-item__name {
+    font-weight: bold;
   text-align: right;
-  font-style: italic;
+  text-transform: uppercase;
   padding: 0;
   margin: 0 .2em 0;
-}
-
-.testimonial-item__name:before {
-  content: "- ";
 }
 
 blockquote {
