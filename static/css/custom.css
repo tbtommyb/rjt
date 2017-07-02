@@ -1,6 +1,12 @@
 /* main blue: #214AAE */
 /* dark blue: #11348a */
 
+/* Site-wide */
+
+li {
+    list-style-type: none;
+}
+
 /* Fonts */
 
 @font-face {
@@ -19,14 +25,34 @@ body {
   }
 }
 
+h2 {
+    line-height: 1.2em;
+}
+
 h4 {
   font-weight: bold;
+}
+
+p {
+    margin: 0 0 .8em;
 }
 
 /* Sections */
 
 header {
   height: 100vh;
+}
+
+.navbar-default {
+    background-color: #000;
+}
+
+.nav .navbar-nav .navbar-right {
+    font-weight: 15px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
 }
 
 .intro-text--title {
@@ -37,7 +63,7 @@ header {
   font-size: 6em;
   font-weight: 500;
   font-family: 'Martel Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
-
+  margin: .2em 0;
 }
 
 .intro-text--title h2 {
