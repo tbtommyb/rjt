@@ -14,8 +14,10 @@
             {{ range .Site.Params.about.paragraphs }}
             <p>{{ . | markdownify }}</p>
             {{ end }}
-            <a href="/packages" class="btn para-btn dark-btn">What I offer</a>
-            <a href="/testimonials" class="btn para-btn dark-btn">What my clients say</a>
+            <div class="btn-holder">
+              <a href="/packages" class="btn para-btn dark-btn">What I offer</a>
+              <a href="/testimonials" class="btn para-btn dark-btn">What my clients say</a>
+            </div>
         </div>
     </div>
 </section>

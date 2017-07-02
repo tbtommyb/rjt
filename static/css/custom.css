@@ -20,6 +20,16 @@ h4 {
     margin-bottom: 40px;
 }
 
+.btn-holder {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#about .btn-holder {
+    margin-top: 2.5em;
+}
+
 /* Fonts */
 
 @font-face {
@@ -264,9 +274,6 @@ hr {
 
 .btn.para-btn {
     font-size: 1.2em;
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-right: 10px;
 }
 
 .btn:active {
