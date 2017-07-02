@@ -114,7 +114,9 @@ header img {
 }
 
 section {
-    padding: 100px 0;
+    padding: 130px 0;
+    color: rgb(23, 23, 23);
+    background: rgb(230, 230, 230);
 }
 
 section h2 {
@@ -126,10 +128,8 @@ section h2 {
 }
 
 section.success {
-    color: rgb(23, 23, 23);
-    background: rgb(230, 230, 230);
-    border-bottom: 1px solid rgb(23, 23, 23);
-    border-top: 1px solid rgb(23, 23, 23);
+    border-bottom: 1px solid rgb(106, 106, 106);
+    border-top: 1px solid rgb(106, 106, 106);
 }
 
 section.success a {
@@ -155,21 +155,6 @@ section.success a.active {
 
     section h2 {
         font-size: 2.6em;
-    }
-}
-
-#testimonial .testimonial-item {
-    right: 0;
-    margin: 0 0 15px;
-}
-
-#testimonial * {
-    z-index: 2;
-}
-
-@media(min-width:767px) {
-    #testimonial .testimonial-item {
-        margin: 0 0 30px;
     }
 }
 

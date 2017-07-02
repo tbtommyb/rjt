@@ -8,7 +8,7 @@
     {{ partial "nav.html" . }}
 
     {{ "<!-- Testimonial Grid Section -->" | safeHTML }}
-    <section class="success" id="testimonial">
+    <section id="testimonial">
       <div class="container">
         <div class="row">
           <div class="col-xs-12 text-center">
@@ -16,38 +16,34 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-8 col-xs-offset-2">
+          <div class="page-intro-text col-xs-8 col-xs-offset-2">
             <p>Here are some testimonials from some clients. More text to go here.</p>
+            <hr>
           </div>
         </div>
         <div class="row">
-          {{ range .Site.Data.testimonials.items }}
-          <div class="testimonial-item col-xs-12 col-sm-6">
-            {{ if .name}}
-            <div class="testimonial-item__name">
-              <p>{{ .name }}</p>
-            </div>
-            {{ end }}
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+            {{ range .Site.Data.testimonials.items }}
+            <div class="testimonial-item col-xs-12 col-sm-6">
+              {{ if .name}}
+              <div class="testimonial-item__name">
+                <p>{{ .name }}</p>
+              </div>
+              {{ end }}
 
-            {{ if .img }}
-            <a href="/img/{{.img}}">
-              <img src="/img/{{.img}}" class="img-responsive"/>
-            </a>
-            {{ end }}
-            <div
               {{ if .img }}
-              class=""
-              {{ else }}
-              class=""
-              {{ end }} >
-              <blockquote>
+              <a href="/img/{{.img}}">
+                <img src="/img/{{.img}}" class="img-responsive"/>
+              </a>
+              {{ end }}
+              <div class="testimonial-item__text">
                 {{ range .paras }}
                 <p>{{ . }}</p>
                 {{ end }}
-              </blockquote>
+              </div>
             </div>
+            {{ end }}
           </div>
-          {{ end }}
         </div>
       </div>
     </section>
