@@ -5,6 +5,7 @@
 
 li {
     list-style-type: none;
+    padding: 0;
 }
 
 /* Fonts */
@@ -229,6 +230,13 @@ blockquote p {
     background-color: transparent;
     color: rgb(23, 23, 23);
     border: 2px solid rgb(23, 23, 23);
+}
+
+.btn.para-btn {
+    font-size: 1.2em;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
 .btn:active {
