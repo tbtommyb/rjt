@@ -24,9 +24,7 @@ My packages are designed to deliver results quickly while fitting around your bu
 
 Individual sessions of sixty minutes and thirty minutes are also available.
 
-Check out my [testimonials](/testimonials) to see what you can achieve.
-
-Please get in touch with me and I can tailor a package to meet your needs.
+If you have any specific requests or aren't quite sure about what you're about looking for, please get in touch with me and I can tailor a package to meet your needs. Check out my [testimonials](/testimonials) to see what you could achieve!
 
 <br>
 
