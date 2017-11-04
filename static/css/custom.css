@@ -170,10 +170,17 @@ hr {
 
 /* Testimonials */
 
+.testimonial-holder {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .testimonial-item img {
   display: inline-block;
   padding: 0;
   margin-bottom: 2em;
+  max-width: 340px;
+  height: auto;
 }
 
 .testimonial-item__name {
@@ -197,7 +204,7 @@ hr {
 
 .testimonial-item__text p {
   font-size: 1.1em;
-  text-align: left;
+  text-align: justify;
   color: rgb(106, 106, 106);
 }
 
@@ -208,8 +215,7 @@ hr {
 
 @media(min-width:767px) {
     #testimonial .testimonial-item {
-        margin: 0 0 30px;
-        height: 650px;
+        margin: 0 0 20px;
     }
 }
 
