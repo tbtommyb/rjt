@@ -1,6 +1,6 @@
 languageCode = "en-uk"
 title = "Roland Johnson Transformations"
-baseURL = "http://www.rjtransformations.co.uk/"
+baseURL = "https://www.rjtransformations.co.uk/"
 theme = "hugo-freelancer-theme"
 
 [[menu.main]]
