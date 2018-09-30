@@ -1,3 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 hugo
-rsync -ravzP --delete /Users/thomasbarrett/coding/rjt/public/ -e 'ssh -i /Users/thomasbarrett/coding/aws/ireland-key-pair.pem' ubuntu@52.17.9.164:/home/ubuntu/rjt
+rsync -ravzP --delete --rsync-path "sudo rsync" /Users/thomasbarrett/coding/rjt/public/ fbsd:/usr/jails/WEB/usr/local/www/rjt
