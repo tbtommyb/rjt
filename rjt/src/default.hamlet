@@ -1,0 +1,10 @@
+$doctype 5
+<html>
+    <head>
+        ^{head}
+    <nav>
+        ^{nav}
+    <body #page-top .index>
+        ^{body}
+    <footer>
+        ^{footer}
