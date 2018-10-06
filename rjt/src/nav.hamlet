@@ -6,10 +6,11 @@
         <span .icon-bar>
         <span .icon-bar>
         <span .icon-bar>
-      <a .navbar-brand>BRAND HERE
+      <a .navbar-brand>#{brandname}
     <div .collapse.navbar-collapse #bs-example-navbar-collapse-1>
       <ul .nav.navbar-nav.navbar-right>
         <li .hidden>
           <a href="#page-top">
-        <li>
-          <a href="/first-page">First page
+        $forall item <- items
+          <li>
+            <a href=#{url item}>#{name item}
