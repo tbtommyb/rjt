@@ -2,12 +2,13 @@
   <div .container>
     <div .row>
       <div .col-lg-12.text-center>
-        <h2>This is the about title
+        <h2>#{title}
   <div .row>
     <div .col-sm-4.col-xs-12>
-      <img .img-responsive.center-block.round.about-img.shadowed src="/img/about.jpg">
+      <img .img-responsive.center-block.round.about-img.shadowed src=#{image}>
     <div .col-sm-8.col-xs-12>
-      <p>This is one of the about paragraphs
+      $forall para <- paragraphs
+        <p>#{para}
       <div .btn-holder>
         <a href="/packages" .btn.para-btn.dark-btn>What I offer
         <a hef="/testimonials" .btn.para-btn.dark-btn>What my clients say
