@@ -1,1 +1,2 @@
-<p>All done, #{name}.
+^{Main.header}
+^{about}

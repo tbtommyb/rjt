@@ -1,2 +1,15 @@
-<nav>
-    <p>Nav bar
+<nav .navbar.navbar-default.navbar-shrink.navbar-fixed-top>
+  <div .container>
+    <div .navbar-header.page-scroll>
+      <button type=button .navbar-toggle data-toggle=collapse data-target="#bs-example-navbar-collapse-1">
+        <span .sr-only>Toggle navigation
+        <span .icon-bar>
+        <span .icon-bar>
+        <span .icon-bar>
+      <a .navbar-brand>BRAND HERE
+    <div .collapse.navbar-collapse #bs-example-navbar-collapse-1>
+      <ul .nav.navbar-nav.navbar-right>
+        <li .hidden>
+          <a href="#page-top">
+        <li>
+          <a href="/first-page">First page

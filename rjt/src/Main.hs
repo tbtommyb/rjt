@@ -4,16 +4,26 @@
 
 module Main where
 
-import Data.Monoid((<>))
+import System.FilePath
 import Web.Scotty
 import Text.Blaze.Html.Renderer.Text (renderHtml)
 import Text.Hamlet
 
+-- TODO: tidy up all of these template functions
 layout :: Html -> Html -> Html -> Html -> Html
 layout head nav body footer = $(shamletFile "src/default.hamlet")
 
 template :: String -> Html -> Html
 template title content = layout (Main.head title) nav content footer
+
+body :: Html -> Html -> Html
+body header about = $(shamletFile "src/body.hamlet")
+
+header :: Html
+header = $(shamletFile "src/header.hamlet")
+
+about :: Html
+about = $(shamletFile "src/about.hamlet")
 
 head :: String -> Html
 head title  = $(shamletFile "src/head.hamlet")
@@ -24,17 +34,13 @@ nav = $(shamletFile "src/nav.hamlet")
 footer :: Html
 footer = $(shamletFile "src/footer.hamlet")
 
-homepage :: String -> Html
-homepage name = $(shamletFile "src/body.hamlet")
-
 main :: IO ()
 main = do
   putStrLn "Starting server..."
   scotty 4000 $ do
-    get "/hello/:name" $ do
-      name <- param "name"
-      Web.Scotty.text ("Hello " <> name <> "!")
-    get "/test" $ do
-      html $ renderHtml $ template "New title" (homepage "tom")
-    get "/custom.css" $ do
-      file "src/custom.css"
+    get "/" $ do
+      html $ renderHtml $ template "RJ Transformations" (Main.body Main.header about)
+    get "/:dirname/:filename" $ do
+      dirname <- param "dirname"
+      filename <- param "filename"
+      file $ "src" </> dirname </> filename

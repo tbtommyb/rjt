@@ -1,0 +1,16 @@
+<section #about .success>
+  <div .container>
+    <div .row>
+      <div .col-lg-12.text-center>
+        <h2>This is the about title
+  <div .row>
+    <div .col-sm-4.col-xs-12>
+      <img .img-responsive.center-block.round.about-img.shadowed src="/img/about.jpg">
+    <div .col-sm-8.col-xs-12>
+      <p>This is one of the about paragraphs
+      <div .btn-holder>
+        <a href="/packages" .btn.para-btn.dark-btn>What I offer
+        <a hef="/testimonials" .btn.para-btn.dark-btn>What my clients say
+      <p>This is a video paragraph
+      <div .col-sm-8-col-sm-offset-2.col-xs-8.col-xs-offset-2>
+        <p>This will be the youtube partial
