@@ -1,0 +1,30 @@
+<section #contact>
+  <div .container>
+    <div .row>
+      <div .col-lg-12.text-center>
+        <h2>#{title}
+  <div .row>
+    <div .col-md-8.col-sm-10.col-md-offset-2.col-sm-offset-1>
+      <form action="//formspree.io/FAKE_EMAIL" method=POST name=sentMessage #contactForm novalidate>
+        $forall item <- formItems
+          <div .row.control-group>
+            <div .form-group.col-xs-12.floating-label-form-group.controls>
+              <label>#{fLabel item}
+              $maybe message <- (fMessage item)
+                <input type=#{fInput item} name=#{fName item} .form-control placeholder=#{fLabel item} ##{fName item} required data-validation-required-message=#{message}>
+                <p .help-block.text-danger>
+              $nothing
+                <input type=#{fInput item} name=#{fName item} .form-control placeholder=#{fLabel item} ##{fName item}>
+        <div>
+          <input type=hidden name=_subject value="New submission!">
+          <input type=text name=_gotcha style="display:none">
+        <div .row.control-group>
+          <div .form-group.col-xs-12.floating-label-form-group.controls>
+            <label>#{tLabel textArea}
+            <textarea rows=#{tRows textArea} name=#{tName textArea} .form-control placeholder=#{tPlaceholder textArea} ##{tName textArea} required data-validation-required-message=#{tMessage textArea}>
+            <p .help-block.text-danger>
+        <br>
+        <div #success>
+        <div .row>
+          <div .form-group.col-xs-12>
+            <button type=submit .btn.dark-btn.centered>#{button}

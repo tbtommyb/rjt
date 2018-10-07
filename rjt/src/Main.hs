@@ -12,7 +12,7 @@ main = do
   putStrLn "Starting server..."
   scotty 4000 $ do
     get "/" $ do
-      html $ renderHtml $ template "RJ Transformations" (body header aboutPage)
+      html $ renderHtml $ template "RJ Transformations" (body header aboutPartial contactPartial)
     -- TODO: maybe replace with middleware
     get "/:dirname/:filename" $ do
       dirname <- param "dirname"

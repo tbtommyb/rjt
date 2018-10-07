@@ -13,4 +13,4 @@
           <a href="#page-top">
         $forall item <- items
           <li>
-            <a href=#{url item}>#{name item}
+            <a href=#{url item}>#{Nav.name item}

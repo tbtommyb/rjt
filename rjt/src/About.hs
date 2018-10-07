@@ -14,3 +14,11 @@ paragraphs = [
       "Get a taster of my training and fitness advice on [my blog](https://medium.com/@rolandjohnson_75946). I offer one-to-one personal training and fitness advice in Liverpool Street, East London and personalised online training and diet packages to clients around the world.",
       "Check out what my clients say and get in touch with me for a free consultation to start your journey."
       ]
+
+videoParagraphs :: [String]
+videoParagraphs = [
+        "I became a personal trainer because a great coach helped me overcome difficulties and achieve my goals. Watch this video to see my story and what I can do for you:"
+                  ]
+
+youtubeSlug :: String
+youtubeSlug = "rOzmNGRi1rg"
