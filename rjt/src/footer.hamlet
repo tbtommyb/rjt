@@ -1,1 +1,11 @@
-<p>This is the footer
+<footer .text-center>
+  <div .footer-above>
+    <div .container>
+      <div .row>
+        <div .footer-col.col-md-12>
+          <h3>#{title}
+          <ul .list-inline>
+          $forall icon <- socials
+            <li>
+              <a href=#{siLink icon} .btn-social.btn-outline>
+                <i .fa.fa-fw.#{siClass icon}>

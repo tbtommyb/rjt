@@ -8,3 +8,10 @@ $doctype 5
         ^{body}
     <footer>
         ^{footer}
+    <script src="/js/jquery-1.11.js">
+    <script src="/js/jquery.easing.min.js">
+    <script src="/js/bootstrap.min.js">
+    <script src="/js/classie.js">
+    <script src="/js/jqBootstrapValidation.js">
+    <script src="/js/contact_me.js">
+    <script src="/js/freelancer.js">

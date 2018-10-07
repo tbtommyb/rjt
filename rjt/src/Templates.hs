@@ -5,6 +5,7 @@ module Templates where
 import About
 import Nav
 import Contact
+import Footer
 import Text.Hamlet
 
 -- TODO: tidy up all of these template functions
@@ -14,7 +15,7 @@ layout :: Html -> Html -> Html -> Html -> Html
 layout head nav body footer = $(shamletFile "src/default.hamlet")
 
 template :: String -> Html -> Html
-template title content = layout (Templates.head title) navPartial content footer
+template title content = layout (Templates.head title) navPartial content footerPartial
 
 body :: Html -> Html -> Html -> Html
 body header about contact = $(shamletFile "src/body.hamlet")
@@ -35,8 +36,11 @@ nav brandname items = $(shamletFile "src/nav.hamlet")
 contact :: String -> [FormItem] -> String -> Html
 contact title formItems button = $(shamletFile "src/contact.hamlet")
 
-footer :: Html
-footer = $(shamletFile "src/footer.hamlet")
+footer :: String -> [SocialIcon] -> Html
+footer title socials = $(shamletFile "src/footer.hamlet")
+
+footerPartial :: Html
+footerPartial = footer Footer.title Footer.socials
 
 aboutPartial :: Html
 aboutPartial = about About.title About.image About.paragraphs About.videoParagraphs About.youtubeSlug
