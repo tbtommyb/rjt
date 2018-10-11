@@ -1,4 +1,5 @@
 {-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE OverloadedStrings #-}
 
 module Templates where
 
@@ -17,8 +18,8 @@ layout head nav body footer = $(shamletFile "src/default.hamlet")
 template :: String -> Html -> Html
 template title content = layout (Templates.head title) navPartial content footerPartial
 
-body :: Html -> Html -> Html -> Html
-body header about contact = $(shamletFile "src/body.hamlet")
+home :: Html -> Html -> Html -> Html
+home header about contact = $(shamletFile "src/body.hamlet")
 
 header :: Html
 header = $(shamletFile "src/header.hamlet")
@@ -50,3 +51,6 @@ contactPartial = contact Contact.title Contact.formItems Contact.button
 
 navPartial :: Html
 navPartial = nav Nav.brandname Nav.items
+
+singlePartial :: String -> Html -> Html
+singlePartial title content = $(shamletFile "src/single.hamlet")

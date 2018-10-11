@@ -1,0 +1,8 @@
+<section #content>
+  <div .container>
+    <div .row>
+      <div .col-xs-12>
+        <h2 .text-center>#{title}
+   <div .row>
+     <div .col-sm-10.col-sm-offset-1.col-xs-12>
+       #{content}

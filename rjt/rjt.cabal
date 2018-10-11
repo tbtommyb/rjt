@@ -19,9 +19,13 @@ executable rjt
   default-language:    Haskell2010
   other-modules:       Templates
                      , About
+                     , Contact
+                     , Footer
+                     , Nav
   build-depends:       base >= 4.7 && < 5
                      , scotty
                      , blaze-html
                      , shakespeare
                      , text
                      , filepath
+                     , markdown
