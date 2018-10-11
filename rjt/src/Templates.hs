@@ -7,6 +7,7 @@ import About
 import Nav
 import Contact
 import Footer
+import Testimonials
 import Text.Hamlet
 
 -- TODO: tidy up all of these template functions
@@ -54,3 +55,9 @@ navPartial = nav Nav.brandname Nav.items
 
 singlePartial :: String -> Html -> Html
 singlePartial title content = $(shamletFile "src/single.hamlet")
+
+testimonials :: String -> [Testimonial] -> Html
+testimonials title testimonials = $(shamletFile "src/testimonials.hamlet")
+
+testimonialsPartial :: String -> Html
+testimonialsPartial title = Templates.testimonials title Testimonials.testimonials

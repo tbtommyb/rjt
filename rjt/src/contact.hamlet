@@ -21,7 +21,7 @@
         <div .row.control-group>
           <div .form-group.col-xs-12.floating-label-form-group.controls>
             <label>#{tLabel textArea}
-            <textarea rows=#{tRows textArea} name=#{tName textArea} .form-control placeholder=#{tPlaceholder textArea} ##{tName textArea} required data-validation-required-message=#{tMessage textArea}>
+            <textarea rows=#{tRows textArea} name=#{Contact.tName textArea} .form-control placeholder=#{tPlaceholder textArea} ##{Contact.tName textArea} required data-validation-required-message=#{tMessage textArea}>
             <p .help-block.text-danger>
         <br>
         <div #success>
