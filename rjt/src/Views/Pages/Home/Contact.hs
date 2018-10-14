@@ -32,8 +32,5 @@ textArea = TextArea {tLabel="Message", tName="message", tRows=5, tPlaceholder="E
 button :: String
 button = "Send"
 
-contact :: String -> [FormItem] -> String -> Html
-contact title formItems button = $(shamletFile "src/Views/Pages/Home/contact.hamlet")
-
 partial :: Html
-partial = contact title formItems button
+partial = $(shamletFile "src/Views/Pages/Home/contact.hamlet")

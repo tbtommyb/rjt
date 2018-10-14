@@ -22,8 +22,5 @@ items = [
 brandname :: String
 brandname = "RJ TRANSFORMATIONS"
 
-nav :: String -> [NavItem] -> Html
-nav brandname items = $(shamletFile "src/Views/Partials/nav.hamlet")
-
 partial :: Html
-partial = nav brandname items
+partial = $(shamletFile "src/Views/Partials/nav.hamlet")

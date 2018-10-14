@@ -19,8 +19,5 @@ socials = [
       }
   ]
 
-footer :: String -> [SocialIcon] -> Html
-footer title socials = $(shamletFile "src/Views/Partials/footer.hamlet")
-
 partial :: Html
-partial = footer title socials
+partial = $(shamletFile "src/Views/Partials/footer.hamlet")

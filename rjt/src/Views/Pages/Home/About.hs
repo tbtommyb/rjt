@@ -26,12 +26,8 @@ videoParagraphs = [
         "I became a personal trainer because a great coach helped me overcome difficulties and achieve my goals. Watch this video to see my story and what I can do for you:"
                   ]
 
-slug :: Youtube
-slug = Youtube "rOzmNGRi1rg"
-
--- TODO: need a better way of handling sets of paragraphs
-about :: String -> String -> [String] -> [String] -> Youtube -> Html
-about title image paragraphs videoParagraphs (Youtube slug) = $(shamletFile "src/Views/Pages/Home/about.hamlet")
+slug :: String
+slug = "rOzmNGRi1rg"
 
 partial :: Html
-partial = about title image paragraphs videoParagraphs slug
+partial = $(shamletFile "src/Views/Pages/Home/about.hamlet")
