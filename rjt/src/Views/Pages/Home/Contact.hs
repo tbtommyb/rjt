@@ -16,8 +16,8 @@ data TextArea = TextArea { tLabel :: String
                          , tPlaceholder :: String
                          , tMessage :: String
                          } deriving (Show)
-contactTitle :: String
-contactTitle = "Contact me"
+title :: String
+title = "Contact me"
 
 formItems :: [FormItem]
 formItems = [
@@ -35,5 +35,5 @@ button = "Send"
 contact :: String -> [FormItem] -> String -> Html
 contact title formItems button = $(shamletFile "src/Views/Pages/Home/contact.hamlet")
 
-contactPartial :: Html
-contactPartial = contact contactTitle formItems button
+partial :: Html
+partial = contact title formItems button

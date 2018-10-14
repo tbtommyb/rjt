@@ -4,11 +4,11 @@ module Views.Pages.Home.About where
 
 import Text.Hamlet
 
-aboutTitle :: String
-aboutTitle = "About me"
+title :: String
+title = "About me"
 
-aboutImage :: String
-aboutImage = "/img/about.jpg"
+image :: String
+image = "/img/about.jpg"
 
 paragraphs :: [String]
 paragraphs = [
@@ -31,5 +31,5 @@ youtubeSlug = "rOzmNGRi1rg"
 about :: String -> String -> [String] -> [String] -> String -> Html
 about title image paragraphs videoParagraphs youtubeSlug = $(shamletFile "src/Views/Pages/Home/about.hamlet")
 
-aboutPartial :: Html
-aboutPartial = about aboutTitle aboutImage paragraphs videoParagraphs youtubeSlug
+partial :: Html
+partial = about title image paragraphs videoParagraphs youtubeSlug
