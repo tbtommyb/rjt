@@ -1,12 +1,15 @@
 module Videos where
 
-instagram :: [String]
+newtype Instagram = Instagram { instaPath :: String } deriving (Show, Eq)
+newtype Youtube = Youtube { ytPath :: String } deriving (Show, Eq)
+
+instagram :: [Instagram]
 instagram = [
-  "BISfT2KDjQp",
-  "BI-Kz2wD1z0",
-  "BNM39AsF9HR",
-  "BL0yY9BlPv3"
+  Instagram "BISfT2KDjQp",
+  Instagram "BI-Kz2wD1z0",
+  Instagram "BNM39AsF9HR",
+  Instagram "BL0yY9BlPv3"
   ]
 
-youtube :: [String]
+youtube :: [Youtube]
 youtube = []

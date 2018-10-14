@@ -21,6 +21,9 @@ main = do
       html $ renderHtml $ template "Packages" (singlePartial "Packages" (markdown def (pack packages)))
     get "/testimonials" $ do
       html $ renderHtml $ template "Testimonials" (testimonialsPartial "Testimonials")
+    get "/videos" $ do
+      videoContent <- liftIO $ readFile "src/videos.md"
+      html $ renderHtml $ template "Videos" (videosPartial "Videos" (markdown def (pack videoContent)))
     -- TODO: maybe replace with middleware
     get "/:dirname/:filename" $ do
       dirname <- param "dirname"

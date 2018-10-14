@@ -8,6 +8,7 @@ import Nav
 import Contact
 import Footer
 import Testimonials
+import Videos
 import Text.Hamlet
 
 -- TODO: tidy up all of these template functions
@@ -61,3 +62,9 @@ testimonials title testimonials = $(shamletFile "src/testimonials.hamlet")
 
 testimonialsPartial :: String -> Html
 testimonialsPartial title = Templates.testimonials title Testimonials.testimonials
+
+videos :: String -> Html -> [Instagram] -> [Youtube] -> Html
+videos title content igVideos ytVideos = $(shamletFile "src/videos.hamlet")
+
+videosPartial :: String -> Html -> Html
+videosPartial title content = videos title content Videos.instagram Videos.youtube
