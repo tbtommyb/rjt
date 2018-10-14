@@ -4,8 +4,7 @@ module Views.Pages.Videos.Videos where
 
 import Text.Hamlet
 
-newtype Instagram = Instagram { instaPath :: String } deriving (Show, Eq)
-newtype Youtube = Youtube { ytPath :: String } deriving (Show, Eq)
+import Types
 
 instagram :: [Instagram]
 instagram = [

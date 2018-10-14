@@ -4,6 +4,8 @@ module Views.Pages.Home.About where
 
 import Text.Hamlet
 
+import Types
+
 title :: String
 title = "About me"
 
@@ -24,12 +26,12 @@ videoParagraphs = [
         "I became a personal trainer because a great coach helped me overcome difficulties and achieve my goals. Watch this video to see my story and what I can do for you:"
                   ]
 
-youtubeSlug :: String
-youtubeSlug = "rOzmNGRi1rg"
+slug :: Youtube
+slug = Youtube "rOzmNGRi1rg"
 
 -- TODO: need a better way of handling sets of paragraphs
-about :: String -> String -> [String] -> [String] -> String -> Html
-about title image paragraphs videoParagraphs youtubeSlug = $(shamletFile "src/Views/Pages/Home/about.hamlet")
+about :: String -> String -> [String] -> [String] -> Youtube -> Html
+about title image paragraphs videoParagraphs (Youtube slug) = $(shamletFile "src/Views/Pages/Home/about.hamlet")
 
 partial :: Html
-partial = about title image paragraphs videoParagraphs youtubeSlug
+partial = about title image paragraphs videoParagraphs slug
