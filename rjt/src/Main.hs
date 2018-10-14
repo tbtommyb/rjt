@@ -6,6 +6,7 @@ import Data.Text.Lazy
 import Text.Markdown
 import Views.Layout as Layout
 import Views.Pages.Home.Home as Home
+import Views.Pages.Packages.Packages as Packages
 import Views.Pages.Testimonials.Testimonials as Testimonials
 import Views.Pages.Videos.Videos as Videos
 import System.FilePath
@@ -17,17 +18,15 @@ renderHomepage :: ActionM ()
 renderHomepage = html $ renderHtml $ Layout.app "RJ Transformations" Home.partial
 
 renderPackages :: ActionM ()
-renderPackages = do
-  packages <- liftIO $ readFile "src/packages.md"
-  html $ renderHtml $ Layout.app "Packages" (Layout.single "Packages" (markdown def (pack packages)))
+renderPackages = html $ renderHtml $ Layout.app "Packages" $ Packages.partial "Packages"
 
 renderTestimonials :: ActionM ()
-renderTestimonials = html $ renderHtml $ Layout.app "Testimonials" (Layout.single "Testimonials" Testimonials.partial)
+renderTestimonials = html $ renderHtml $ Layout.app "Testimonials" $ Layout.single "Testimonials" Testimonials.partial
 
 renderVideos :: ActionM ()
 renderVideos = do
   videoContent <- liftIO $ readFile "src/videos.md"
-  html $ renderHtml $ Layout.app "Videos" (Layout.single "Videos" (Videos.partial (markdown def (pack videoContent))))
+  html $ renderHtml $ Layout.app "Videos" $ Layout.single "Videos" $ Videos.partial $ markdown def $ pack videoContent
 
 main :: IO ()
 main = do
