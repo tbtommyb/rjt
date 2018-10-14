@@ -1,17 +1,10 @@
-<section #testimonial>
-  <div .container>
-    <div .row>
-      <div .col-xs-12>
-        <h2 .text-center>#{title}
-   <div .row>
-     <div .testimonial-holder.col-xs-12.col-sm-10.col-sm-offset-1>
-       $forall item <- testimonials
-         <div .testimonial-item.col-xs-12.col-sm-6>
-           <div .testimonial-item__name>
-             #{tName item}
-           $maybe src <- (tImgSrc item)
-             <a href="/img/#{src}">
-               <img src="/img/#{src}" .img-responsive>
-           <div .testimonial-item__text>
-             $forall para <- (tParas item)
-               <p>#{para}
+$forall item <- testimonials
+  <div .testimonial-item.col-xs-12.col-sm-6>
+    <div .testimonial-item__name>
+      #{tName item}
+    $maybe src <- (tImgSrc item)
+      <a href="/img/#{src}">
+        <img src="/img/#{src}" .img-responsive>
+    <div .testimonial-item__text>
+      $forall para <- (tParas item)
+        <p>#{para}

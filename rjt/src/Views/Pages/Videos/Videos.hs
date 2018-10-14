@@ -17,8 +17,5 @@ instagram = [
 youtube :: [Youtube]
 youtube = []
 
-videos :: String -> Html -> [Instagram] -> [Youtube] -> Html
-videos title content igVideos ytVideos = $(shamletFile "src/Views/Pages/Videos/videos.hamlet")
-
-partial :: String -> Html -> Html
-partial title content = videos title content instagram youtube
+partial :: Html -> Html
+partial content = $(shamletFile "src/Views/Pages/Videos/videos.hamlet")

@@ -78,8 +78,5 @@ testimonials = [
       }
   ]
 
-testimonial :: String -> [Testimonial] -> Html
-testimonial title testimonials = $(shamletFile "src/Views/Pages/Testimonials/testimonials.hamlet")
-
-partial :: String -> Html
-partial title = testimonial title testimonials
+partial :: Html
+partial = $(shamletFile "src/Views/Pages/Testimonials/testimonials.hamlet")

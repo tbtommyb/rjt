@@ -22,12 +22,12 @@ renderPackages = do
   html $ renderHtml $ Layout.app "Packages" (Layout.single "Packages" (markdown def (pack packages)))
 
 renderTestimonials :: ActionM ()
-renderTestimonials = html $ renderHtml $ Layout.app "Testimonials" (Testimonials.partial "Testimonials")
+renderTestimonials = html $ renderHtml $ Layout.app "Testimonials" (Layout.single "Testimonials" Testimonials.partial)
 
 renderVideos :: ActionM ()
 renderVideos = do
   videoContent <- liftIO $ readFile "src/videos.md"
-  html $ renderHtml $ Layout.app "Videos" (Videos.partial "Videos" (markdown def (pack videoContent)))
+  html $ renderHtml $ Layout.app "Videos" (Layout.single "Videos" (Videos.partial (markdown def (pack videoContent))))
 
 main :: IO ()
 main = do
