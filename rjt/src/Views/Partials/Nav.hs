@@ -1,4 +1,8 @@
-module Nav where
+{-# LANGUAGE TemplateHaskell #-}
+
+module Views.Partials.Nav where
+
+import Text.Hamlet
 
 data NavItem = NavItem { name :: String
                        , url :: String
@@ -17,3 +21,9 @@ items = [
 
 brandname :: String
 brandname = "RJ TRANSFORMATIONS"
+
+nav :: String -> [NavItem] -> Html
+nav brandname items = $(shamletFile "src/Views/Partials/nav.hamlet")
+
+partial :: Html
+partial = nav brandname items

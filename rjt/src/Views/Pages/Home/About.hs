@@ -1,10 +1,14 @@
-module About where
+{-# LANGUAGE TemplateHaskell #-}
 
-title :: String
-title = "About me"
+module Views.Pages.Home.About where
 
-image :: String
-image = "/img/about.jpg"
+import Text.Hamlet
+
+aboutTitle :: String
+aboutTitle = "About me"
+
+aboutImage :: String
+aboutImage = "/img/about.jpg"
 
 paragraphs :: [String]
 paragraphs = [
@@ -22,3 +26,10 @@ videoParagraphs = [
 
 youtubeSlug :: String
 youtubeSlug = "rOzmNGRi1rg"
+
+-- TODO: need a better way of handling sets of paragraphs
+about :: String -> String -> [String] -> [String] -> String -> Html
+about title image paragraphs videoParagraphs youtubeSlug = $(shamletFile "src/Views/Pages/Home/about.hamlet")
+
+aboutPartial :: Html
+aboutPartial = about aboutTitle aboutImage paragraphs videoParagraphs youtubeSlug

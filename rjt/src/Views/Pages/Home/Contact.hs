@@ -1,4 +1,8 @@
-module Contact where
+{-# LANGUAGE TemplateHaskell #-}
+
+module Views.Pages.Home.Contact where
+
+import Text.Hamlet
 
 data FormItem = FormItem { fLabel :: String
                          , fInput :: String
@@ -12,8 +16,8 @@ data TextArea = TextArea { tLabel :: String
                          , tPlaceholder :: String
                          , tMessage :: String
                          } deriving (Show)
-title :: String
-title = "Contact me"
+contactTitle :: String
+contactTitle = "Contact me"
 
 formItems :: [FormItem]
 formItems = [
@@ -27,3 +31,9 @@ textArea = TextArea {tLabel="Message", tName="message", tRows=5, tPlaceholder="E
 
 button :: String
 button = "Send"
+
+contact :: String -> [FormItem] -> String -> Html
+contact title formItems button = $(shamletFile "src/Views/Pages/Home/contact.hamlet")
+
+contactPartial :: Html
+contactPartial = contact contactTitle formItems button

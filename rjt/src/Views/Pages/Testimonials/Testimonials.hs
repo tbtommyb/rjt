@@ -1,4 +1,8 @@
-module Testimonials where
+{-# LANGUAGE TemplateHaskell #-}
+
+module Views.Pages.Testimonials.Testimonials where
+
+import Text.Hamlet
 
 data Testimonial = Testimonial { tName :: String
                                , tImgSrc :: Maybe String
@@ -73,3 +77,9 @@ testimonials = [
              ]
       }
   ]
+
+testimonial :: String -> [Testimonial] -> Html
+testimonial title testimonials = $(shamletFile "src/Views/Pages/Testimonials/testimonials.hamlet")
+
+partial :: String -> Html
+partial title = testimonial title testimonials

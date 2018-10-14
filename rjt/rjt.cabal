@@ -17,11 +17,16 @@ executable rjt
   hs-source-dirs:      src
   main-is:             Main.hs
   default-language:    Haskell2010
-  other-modules:       Templates
-                     , About
-                     , Contact
-                     , Footer
-                     , Nav
+  other-modules:       Views.Layout
+                     , Views.Partials.Header
+                     , Views.Partials.Head
+                     , Views.Partials.Nav
+                     , Views.Partials.Footer
+                     , Views.Pages.Home.About
+                     , Views.Pages.Home.Home
+                     , Views.Pages.Home.Contact
+                     , Views.Pages.Testimonials.Testimonials
+                     , Views.Pages.Videos.Videos
   build-depends:       base >= 4.7 && < 5
                      , scotty
                      , blaze-html

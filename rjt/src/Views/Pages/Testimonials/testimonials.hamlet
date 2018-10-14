@@ -8,7 +8,7 @@
        $forall item <- testimonials
          <div .testimonial-item.col-xs-12.col-sm-6>
            <div .testimonial-item__name>
-             #{Testimonials.tName item}
+             #{tName item}
            $maybe src <- (tImgSrc item)
              <a href="/img/#{src}">
                <img src="/img/#{src}" .img-responsive>
