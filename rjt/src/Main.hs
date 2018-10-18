@@ -2,6 +2,9 @@
 
 module Main where
 
+import Config
+import Data.Maybe
+import Data.Aeson
 import Data.Text.Lazy
 import Text.Markdown
 import Views.Layout as Layout
@@ -13,12 +16,15 @@ import System.FilePath
 import Web.Scotty hiding (body, header)
 import Text.Blaze.Html.Renderer.Text
 import Control.Monad.IO.Class (liftIO)
+import qualified Data.ByteString.Lazy as B
 
 renderHomepage :: ActionM ()
 renderHomepage = html $ renderHtml $ Layout.app "RJ Transformations" Home.partial
 
 renderPackages :: ActionM ()
-renderPackages = html $ renderHtml $ Layout.app "Packages" $ Packages.partial "Packages"
+renderPackages = do
+  content <- liftIO $ Packages.partial "Packages"
+  html $ renderHtml $ Layout.app "Packages" content
 
 renderTestimonials :: ActionM ()
 renderTestimonials = html $ renderHtml $ Layout.app "Testimonials" $ Layout.single "Testimonials" Testimonials.partial
@@ -30,6 +36,9 @@ renderVideos = do
 
 main :: IO ()
 main = do
+  config <- B.readFile "src/config.json"
+  let cfg = decode config :: Maybe Config.Config
+  print cfg
   putStrLn "Starting server..."
   scotty 4000 $ do
     get "/" $ renderHomepage

@@ -1,0 +1,9 @@
+{
+  "homePage": {
+    "title": "test title",
+    "imgPath": "imgpath",
+    "paragraphs": ["one", "two", "three"],
+    "videoParagraphs": ["four", "five"],
+    "videoSlug": "abcd"
+  }
+}

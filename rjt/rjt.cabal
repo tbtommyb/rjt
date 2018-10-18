@@ -27,7 +27,9 @@ executable rjt
                      , Views.Pages.Home.Contact
                      , Views.Pages.Testimonials.Testimonials
                      , Views.Pages.Videos.Videos
+                     , Views.Pages.Packages.Packages
                      , Types
+                     , Config
   build-depends:       base >= 4.7 && < 5
                      , scotty
                      , blaze-html
@@ -35,3 +37,5 @@ executable rjt
                      , text
                      , filepath
                      , markdown
+                     , aeson
+                     , bytestring
