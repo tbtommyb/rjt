@@ -39,3 +39,11 @@ executable rjt
                      , markdown
                      , aeson
                      , bytestring
+                     , persistent
+                     , persistent-template
+                     , persistent-sqlite
+                     , transformers
+                     , mtl
+                     , resource-pool
+                     , wai-extra
+                     , monad-logger
