@@ -5,12 +5,12 @@ module Main where
 
 import qualified Web.Scotty ()
 import Web.Scotty.Trans as S
+import Network.Wai (Middleware)
+import Network.Wai.Middleware.Routed
+import Network.Wai.Middleware.HttpAuth
 
-import Control.Applicative (Applicative)
 import Control.Monad.Trans.Class (lift)
-import Control.Monad.Trans.Reader (ReaderT, runReaderT)
-import Control.Monad.Reader.Class (MonadReader)
-import Control.Monad.IO.Class (liftIO, MonadIO)
+import Control.Monad.IO.Class (liftIO)
 
 -- import Config
 -- import Data.Maybe
@@ -54,13 +54,14 @@ main = do
   let config = Config { getPool = pool }
   scottyT 4000 (runIO config) =<< runIO config application
 
+authorise :: Middleware
+authorise = basicAuth (\u p -> return $ u == "roland" && p == "pass") "Enter admin username and password"
+
 -- Main application
 application :: ConfigM (ScottyT T.Text ConfigM ())
 application = do
     return $ do
-      S.get "/users" $ do
-        users <- lift $ User.getAll
-        html $ T.pack $ show $ length(users)
+      middleware $ routedMiddleware ("admin" `elem`) authorise
       S.get "/" $ renderHomepage
       S.get "/index.html" $ renderHomepage
       S.get "/packages" $ renderPackages
@@ -71,3 +72,7 @@ application = do
         dirname <- param "dirname"
         filename <- param "filename"
         file $ "src" </> dirname </> filename
+      -- admin section
+      S.get "/admin/users" $ do
+        users <- lift $ User.getAll
+        html $ T.pack $ show $ length $ users

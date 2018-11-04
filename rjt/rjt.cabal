@@ -30,6 +30,9 @@ executable rjt
                      , Views.Pages.Packages.Packages
                      , Types
                      , Config
+                     , Database
+                     , Internal
+                     , Models.User
   build-depends:       base >= 4.7 && < 5
                      , scotty
                      , blaze-html
@@ -46,4 +49,5 @@ executable rjt
                      , mtl
                      , resource-pool
                      , wai-extra
+                     , wai
                      , monad-logger
