@@ -68,8 +68,7 @@ application = do
       S.get "/testimonials" $ renderTestimonials
       S.get "/videos" $ renderVideos
       S.get "/admin" $ do
-        content <- lift $ Users.index
-        html $ renderHtml $ content
+        lift Users.index >>= html . renderHtml
       -- TODO: maybe replace with middleware
       S.get "/:dirname/:filename" $ do
         dirname <- param "dirname"
