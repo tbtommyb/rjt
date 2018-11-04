@@ -4,8 +4,6 @@ module Views.Pages.Home.About where
 
 import Text.Hamlet
 
-import Types
-
 title :: String
 title = "About me"
 

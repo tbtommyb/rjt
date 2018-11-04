@@ -24,13 +24,13 @@ import Text.Blaze.Html.Renderer.Text
 import Database as DB
 import Internal
 
-import Models.User as User
-
 import Views.Layout as Layout
 import Views.Pages.Home.Home as Home
 import Views.Pages.Packages.Packages as Packages
 import Views.Pages.Testimonials.Testimonials as Testimonials
 import Views.Pages.Videos.Videos as Videos
+
+import Views.Admin.Users.Users as Users
 
 renderHomepage :: ActionT T.Text ConfigM ()
 renderHomepage = html $ renderHtml $ Layout.app "RJ Transformations" Home.partial
@@ -67,12 +67,11 @@ application = do
       S.get "/packages" $ renderPackages
       S.get "/testimonials" $ renderTestimonials
       S.get "/videos" $ renderVideos
+      S.get "/admin" $ do
+        content <- lift $ Users.index
+        html $ renderHtml $ content
       -- TODO: maybe replace with middleware
       S.get "/:dirname/:filename" $ do
         dirname <- param "dirname"
         filename <- param "filename"
         file $ "src" </> dirname </> filename
-      -- admin section
-      S.get "/admin/users" $ do
-        users <- lift $ User.getAll
-        html $ T.pack $ show $ length $ users

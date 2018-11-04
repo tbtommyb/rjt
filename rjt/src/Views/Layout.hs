@@ -5,7 +5,7 @@ module Views.Layout where
 
 import Views.Partials.Head as Head
 import Views.Partials.Nav as Nav
-import Views.Partials.Footer as Footer
+import Views.Partials.Footer as Footer (partial)
 import Text.Hamlet
 
 appBuilder :: Html -> Html -> Html -> Html -> Html
@@ -16,3 +16,6 @@ app title content = appBuilder (Head.partial title) Nav.partial content Footer.p
 
 single :: String -> Html -> Html
 single title content = $(shamletFile "src/Views/single.hamlet")
+
+admin :: String -> Html -> Html
+admin title content = appBuilder (Head.partial title) Nav.admin content Footer.partial

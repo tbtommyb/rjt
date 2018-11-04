@@ -1,0 +1,10 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name
+      <th>Email
+  <tbody>
+    $forall Entity userId user <- users
+      <tr>
+        <td>#{userName user } #{userSurname user}
+        <td>#{userEmail user}

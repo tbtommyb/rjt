@@ -9,8 +9,8 @@ data NavItem = NavItem { name :: String
                        , weighting :: Int
                        } deriving (Show)
 
-items :: [NavItem]
-items = [
+publicItems :: [NavItem]
+publicItems = [
   NavItem {name="About", url="/index.html#about", weighting=1},
   NavItem {name="Packages", url="/packages", weighting=2},
   NavItem {name="Testimonials", url="/testimonials", weighting=3},
@@ -19,8 +19,18 @@ items = [
   NavItem {name="Blog", url="https://medium.com/@rolandjohnson_75946", weighting=6}
   ]
 
+adminItems :: [NavItem]
+adminItems = NavItem {name="Admin", url="/admin", weighting=7} : publicItems
+
 brandname :: String
 brandname = "RJ TRANSFORMATIONS"
 
 partial :: Html
-partial = $(shamletFile "src/Views/Partials/nav.hamlet")
+partial =
+  let items = publicItems
+  in $(shamletFile "src/Views/Partials/nav.hamlet")
+
+admin :: Html
+admin =
+  let items = adminItems
+  in $(shamletFile "src/Views/Partials/nav.hamlet")
