@@ -28,3 +28,7 @@ getById userId = do
   case maybeUser of
     Nothing -> pure $ User "I" "don't" "exist" -- TODO: handle better
     Just user -> pure user
+
+create :: String -> String -> String -> ConfigM (Key User)
+create first second email = do
+  DB.runDb $ insert $ User first second email

@@ -1,3 +1,11 @@
+<form action=/admin/users method=post>
+  <label for=firstName>First name
+  <input name=firstName>
+  <label for=surname>Surname
+  <input name=surname>
+  <label for=email>Email
+  <input name=email>
+  <button>Create user
 <table>
   <thead>
     <tr>

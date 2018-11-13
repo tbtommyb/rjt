@@ -32,6 +32,8 @@ import Views.Pages.Videos.Videos as Videos
 
 import Views.Admin.Users.Users as Users
 
+import Models.User as UserModel
+
 renderHomepage :: ActionT T.Text ConfigM ()
 renderHomepage = html $ renderHtml $ Layout.app "RJ Transformations" Home.partial
 
@@ -71,7 +73,13 @@ application = do
         lift Users.index >>= html . renderHtml
       S.get "/admin/users/:userId" $ do
         userId <- param "userId"
-        lift (Users.getById userId) >>= html . renderHtml
+        lift (Users.show userId) >>= html . renderHtml
+      S.post "/admin/users" $ do
+        firstName <- param "firstName"
+        surname <- param "surname"
+        email <- param "email"
+        _ <- lift $ UserModel.create firstName surname email
+        redirect "/admin/users/"
       -- TODO: maybe replace with middleware
       S.get "/:dirname/:filename" $ do
         dirname <- param "dirname"

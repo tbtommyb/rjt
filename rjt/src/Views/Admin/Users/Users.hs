@@ -18,7 +18,7 @@ index = do
   users <- UserModel.getAll
   pure $ Layout.admin "Users (admin)" $ Layout.single "Users" $(shamletFile "src/Views/Admin/Users/index.hamlet")
 
-getById :: Int64 -> ConfigM (Html)
-getById userId = do
+show :: Int64 -> ConfigM (Html)
+show userId = do
   user <- UserModel.getById userId
-  pure $ Layout.admin "User (admin" $ Layout.single "User" $(shamletFile "src/Views/Admin/Users/single.hamlet")
+  pure $ Layout.admin "User (admin" $ Layout.single (userName user) $(shamletFile "src/Views/Admin/Users/single.hamlet")
