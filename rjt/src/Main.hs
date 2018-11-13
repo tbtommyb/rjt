@@ -67,8 +67,11 @@ application = do
       S.get "/packages" $ renderPackages
       S.get "/testimonials" $ renderTestimonials
       S.get "/videos" $ renderVideos
-      S.get "/admin" $ do
+      S.get "/admin/users" $ do
         lift Users.index >>= html . renderHtml
+      S.get "/admin/users/:userId" $ do
+        userId <- param "userId"
+        lift (Users.getById userId) >>= html . renderHtml
       -- TODO: maybe replace with middleware
       S.get "/:dirname/:filename" $ do
         dirname <- param "dirname"

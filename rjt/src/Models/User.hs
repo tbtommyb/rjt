@@ -2,6 +2,7 @@
 
 module Models.User where
 
+import Data.Int
 import Control.Monad.Trans.Reader (ReaderT)
 
 import Database.Persist()
@@ -20,3 +21,10 @@ insertUsers = do
 getAll :: ConfigM [Entity DB.User]
 getAll = do
   DB.runDb (selectList [] [])
+
+getById :: Int64 -> ConfigM DB.User
+getById userId = do
+  maybeUser <- DB.runDb $ get (toSqlKey userId) ::ConfigM (Maybe DB.User)
+  case maybeUser of
+    Nothing -> pure $ User "I" "don't" "exist" -- TODO: handle better
+    Just user -> pure user

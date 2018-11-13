@@ -6,5 +6,7 @@
   <tbody>
     $forall Entity userId user <- users
       <tr>
-        <td>#{userName user } #{userSurname user}
+      <td>
+        <a href=/admin/users/#{fromSqlKey userId}>
+          #{userName user} #{userSurname user}
         <td>#{userEmail user}
