@@ -29,6 +29,7 @@ executable rjt
                      , Views.Pages.Testimonials.Testimonials
                      , Views.Pages.Videos.Videos
                      , Views.Pages.Packages.Packages
+                     , Controllers.Homepage
                      , Types
                      , Content
                      , Database

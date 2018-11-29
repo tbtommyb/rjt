@@ -14,7 +14,6 @@ import Control.Monad.IO.Class (liftIO)
 import Control.Monad.Reader (asks)
 
 import Content
-import Data.Maybe
 import Data.Aeson
 
 import qualified Data.ByteString.Lazy as B
@@ -28,20 +27,14 @@ import Database as DB
 import Internal
 
 import Views.Layout as Layout
-import Views.Pages.Home.Home as Home
 import Views.Pages.Packages.Packages as Packages
 import Views.Pages.Testimonials.Testimonials as Testimonials
 import Views.Pages.Videos.Videos as Videos
-
 import Views.Admin.Users.Users as Users
 
-import Models.User as UserModel
+import Controllers.Homepage as HomepageController (homepageController)
 
-renderHomepage :: ActionT L.Text ConfigM ()
-renderHomepage = do
-  content <- lift $ asks getContent
-  let homeContent = homePage $ content
-  html $ renderHtml $ Layout.app (T.unpack $ title $ homeContent) Home.partial
+import Models.User as UserModel
 
 renderPackages :: ActionT L.Text ConfigM ()
 renderPackages = do
@@ -72,10 +65,10 @@ authorise = basicAuth (\u p -> return $ u == "roland" && p == "pass") "Enter adm
 -- Main application
 application :: ConfigM (ScottyT L.Text ConfigM ())
 application = do
+    content <- asks getContent
     return $ do
       middleware $ routedMiddleware ("admin" `elem`) authorise
-      S.get "/" $ renderHomepage
-      S.get "/index.html" $ renderHomepage
+      homepageController (homePage content)
       S.get "/packages" $ renderPackages
       S.get "/testimonials" $ renderTestimonials
       S.get "/videos" $ renderVideos
