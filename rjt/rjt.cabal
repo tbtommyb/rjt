@@ -30,7 +30,7 @@ executable rjt
                      , Views.Pages.Videos.Videos
                      , Views.Pages.Packages.Packages
                      , Types
-                     , Config
+                     , Content
                      , Database
                      , Internal
                      , Models.User

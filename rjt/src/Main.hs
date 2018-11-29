@@ -11,12 +11,15 @@ import Network.Wai.Middleware.HttpAuth
 
 import Control.Monad.Trans.Class (lift)
 import Control.Monad.IO.Class (liftIO)
+import Control.Monad.Reader (asks)
 
--- import Config
--- import Data.Maybe
--- import Data.Aeson
--- import qualified Data.ByteString.Lazy as B
-import qualified Data.Text.Lazy as T
+import Content
+import Data.Maybe
+import Data.Aeson
+
+import qualified Data.ByteString.Lazy as B
+import qualified Data.Text as T
+import qualified Data.Text.Lazy as L
 import Text.Markdown
 import System.FilePath
 import Text.Blaze.Html.Renderer.Text
@@ -34,33 +37,40 @@ import Views.Admin.Users.Users as Users
 
 import Models.User as UserModel
 
-renderHomepage :: ActionT T.Text ConfigM ()
-renderHomepage = html $ renderHtml $ Layout.app "RJ Transformations" Home.partial
+renderHomepage :: ActionT L.Text ConfigM ()
+renderHomepage = do
+  content <- lift $ asks getContent
+  let homeContent = homePage $ content
+  html $ renderHtml $ Layout.app (T.unpack $ title $ homeContent) Home.partial
 
-renderPackages :: ActionT T.Text ConfigM ()
+renderPackages :: ActionT L.Text ConfigM ()
 renderPackages = do
   content <- liftIO $ Packages.partial "Packages"
   html $ renderHtml $ Layout.app "Packages" content
 
-renderTestimonials :: ActionT T.Text ConfigM ()
+renderTestimonials :: ActionT L.Text ConfigM ()
 renderTestimonials = html $ renderHtml $ Layout.app "Testimonials" $ Layout.single "Testimonials" Testimonials.partial
 
-renderVideos :: ActionT T.Text ConfigM ()
+renderVideos :: ActionT L.Text ConfigM ()
 renderVideos = do
   videoContent <- liftIO $ readFile "src/videos.md"
-  html $ renderHtml $ Layout.app "Videos" $ Layout.single "Videos" $ Videos.partial $ markdown def $ T.pack videoContent
+  html $ renderHtml $ Layout.app "Videos" $ Layout.single "Videos" $ Videos.partial $ markdown def $ L.pack videoContent
 
 main :: IO ()
 main = do
   pool <- DB.setup "dev.db" 3
-  let config = Config { getPool = pool }
+  jsonConfig <- B.readFile "src/config.json"
+  let content = case decode jsonConfig :: Maybe Content.Content of
+        Nothing -> error "Could not read config.json file"
+        Just c -> c
+  let config = Config { getPool = pool, getContent = content }
   scottyT 4000 (runIO config) =<< runIO config application
 
 authorise :: Middleware
 authorise = basicAuth (\u p -> return $ u == "roland" && p == "pass") "Enter admin username and password"
 
 -- Main application
-application :: ConfigM (ScottyT T.Text ConfigM ())
+application :: ConfigM (ScottyT L.Text ConfigM ())
 application = do
     return $ do
       middleware $ routedMiddleware ("admin" `elem`) authorise

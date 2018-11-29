@@ -2,6 +2,7 @@
 
 module Internal where
 
+import Content (Content)
 import Control.Applicative (Applicative)
 import Control.Monad.Trans.Reader (ReaderT, runReaderT)
 import Control.Monad.IO.Class (MonadIO)
@@ -11,6 +12,7 @@ import Database.Persist.Sqlite as DB
 
 data Config = Config
   { getPool :: ConnectionPool
+  , getContent :: Content
   } deriving (Show)
 
 newtype ConfigM a = ConfigM
