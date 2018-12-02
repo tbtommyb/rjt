@@ -11,9 +11,9 @@
 
 module Database where
 
-import Control.Monad.Reader.Class (MonadReader)
+import Control.Monad.State.Class (MonadState)
 import Control.Monad.IO.Class (liftIO, MonadIO)
-import Control.Monad.Reader (asks)
+import Control.Monad.State (gets)
 
 import Data.Text
 import Data.Pool (Pool)
@@ -24,9 +24,9 @@ import Control.Monad.Logger (runStdoutLoggingT)
 
 import Internal (Config, getPool)
 
-runDb :: (MonadReader Config m, MonadIO m) => SqlPersistT IO a -> m a
+runDb :: (MonadState Config m, MonadIO m) => SqlPersistT IO a -> m a
 runDb query = do
-    pool <- asks getPool
+    pool <- gets getPool
     liftIO $ runSqlPool query pool
 
 share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|

@@ -39,6 +39,10 @@ packages:
 # using the same syntax as the packages field.
 # (e.g., acme-missiles-0.3)
 # extra-deps: []
+extra-deps:
+- json-state-0.1.0.1
+- settings-0.3.0.0
+- time-units-1.0.0
 
 # Override default flag values for local packages and extra-deps
 # flags: {}

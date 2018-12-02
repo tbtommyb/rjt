@@ -11,7 +11,7 @@ import Network.Wai.Middleware.HttpAuth
 
 import Control.Monad.Trans.Class (lift)
 import Control.Monad.IO.Class (liftIO)
-import Control.Monad.Reader (asks)
+import Control.Monad.State (gets)
 
 import Content
 import Data.Aeson
@@ -56,7 +56,7 @@ main = do
   let content = case decode jsonConfig :: Maybe Content.Content of
         Nothing -> error "Could not read config.json file"
         Just c -> c
-  let config = Config { getPool = pool, getContent = content }
+  let config = Config { getPool = pool, appContent = content }
   scottyT 4000 (runIO config) =<< runIO config application
 
 authorise :: Middleware
@@ -65,7 +65,7 @@ authorise = basicAuth (\u p -> return $ u == "roland" && p == "pass") "Enter adm
 -- Main application
 application :: ConfigM (ScottyT L.Text ConfigM ())
 application = do
-    content <- asks getContent
+    content <- gets appContent
     return $ do
       middleware $ routedMiddleware ("admin" `elem`) authorise
       homepageController (homePage content)

@@ -53,3 +53,5 @@ executable rjt
                      , wai-extra
                      , wai
                      , monad-logger
+                     , json-state
+                     , settings
