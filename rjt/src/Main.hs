@@ -35,6 +35,8 @@ import Views.Admin.Users.Users as Users
 import Controllers.Homepage as HomepageController (homepageController)
 
 import Models.User as UserModel
+import Data.JsonState
+import Data.Time.Units
 
 renderPackages :: ActionT L.Text ConfigM ()
 renderPackages = do
@@ -49,13 +51,16 @@ renderVideos = do
   videoContent <- liftIO $ readFile "src/videos.md"
   html $ renderHtml $ Layout.app "Videos" $ Layout.single "Videos" $ Videos.partial $ markdown def $ L.pack videoContent
 
+saveState :: IO (Content.Content -> IO ())
+saveState = mkSaveState (3 :: Second) "src/new.json"
+
 main :: IO ()
 main = do
   pool <- DB.setup "dev.db" 3
-  jsonConfig <- B.readFile "src/config.json"
-  let content = case decode jsonConfig :: Maybe Content.Content of
-        Nothing -> error "Could not read config.json file"
-        Just c -> c
+  jsonConfig <- liftIO $ loadState "src/config.json" :: IO (Either (Bool, String) Content.Content)
+  let content = case jsonConfig of
+        Left (_, e) -> error e
+        Right s -> s
   let config = Config { getPool = pool, appContent = content }
   scottyT 4000 (runIO config) =<< runIO config application
 
@@ -66,6 +71,7 @@ authorise = basicAuth (\u p -> return $ u == "roland" && p == "pass") "Enter adm
 application :: ConfigM (ScottyT L.Text ConfigM ())
 application = do
     content <- gets appContent
+    _ <- liftIO $ saveState
     return $ do
       middleware $ routedMiddleware ("admin" `elem`) authorise
       homepageController (homePage content)

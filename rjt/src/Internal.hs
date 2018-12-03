@@ -4,7 +4,7 @@ module Internal where
 
 import Content (Content)
 import Control.Applicative (Applicative)
-import Control.Monad.Trans.State (StateT, runStateT, evalStateT)
+import Control.Monad.Trans.State (StateT, evalStateT)
 import Control.Monad.IO.Class (MonadIO)
 import Control.Monad.State.Class (MonadState)
 

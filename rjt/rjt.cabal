@@ -54,4 +54,4 @@ executable rjt
                      , wai
                      , monad-logger
                      , json-state
-                     , settings
+                     , time-units
