@@ -11,7 +11,7 @@ import Network.Wai.Middleware.HttpAuth
 
 import Control.Monad.Trans.Class (lift)
 import Control.Monad.IO.Class (liftIO)
-import Control.Monad.State (gets)
+import Control.Monad.State (put, gets, modify)
 
 import Content
 import Data.Aeson
@@ -67,11 +67,24 @@ main = do
 authorise :: Middleware
 authorise = basicAuth (\u p -> return $ u == "roland" && p == "pass") "Enter admin username and password"
 
+updateConfig :: String -> ConfigM ()
+updateConfig input = do
+  modify (\state -> state { appContent = (appContent state) {
+                              homePage = (homePage (appContent state)) {
+                                  title = T.pack input
+                                  }
+                              }
+                          }
+         )
+  content <- gets appContent
+  liftIO $ B.writeFile "src/tom.json" (encode content)
+
 -- Main application
 application :: ConfigM (ScottyT L.Text ConfigM ())
 application = do
     content <- gets appContent
-    _ <- liftIO $ saveState
+    -- _ <- liftIO $ saveState
+    updateConfig "hello tom"
     return $ do
       middleware $ routedMiddleware ("admin" `elem`) authorise
       homepageController (homePage content)
