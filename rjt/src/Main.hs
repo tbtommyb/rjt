@@ -33,6 +33,7 @@ import Views.Pages.Videos.Videos as Videos
 import Views.Admin.Users.Users as Users
 
 import Controllers.Homepage as HomepageController (homepageController)
+import Controllers.Admin as AdminController (adminController)
 
 import Models.User as UserModel
 import Data.JsonState
@@ -67,15 +68,9 @@ main = do
 authorise :: Middleware
 authorise = basicAuth (\u p -> return $ u == "roland" && p == "pass") "Enter admin username and password"
 
-updateConfig :: String -> ConfigM ()
-updateConfig input = do
-  modify (\state -> state { appContent = (appContent state) {
-                              homePage = (homePage (appContent state)) {
-                                  title = T.pack input
-                                  }
-                              }
-                          }
-         )
+updateConfig :: Content -> ConfigM ()
+updateConfig newContent = do
+  modify (\state -> state { appContent = newContent })
   content <- gets appContent
   liftIO $ B.writeFile "src/tom.json" (encode content)
 
@@ -83,14 +78,13 @@ updateConfig input = do
 application :: ConfigM (ScottyT L.Text ConfigM ())
 application = do
     content <- gets appContent
-    -- _ <- liftIO $ saveState
-    updateConfig "hello tom"
     return $ do
       middleware $ routedMiddleware ("admin" `elem`) authorise
       homepageController (homePage content)
       S.get "/packages" $ renderPackages
       S.get "/testimonials" $ renderTestimonials
       S.get "/videos" $ renderVideos
+      adminController content
       S.get "/admin/users" $ do
         lift Users.index >>= html . renderHtml
       S.get "/admin/users/:userId" $ do

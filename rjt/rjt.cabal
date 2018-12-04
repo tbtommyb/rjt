@@ -19,6 +19,7 @@ executable rjt
   default-language:    Haskell2010
   other-modules:       Views.Layout
                      , Views.Admin.Users.Users
+                     , Views.Admin.EditContent.EditContent
                      , Views.Partials.Header
                      , Views.Partials.Head
                      , Views.Partials.Nav
@@ -30,6 +31,7 @@ executable rjt
                      , Views.Pages.Videos.Videos
                      , Views.Pages.Packages.Packages
                      , Controllers.Homepage
+                     , Controllers.Admin
                      , Types
                      , Content
                      , Database

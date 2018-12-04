@@ -1,10 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE MultiParamTypeClasses #-}
 
 module Controllers.Homepage where
-
-import Control.Monad.Trans.Class (lift)
-import Control.Monad.Reader (asks)
 
 import qualified Data.Text.Lazy as L
 import qualified Data.Text as T
