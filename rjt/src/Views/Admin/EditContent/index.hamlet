@@ -1,3 +1,13 @@
-<h1>HELLO TOM
-<div>
-  #{title $ homePage content}
+<form action=/admin/content method=post>
+  <fieldset>
+    <legend>Home page
+    <label for=title>Title (appears only on browser tab)
+    <input name=title value=#{title $ homePage content}>
+    <label for=imgPath>Splash image path
+    <input name=imgPath value=#{imgPath $ homePage content}>
+    <label for=videoSlug>Video slug
+    <input name=videoSlug value=#{videoSlug $ homePage content}>
+    <label for=para>Content paragraphs
+    $forall para <- paragraphs $ homePage content
+      <input name=para value=#{para}>
+
