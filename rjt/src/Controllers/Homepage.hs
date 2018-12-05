@@ -3,7 +3,6 @@
 module Controllers.Homepage where
 
 import qualified Data.Text.Lazy as L
-import qualified Data.Text as T
 
 import Web.Scotty.Trans as S
 import Text.Blaze.Html.Renderer.Text
@@ -13,12 +12,12 @@ import Content
 import Views.Layout as Layout
 import Views.Pages.Home.Home as HomeView
 
-renderHomepage :: Content.Homepage -> ActionT L.Text ConfigM ()
+renderHomepage :: Content -> ActionT L.Text ConfigM ()
 renderHomepage content = do
-  let t = T.unpack $ title $ content
-  html $ renderHtml $ Layout.app t HomeView.partial
+  let t = tabTitle $ homePage $ content
+  html $ renderHtml $ Layout.app t (HomeView.partial $ homePage content)
 
-homepageController :: Content.Homepage -> ScottyT L.Text ConfigM ()
+homepageController :: Content -> ScottyT L.Text ConfigM ()
 homepageController content = do
   S.get "/" $ renderHomepage content
   S.get "/index.html" $ renderHomepage content

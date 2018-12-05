@@ -80,7 +80,7 @@ application = do
     content <- gets appContent
     return $ do
       middleware $ routedMiddleware ("admin" `elem`) authorise
-      homepageController (homePage content)
+      homepageController content
       S.get "/packages" $ renderPackages
       S.get "/testimonials" $ renderTestimonials
       S.get "/videos" $ renderVideos

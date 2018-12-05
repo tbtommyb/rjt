@@ -1,13 +1,23 @@
 <form action=/admin/content method=post>
   <fieldset>
     <legend>Home page
-    <label for=title>Title (appears only on browser tab)
-    <input name=title value=#{title $ homePage content}>
-    <label for=imgPath>Splash image path
-    <input name=imgPath value=#{imgPath $ homePage content}>
-    <label for=videoSlug>Video slug
-    <input name=videoSlug value=#{videoSlug $ homePage content}>
-    <label for=para>Content paragraphs
-    $forall para <- paragraphs $ homePage content
-      <input name=para value=#{para}>
-
+    <div>
+      <label for=tabTitle>Tab title
+      <input name=tabTitle value=#{tabTitle $ homePage content}>
+    <div>
+      <label for=title>Title
+      <input name=title value=#{title $ homePage content}>
+    <div>
+      <label for=profileImgPath>Profile image path
+      <input name=profileImgPath value=#{profileImgPath $ homePage content}>
+    <div>
+      <label for=paragraphs>Content paragraphs
+      <textarea rows=15 cols=100 name=paragraphs>
+        #{paragraphs $ homePage content}
+    <div>
+      <label for=videoParagraphs>Video paragraphs
+      <textarea rows=5 cols=100 name=videoParagraphs>
+        #{videoParagraphs $ homePage content}
+    <div>
+      <label for=videoSlug>Video slug
+      <input name=videoSlug value=#{videoSlug $ homePage content}>

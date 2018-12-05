@@ -11,9 +11,10 @@ data Content =
   Content { homePage :: Homepage } deriving (Show, Generic, ToJSON, FromJSON)
 
 data Homepage =
-  Homepage { title :: Text
-           , imgPath :: Text
-           , paragraphs :: [Text]
-           , videoParagraphs :: [Text]
+  Homepage { title :: String
+           , tabTitle :: String
+           , profileImgPath :: String
+           , paragraphs :: String
+           , videoParagraphs :: String
            , videoSlug :: Text
            } deriving (Show, Generic, ToJSON, FromJSON)
