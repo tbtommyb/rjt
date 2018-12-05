@@ -15,3 +15,4 @@ $doctype 5
     <script src="/js/jqBootstrapValidation.js">
     <script src="/js/contact_me.js">
     <script src="/js/freelancer.js">
+    <script src="/js/admin.js">

@@ -1,4 +1,6 @@
-<form action=/admin/content method=post>
+<span #result>
+<form #adminContent action=/admin/content method=post>
+  <input type=submit value=Save>
   <fieldset>
     <legend>Home page
     <div>
