@@ -2,7 +2,7 @@
 
 module Controllers.Homepage where
 
-import Control.Monad.State (gets, lift)
+import Control.Monad.State (gets, lift, runStateT, execStateT, evalStateT)
 import qualified Data.Text.Lazy as L
 
 import Web.Scotty (ScottyM)
@@ -14,14 +14,20 @@ import Content
 import Views.Layout as Layout
 import Views.Pages.Home.Home as HomeView
 
-renderHomepage :: Content -> ActionT L.Text IO ()
-renderHomepage content = do
-  let t = tabTitle $ homePage $ content
-  html $ renderHtml $ Layout.app t (HomeView.partial $ homePage content)
-
-homepageController :: ConfigM (ScottyT L.Text IO ())
-homepageController = do
+renderHomepage :: ActionD ()
+renderHomepage = do
   content <- gets appContent
-  pure $ do
-    S.get "/" $ renderHomepage content
-    S.get "/index.html" $ renderHomepage content
+  let t = tabTitle $ homePage $ content
+  lift $ html $ renderHtml $ Layout.app t (HomeView.partial $ homePage content)
+
+-- homepageController :: ConfigM (ScottyT L.Text ConfigM ())
+-- homepageController :: ConfigM ()
+-- homepageController = do
+--   content <- gets appContent
+--   lift $ S.get "/" $ renderHomepage content
+--     -- S.get "/index.html" $ renderHomepage content
+
+homepageController :: Config -> ScottyM ()
+homepageController config = do
+  S.get "/" $ evalStateT renderHomepage config
+  S.get "/index" $ evalStateT renderHomepage config

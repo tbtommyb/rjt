@@ -3,15 +3,15 @@
 
 module Main where
 
-import Web.Scotty (ScottyM, scotty)
-import Web.Scotty.Trans as S
+import Web.Scotty
+-- import Web.Scotty.Trans as S
 import Network.Wai (Middleware)
 import Network.Wai.Middleware.Routed
 import Network.Wai.Middleware.HttpAuth
 
 import Control.Monad.Trans.Class (lift)
 import Control.Monad.IO.Class (liftIO)
-import Control.Monad.State (gets, evalStateT)
+import Control.Monad.State (gets, evalStateT, runStateT, execStateT)
 
 import Content
 
@@ -29,25 +29,25 @@ import Views.Pages.Testimonials.Testimonials as Testimonials
 import Views.Pages.Videos.Videos as Videos
 import Views.Admin.Users.Users as Users
 
-import Controllers.Homepage as HomepageController (homepageController)
+import Controllers.Homepage as HomepageController
 import Controllers.Admin as AdminController (adminController)
 
 import Models.User as UserModel
 import Data.JsonState
 import Data.Time.Units
 
-renderPackages :: ActionT L.Text ConfigM ()
-renderPackages = do
-  content <- liftIO $ Packages.partial "Packages"
-  html $ renderHtml $ Layout.app "Packages" content
+-- renderPackages :: ActionT L.Text ConfigM ()
+-- renderPackages = do
+--   content <- liftIO $ Packages.partial "Packages"
+--   html $ renderHtml $ Layout.app "Packages" content
 
-renderTestimonials :: ActionT L.Text ConfigM ()
-renderTestimonials = html $ renderHtml $ Layout.app "Testimonials" $ Layout.single "Testimonials" Testimonials.partial
+-- renderTestimonials :: ActionT L.Text ConfigM ()
+-- renderTestimonials = html $ renderHtml $ Layout.app "Testimonials" $ Layout.single "Testimonials" Testimonials.partial
 
-renderVideos :: ActionT L.Text ConfigM ()
-renderVideos = do
-  videoContent <- liftIO $ readFile "src/videos.md"
-  html $ renderHtml $ Layout.app "Videos" $ Layout.single "Videos" $ Videos.partial $ markdown def $ L.pack videoContent
+-- renderVideos :: ActionT L.Text ConfigM ()
+-- renderVideos = do
+--   videoContent <- liftIO $ readFile "src/videos.md"
+--   html $ renderHtml $ Layout.app "Videos" $ Layout.single "Videos" $ Videos.partial $ markdown def $ L.pack videoContent
 
 main :: IO ()
 main = do
@@ -57,7 +57,7 @@ main = do
         Left (_, e) -> error e
         Right s -> s
   let config = Config { getPool = pool, appContent = content }
-  scotty 4000 =<< runIO config application
+  scotty 4000 $ application config
 
 authorise :: Middleware
 authorise = basicAuth (\u p -> return $ u == "roland" && p == "pass") "Enter admin username and password"
@@ -66,12 +66,16 @@ runMiddlewares :: ScottyM ()
 runMiddlewares = do
   middleware $ routedMiddleware ("admin" `elem`) authorise
 
--- Main application
-application :: ConfigM (ScottyT L.Text IO ())
-application = do
-  pure $ middleware $ routedMiddleware ("admin" `elem`) authorise
-  homepageController
-  adminController
+application :: Config -> ScottyM ()
+application config = do
+  runMiddlewares
+  homepageController config
+  adminController config
+  -- S.get "/" $ do
+  --   evalStateT handler config
+  -- pure $ middleware $ routedMiddleware ("admin" `elem`) authorise
+  -- return $ homepageController
+  -- adminController
       -- S.get "/packages" $ renderPackages
       -- S.get "/testimonials" $ renderTestimonials
       -- S.get "/videos" $ renderVideos
