@@ -3,7 +3,7 @@
 
 module Main where
 
-import Web.Scotty
+import Web.Scotty.Trans
 -- import Web.Scotty.Trans as S
 import Network.Wai (Middleware)
 import Network.Wai.Middleware.Routed
@@ -12,6 +12,8 @@ import Network.Wai.Middleware.HttpAuth
 import Control.Monad.Trans.Class (lift)
 import Control.Monad.IO.Class (liftIO)
 import Control.Monad.State (gets, evalStateT, runStateT, execStateT)
+import Control.Concurrent.STM
+import Control.Monad.Reader (runReaderT)
 
 import Content
 
@@ -29,8 +31,8 @@ import Views.Pages.Testimonials.Testimonials as Testimonials
 import Views.Pages.Videos.Videos as Videos
 import Views.Admin.Users.Users as Users
 
-import Controllers.Homepage as HomepageController
-import Controllers.Admin as AdminController (adminController)
+import Controllers.Homepage (homepageController)
+import Controllers.Admin (adminController)
 
 import Models.User as UserModel
 import Data.JsonState
@@ -57,25 +59,26 @@ main = do
         Left (_, e) -> error e
         Right s -> s
   let config = Config { getPool = pool, appContent = content }
-  scotty 4000 $ application config
+  sync <- newTVarIO config
+  let runActionToIO m = runReaderT (runWebM m) sync
+  scottyT 4000 runActionToIO application
 
 authorise :: Middleware
 authorise = basicAuth (\u p -> return $ u == "roland" && p == "pass") "Enter admin username and password"
 
-runMiddlewares :: ScottyM ()
+runMiddlewares :: ScottyT L.Text WebM ()
 runMiddlewares = do
   middleware $ routedMiddleware ("admin" `elem`) authorise
 
-application :: Config -> ScottyM ()
-application config = do
+application :: ScottyT L.Text WebM ()
+application = do
   runMiddlewares
-  homepageController config
-  adminController config
-  -- S.get "/" $ do
-  --   evalStateT handler config
-  -- pure $ middleware $ routedMiddleware ("admin" `elem`) authorise
-  -- return $ homepageController
-  -- adminController
+  homepageController
+  adminController
+  get "/:dirname/:filename" $ do
+    dirname <- param "dirname"
+    filename <- param "filename"
+    file $ "src" </> dirname </> filename
       -- S.get "/packages" $ renderPackages
       -- S.get "/testimonials" $ renderTestimonials
       -- S.get "/videos" $ renderVideos
@@ -91,8 +94,3 @@ application config = do
       --   email <- param "email"
       --   _ <- lift $ UserModel.create firstName surname email
       --   redirect "/admin/users/"
-      -- -- TODO: maybe replace with middleware
-      -- S.get "/:dirname/:filename" $ do
-      --   dirname <- param "dirname"
-      --   filename <- param "filename"
-      --   file $ "src" </> dirname </> filename

@@ -55,5 +55,6 @@ executable rjt
                      , wai-extra
                      , wai
                      , monad-logger
-                     , json-state
                      , time-units
+                     , json-state
+                     , stm
