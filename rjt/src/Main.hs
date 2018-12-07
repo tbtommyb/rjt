@@ -4,7 +4,6 @@
 module Main where
 
 import Web.Scotty.Trans
--- import Web.Scotty.Trans as S
 import Network.Wai (Middleware)
 import Network.Wai.Middleware.Routed
 import Network.Wai.Middleware.HttpAuth
@@ -19,7 +18,6 @@ import Content
 
 import qualified Data.Text.Lazy as L
 import Text.Markdown
-import System.FilePath
 import Text.Blaze.Html.Renderer.Text
 
 import Database as DB
@@ -33,6 +31,8 @@ import Views.Admin.Users.Users as Users
 
 import Controllers.Homepage (homepageController)
 import Controllers.Admin (adminController)
+import Controllers.Testimonials (testimonialsController)
+import Controllers.Static (staticController)
 
 import Models.User as UserModel
 import Data.JsonState
@@ -75,10 +75,8 @@ application = do
   runMiddlewares
   homepageController
   adminController
-  get "/:dirname/:filename" $ do
-    dirname <- param "dirname"
-    filename <- param "filename"
-    file $ "src" </> dirname </> filename
+  testimonialsController
+  staticController
       -- S.get "/packages" $ renderPackages
       -- S.get "/testimonials" $ renderTestimonials
       -- S.get "/videos" $ renderVideos

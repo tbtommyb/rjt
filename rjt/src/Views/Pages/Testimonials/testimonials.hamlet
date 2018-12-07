@@ -1,10 +1,10 @@
-$forall item <- testimonials
-  <div .testimonial-item.col-xs-12.col-sm-6>
-    <div .testimonial-item__name>
-      #{tName item}
-    $maybe src <- (tImgSrc item)
-      <a href="/img/#{src}">
-        <img src="/img/#{src}" .img-responsive>
-    <div .testimonial-item__text>
-      $forall para <- (tParas item)
-        <p>#{para}
+<section>
+  $forall item <- testimonials content
+    <div .testimonial-item.col-xs-12.col-sm-6>
+      <div .testimonial-item__name>
+        #{testimonialName item}
+      $maybe src <- (testimonialImgSrc item)
+        <a href="/img/#{src}">
+          <img src="/img/#{src}" .img-responsive>
+      <div .testimonial-item__text>
+        <p>#{markdown def $ L.pack $ testimonialContent item}

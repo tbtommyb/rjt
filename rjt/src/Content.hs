@@ -8,7 +8,9 @@ import GHC.Generics
 import Data.Text
 
 data Content =
-  Content { homePage :: Homepage } deriving (Show, Generic, ToJSON, FromJSON)
+  Content { homePage :: Homepage
+          , testimonialsPage :: TestimonialsPage
+          } deriving (Show, Generic, ToJSON, FromJSON)
 
 data Homepage =
   Homepage { title :: String
@@ -18,3 +20,14 @@ data Homepage =
            , videoParagraphs :: String
            , videoSlug :: Text
            } deriving (Show, Generic, ToJSON, FromJSON)
+
+data TestimonialsPage =
+  TestimonialsPage { testimonialsPageTitle :: String
+                  , testimonials :: [Testimonial]
+                  } deriving (Show, Generic, ToJSON, FromJSON)
+
+data Testimonial =
+  Testimonial { testimonialName :: String
+              , testimonialImgSrc :: Maybe String
+              , testimonialContent :: String
+              } deriving (Show, Generic, ToJSON, FromJSON)
