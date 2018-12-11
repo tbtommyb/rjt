@@ -1,7 +1,6 @@
 const adminForm = document.getElementById("adminContent");
 
 adminForm.onsubmit = function(e) {
-  // stop the regular form submission
   e.preventDefault();
 
   let data = {};
@@ -14,12 +13,14 @@ adminForm.onsubmit = function(e) {
   xhr.open(adminForm.method, adminForm.action, true);
   xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
 
-  xhr.send(JSON.stringify({ homePage: data }));
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      document.getElementById("result").innerHTML = "Content updated";
+    }
+    if (xhr.readyState === 4 && xhr.status === 500) {
+      document.getElementById("result").innerHTML = "ERROR";
+    }
+  };
 
-  xhr.onloadend = function() {
-    document.getElementById("result").innerHTML = "Content updated";
-  };
-  xhr.onerror = function() {
-    document.getElementById("result").innerHTML = "ERROR";
-  };
+  xhr.send(JSON.stringify({ homePage: data }));
 };
