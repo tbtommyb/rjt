@@ -11,7 +11,7 @@
       <div .page-intro-text.col-xs-12.col-sm-10.col-sm-offset-1>
         $forall item <- packages content
           <h4>#{packageName item}
-          <p>#{packageDescription item}
+          <p>#{markdown def $ L.pack $ packageDescription item}
     <div .row>
       <div .page-intro-text.col-xs-12.col-sm-10.col-sm-offset-1>
         #{markdown def $ L.pack $ packagesPageSupplementaryContent content}

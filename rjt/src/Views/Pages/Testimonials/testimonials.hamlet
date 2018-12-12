@@ -5,7 +5,7 @@
         <h2>#{testimonialsPageTitle content}
     <div .row>
       <div .page-intro-text.col-xs-12.col-sm-10.col-sm-offset-1>
-        #{markdown def $ L.pack $ testimonialsPageContent content}
+        #{markdown def $ L.pack $ testimonialsPageIntroContent content}
         <hr>
     <div .row>
       <div .testimonial-holder.col-xs-12.col-sm-10.col-sm-offset-1>

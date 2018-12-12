@@ -1,5 +1,6 @@
 <span #result>
 <input #adminSave type=submit value=Save>
+<p>All long bits of text are Markdown formatted. This allows you to make text bold, add links and so on. Instructions are <a href="https://guides.github.com/features/mastering-markdown/">here</a>.
 <form #content action=/admin/content method=post>
   <fieldset>
     <legend>Home page
@@ -13,11 +14,11 @@
       <label for=homePage[profileImgPath]>Profile image path
       <input name=homePage[profileImgPath] value=#{profileImgPath $ homePage content}>
     <div>
-      <label for=homePage[paragraphs]>Content paragraphs
+      <label for=homePage[paragraphs]>Intro content
       <textarea rows=15 cols=100 name=homePage[paragraphs]>
         #{paragraphs $ homePage content}
     <div>
-      <label for=homePage[videoParagraphs]>Video paragraphs
+      <label for=homePage[videoParagraphs]>Video intro content
       <textarea rows=5 cols=100 name=homePage[videoParagraphs]>
         #{videoParagraphs $ homePage content}
     <div>
@@ -29,9 +30,9 @@
       <label for=testimonialsPage[testimonialsPageTitle]>Testimonials page title
       <input name=testimonialsPage[testimonialsPageTitle] value=#{testimonialsPageTitle $ testimonialsPage content}>
     <div>
-      <label for=testimonialsPage[testimonialsPageContent]>Testimonials page content
-      <textarea rows=5 cols=100 name=testimonialsPage[testimonialsPageContent]>
-        #{testimonialsPageContent $ testimonialsPage content}
+      <label for=testimonialsPage[testimonialsPageIntroContent]>Testimonials page intro content
+      <textarea rows=5 cols=100 name=testimonialsPage[testimonialsPageIntroContent]>
+        #{testimonialsPageIntroContent $ testimonialsPage content}
     <p>Drag and drop to reorder the testimonials.</p>
     <ul #testitems>
       $forall test <- testimonials $ testimonialsPage content
@@ -54,7 +55,7 @@
       <label for=packagesPage[packagesPageTitle]>Packages page title
       <input name=packagesPage[packagesPageTitle] value=#{packagesPageTitle $ packagesPage content}>
     <div>
-      <label for=packagesPage[packagesPageIntroContent]>Packages page intro
+      <label for=packagesPage[packagesPageIntroContent]>Packages page intro content
       <textarea rows=5 cols=100 name=packagesPage[packagesPageIntroContent]>
         #{packagesPageIntroContent $ packagesPage content}
     <p>Drag and drop to reorder the packages.</p>
@@ -81,7 +82,7 @@
       <label for=videosPage[videosPageTitle]>Videos page title
       <input name=videosPage[videosPageTitle] value=#{videosPageTitle $ videosPage content}>
     <div>
-      <label for=videosPage[videosPageIntroContent]>Videos page intro
+      <label for=videosPage[videosPageIntroContent]>Videos page intro content
       <textarea rows=5 cols=100 name=videosPage[videosPageIntroContent]>
         #{videosPageIntroContent $ videosPage content}
     <p>Drag and drop to reorder the Instagram videos.</p>
@@ -92,7 +93,7 @@
             <label for=videosPage[instagramSlugs][]>Slug
             <input name=videosPage[instagramSlugs][] value=#{instaSlug}>
       <div>
-        <label for=videosPage[instagramSlugs][]>Slug
+        <label for=videosPage[instagramSlugs][]>Add new instagram video
         <input name=videosPage[instagramSlugs][]>
     <p>Drag and drop to reorder the Youtube videos.</p>
     <ul #youtube>
@@ -102,5 +103,5 @@
             <label for=videosPage[youtubeSlugs][]>Slug
             <input name=videosPage[youtubeSlugs][] value=#{ytSlug}>
       <div>
-        <label for=videosPage[youtubeSlugs][]>Slug
+        <label for=videosPage[youtubeSlugs][]>Add new youtube video
         <input name=videosPage[youtubeSlugs][]>

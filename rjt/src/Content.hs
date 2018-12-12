@@ -25,7 +25,7 @@ data Homepage =
 
 data TestimonialsPage =
   TestimonialsPage { testimonialsPageTitle :: String
-                   , testimonialsPageContent :: String
+                   , testimonialsPageIntroContent :: String
                   , testimonials :: [Testimonial]
                   } deriving (Show, Generic, ToJSON, FromJSON)
 
