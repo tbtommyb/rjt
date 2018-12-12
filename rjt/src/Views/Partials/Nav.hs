@@ -11,11 +11,11 @@ data NavItem = NavItem { name :: String
 
 publicItems :: [NavItem]
 publicItems = [
-  NavItem {name="About", url="/index.html#about", weighting=1},
+  NavItem {name="About", url="/#about", weighting=1},
   NavItem {name="Packages", url="/packages", weighting=2},
   NavItem {name="Testimonials", url="/testimonials", weighting=3},
   NavItem {name="Videos", url="/videos", weighting=4},
-  NavItem {name="Contact", url="/index.html#contact", weighting=5},
+  NavItem {name="Contact", url="/#contact", weighting=5},
   NavItem {name="Blog", url="https://medium.com/@rolandjohnson_75946", weighting=6}
   ]
 
