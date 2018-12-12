@@ -1,19 +1,18 @@
-const adminForm = document.getElementById("adminContent");
+$(() => {
+  $("#testitems").sortable();
+  $("#testitems").disableSelection();
+});
 
-adminForm.onsubmit = function(e) {
+document.getElementById("adminSave").addEventListener("click", e => {
   e.preventDefault();
 
-  let data = {};
-  let formdata = new FormData(adminForm);
-  for (let tuple of formdata.entries()) {
-    data[tuple[0]] = tuple[1];
-  }
+  const data = $("form#content").serializeObject();
 
   var xhr = new XMLHttpRequest();
-  xhr.open(adminForm.method, adminForm.action, true);
+  xhr.open("POST", "/admin/content", true);
   xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
 
-  xhr.onreadystatechange = function() {
+  xhr.onreadystatechange = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
       document.getElementById("result").innerHTML = "Content updated";
     }
@@ -22,5 +21,5 @@ adminForm.onsubmit = function(e) {
     }
   };
 
-  xhr.send(JSON.stringify({ homePage: data }));
-};
+  xhr.send(JSON.stringify(data));
+});

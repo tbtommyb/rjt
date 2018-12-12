@@ -8,35 +8,23 @@ import Network.Wai (Middleware)
 import Network.Wai.Middleware.Routed
 import Network.Wai.Middleware.HttpAuth
 
-import Control.Monad.Trans.Class (lift)
 import Control.Monad.IO.Class (liftIO)
-import Control.Monad.State (gets, evalStateT, runStateT, execStateT)
 import Control.Concurrent.STM
 import Control.Monad.Reader (runReaderT)
 
 import Content
 
 import qualified Data.Text.Lazy as L
-import Text.Markdown
-import Text.Blaze.Html.Renderer.Text
 
 import Database as DB
 import Internal
-
-import Views.Layout as Layout
-import Views.Pages.Packages.Packages as Packages
-import Views.Pages.Testimonials.Testimonials as Testimonials
-import Views.Pages.Videos.Videos as Videos
-import Views.Admin.Users.Users as Users
 
 import Controllers.Homepage (homepageController)
 import Controllers.Admin (adminController)
 import Controllers.Testimonials (testimonialsController)
 import Controllers.Static (staticController)
 
-import Models.User as UserModel
 import Data.JsonState
-import Data.Time.Units
 
 -- renderPackages :: ActionT L.Text ConfigM ()
 -- renderPackages = do
@@ -78,7 +66,6 @@ application = do
   testimonialsController
   staticController
       -- S.get "/packages" $ renderPackages
-      -- S.get "/testimonials" $ renderTestimonials
       -- S.get "/videos" $ renderVideos
       -- adminController content
       -- S.get "/admin/users" $ do

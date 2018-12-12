@@ -1,25 +1,46 @@
 <span #result>
-<form #adminContent action=/admin/content method=post>
-  <input type=submit value=Save>
+<input #adminSave type=submit value=Save>
+<form #content action=/admin/content method=post>
   <fieldset>
     <legend>Home page
     <div>
-      <label for=tabTitle>Tab title
-      <input name=tabTitle value=#{tabTitle $ homePage content}>
+      <label for=homePage[tabTitle]>Tab title
+      <input name=homePage[tabTitle] value=#{tabTitle $ homePage content}>
     <div>
-      <label for=title>Title
-      <input name=title value=#{title $ homePage content}>
+      <label for=homePage[title]>Title
+      <input name=homePage[title] value=#{title $ homePage content}>
     <div>
-      <label for=profileImgPath>Profile image path
-      <input name=profileImgPath value=#{profileImgPath $ homePage content}>
+      <label for=homePage[profileImgPath]>Profile image path
+      <input name=homePage[profileImgPath] value=#{profileImgPath $ homePage content}>
     <div>
-      <label for=paragraphs>Content paragraphs
-      <textarea rows=15 cols=100 name=paragraphs>
+      <label for=homePage[paragraphs]>Content paragraphs
+      <textarea rows=15 cols=100 name=homePage[paragraphs]>
         #{paragraphs $ homePage content}
     <div>
-      <label for=videoParagraphs>Video paragraphs
-      <textarea rows=5 cols=100 name=videoParagraphs>
+      <label for=homePage[videoParagraphs]>Video paragraphs
+      <textarea rows=5 cols=100 name=homePage[videoParagraphs]>
         #{videoParagraphs $ homePage content}
     <div>
-      <label for=videoSlug>Video slug
-      <input name=videoSlug value=#{videoSlug $ homePage content}>
+      <label for=homePage[videoSlug]>Video slug
+      <input name=homePage[videoSlug] value=#{videoSlug $ homePage content}>
+  <fieldset>
+    <legend>Testimonials
+    <div>
+      <label for=testimonialsPage[testimonialsPageTitle]>Testimonials page title
+      <input name=testimonialsPage[testimonialsPageTitle] value=#{testimonialsPageTitle $ testimonialsPage content}>
+    <ul #testitems>
+      <p>Drag and drop to reorder the testimonials.</p>
+      $forall test <- testimonials $ testimonialsPage content
+        <li>
+          <div>
+            <label for=testimonialsPage[testimonials][][testimonialName]>Name
+            <input name=testimonialsPage[testimonials][][testimonialName] value=#{testimonialName test}>
+            <label for=testimonialsPage[testimonials][][testimonialImgSrc]>Image path
+            $maybe imgSrc <- testimonialImgSrc test
+              <input name=testimonialsPage[testimonials][][testimonialImgSrc] value=#{imgSrc}>
+            $nothing
+              <input name=testimonialsPage[testimonials][][testimonialImgSrc] value=>
+          <div>
+            <label for=testimonialsPage[testimonials][][testimonialContent]>Text
+            <textarea rows=10 cols=50 name=testimonialsPage[testimonials][][testimonialContent]>
+              #{testimonialContent test}

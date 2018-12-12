@@ -320,3 +320,23 @@ form label {
     text-align: right;
     vertical-align: top;
 }
+
+#content input {
+    width: 200px;
+}
+
+#testitems li {
+    border-bottom: 1px solid gray;
+    padding: 1em;
+    margin: 1em;
+}
+
+#testitems div {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#testitems label {
+    text-align: left;
+}

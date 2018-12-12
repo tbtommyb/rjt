@@ -16,3 +16,5 @@ $doctype 5
     <script src="/js/contact_me.js">
     <script src="/js/freelancer.js">
     <script src="/js/admin.js">
+    <script src="/js/jquery.serialize-object.min.js">
+    <script src="/js/jquery-ui.min.js">
