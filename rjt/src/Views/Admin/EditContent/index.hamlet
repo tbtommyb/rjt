@@ -14,6 +14,7 @@
       <label for=homePage[profileImgPath]>Profile image path
       <input .imgSrc name=homePage[profileImgPath] value=#{profileImgPath $ homePage content}>
       <input type=file>
+      <img src=/img/#{profileImgPath $ homePage content} .preview>
     <div>
       <label for=homePage[paragraphs]>Intro content
       <textarea rows=15 cols=100 name=homePage[paragraphs]>
@@ -44,6 +45,7 @@
             <label for=testimonialsPage[testimonials][][testimonialImgSrc]>Image path
             $maybe imgSrc <- testimonialImgSrc test
               <input .imgSrc name=testimonialsPage[testimonials][][testimonialImgSrc] value=#{imgSrc}>
+              <img src=/img/#{imgSrc} .preview>
             $nothing
               <input .imgSrc name=testimonialsPage[testimonials][][testimonialImgSrc] value=>
             <input type=file>

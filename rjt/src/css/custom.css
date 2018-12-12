@@ -344,3 +344,8 @@ form label {
 #content input[type="file"] {
     display: inline-block;
 }
+
+#content .preview {
+    width: 100px;
+    height: 100%;
+}

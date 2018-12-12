@@ -7,6 +7,7 @@ $(() => {
 
 $(":file").on("change", function(e) {
   const filepathInput = $(this).siblings(".imgSrc")[0];
+  const previewImage = $(this).siblings(".preview")[0];
   var file = this.files[0];
 
   let data = new FormData();
@@ -21,9 +22,18 @@ $(":file").on("change", function(e) {
   })
     .done(res => {
       filepathInput.value = res;
+      let imgSrc = "/img" + res;
+      if (previewImage) {
+        previewImage.src = imgSrc;
+      } else {
+        let img = new Image();
+        img.classList.add("preview");
+        img.src = "/img/" + res;
+        $(filepathInput).after(img);
+      }
     })
     .fail(function() {
-      console.log("An error occurred, the files couldn't be sent!");
+      $(filepathInput).after("<p>Error, could not upload file</p>");
     });
 });
 
