@@ -1,0 +1,20 @@
+<section #packages>
+  <div .container>
+    <div .row>
+      <div .col-xs-12.text-center>
+        <h2>#{packagesPageTitle content}
+    <div .row>
+      <div .page-intro-text.col-xs-12.col-sm-10.col-sm-offset-1>
+        #{markdown def $ L.pack $ packagesIntroContent content}
+        <hr>
+    <div .row>
+      <div .page-intro-text.col-xs-12.col-sm-10.col-sm-offset-1>
+        $forall item <- packages content
+          <h4>#{packageName item}
+          <p>#{packageDescription item}
+    <div .row>
+      <div .page-intro-text.col-xs-12.col-sm-10.col-sm-offset-1>
+        #{markdown def $ L.pack $ packagesSupplementaryContent content}
+    <div .row>
+      <div .page-intro-text.col-xs-12.col-sm-10.col-sm-offset-1>
+        <a .btn.dark-btn.centered href=/#contact>#{packagesButtonLabel content}

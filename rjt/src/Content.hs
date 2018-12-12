@@ -10,6 +10,7 @@ import Data.Text
 data Content =
   Content { homePage :: Homepage
           , testimonialsPage :: TestimonialsPage
+          , packagesPage :: PackagesPage
           } deriving (Show, Generic, ToJSON, FromJSON)
 
 data Homepage =
@@ -32,3 +33,16 @@ data Testimonial =
               , testimonialImgSrc :: Maybe String
               , testimonialContent :: String
               } deriving (Show, Generic, ToJSON, FromJSON)
+
+data PackagesPage =
+  PackagesPage { packagesPageTitle :: String
+               , packagesIntroContent :: String
+               , packages :: [Package]
+               , packagesSupplementaryContent :: String
+               , packagesButtonLabel :: String
+               } deriving (Show, Generic, ToJSON, FromJSON)
+
+data Package =
+  Package { packageName :: String
+          , packageDescription :: String
+          } deriving (Show, Generic, ToJSON, FromJSON)

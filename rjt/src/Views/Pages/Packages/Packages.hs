@@ -1,11 +1,12 @@
+{-# LANGUAGE TemplateHaskell #-}
+
 module Views.Pages.Packages.Packages where
 
-import Views.Layout as Layout
-import Data.Text.Lazy
+import qualified Data.Text.Lazy as L
 import Text.Hamlet
 import Text.Markdown
 
-partial :: String -> IO Html
-partial title = do
-  packages <- readFile "src/packages.md"
-  return $ Layout.single title $ markdown def $ pack packages
+import Content
+
+partial :: Content.PackagesPage -> Html
+partial content = $(shamletFile "src/Views/Pages/Packages/packages.hamlet")

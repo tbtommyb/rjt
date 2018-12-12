@@ -23,13 +23,9 @@ import Internal
 import Controllers.Homepage (homepageController)
 import Controllers.Admin (adminController)
 import Controllers.Testimonials (testimonialsController)
+import Controllers.Packages (packagesController)
 
 import Data.JsonState
-
--- renderPackages :: ActionT L.Text ConfigM ()
--- renderPackages = do
---   content <- liftIO $ Packages.partial "Packages"
---   html $ renderHtml $ Layout.app "Packages" content
 
 -- renderVideos :: ActionT L.Text ConfigM ()
 -- renderVideos = do
@@ -62,6 +58,7 @@ application = do
   homepageController
   adminController
   testimonialsController
+  packagesController
       -- S.get "/packages" $ renderPackages
       -- S.get "/videos" $ renderVideos
       -- adminController content
