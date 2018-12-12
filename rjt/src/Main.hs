@@ -24,13 +24,10 @@ import Controllers.Homepage (homepageController)
 import Controllers.Admin (adminController)
 import Controllers.Testimonials (testimonialsController)
 import Controllers.Packages (packagesController)
+import Controllers.Videos (videosController)
 
 import Data.JsonState
 
--- renderVideos :: ActionT L.Text ConfigM ()
--- renderVideos = do
---   videoContent <- liftIO $ readFile "src/videos.md"
---   html $ renderHtml $ Layout.app "Videos" $ Layout.single "Videos" $ Videos.partial $ markdown def $ L.pack videoContent
 
 main :: IO ()
 main = do
@@ -59,17 +56,4 @@ application = do
   adminController
   testimonialsController
   packagesController
-      -- S.get "/packages" $ renderPackages
-      -- S.get "/videos" $ renderVideos
-      -- adminController content
-      -- S.get "/admin/users" $ do
-      --   lift Users.index >>= html . renderHtml
-      -- S.get "/admin/users/:userId" $ do
-      --   userId <- param "userId"
-      --   lift (Users.show userId) >>= html . renderHtml
-      -- S.post "/admin/users" $ do
-      --   firstName <- param "firstName"
-      --   surname <- param "surname"
-      --   email <- param "email"
-      --   _ <- lift $ UserModel.create firstName surname email
-      --   redirect "/admin/users/"
+  videosController

@@ -1,6 +1,8 @@
 $(() => {
-  $("#testitems").sortable();
-  $("#testitems").disableSelection();
+  ["#testitems", "#packages", "#youtube", "#instagram"].forEach(e => {
+    $(e).sortable();
+    $(e).disableSelection();
+  });
 });
 
 document.getElementById("adminSave").addEventListener("click", e => {
@@ -10,6 +12,13 @@ document.getElementById("adminSave").addEventListener("click", e => {
   data.testimonialsPage.testimonials.forEach(t => {
     if (t.testimonialImgSrc === "") t.testimonialImgSrc = null;
   });
+  data.videosPage.youtubeSlugs = data.videosPage.youtubeSlugs.filter(
+    s => s.length
+  );
+  data.videosPage.instagramSlugs = data.videosPage.instagramSlugs.filter(
+    s => s.length
+  );
+  console.log(data);
 
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "/admin/content", true);

@@ -2,20 +2,11 @@
 
 module Views.Pages.Videos.Videos where
 
+import qualified Data.Text.Lazy as L
 import Text.Hamlet
+import Text.Markdown
 
-import Types
+import Content
 
-instagram :: [Instagram]
-instagram = [
-  Instagram "BISfT2KDjQp",
-  Instagram "BI-Kz2wD1z0",
-  Instagram "BNM39AsF9HR",
-  Instagram "BL0yY9BlPv3"
-  ]
-
-youtube :: [Youtube]
-youtube = []
-
-partial :: Html -> Html
+partial :: Content.VideosPage -> Html
 partial content = $(shamletFile "src/Views/Pages/Videos/videos.hamlet")

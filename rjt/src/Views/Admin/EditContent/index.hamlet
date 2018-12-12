@@ -30,9 +30,10 @@
       <input name=testimonialsPage[testimonialsPageTitle] value=#{testimonialsPageTitle $ testimonialsPage content}>
     <div>
       <label for=testimonialsPage[testimonialsPageContent]>Testimonials page content
-      <input name=testimonialsPage[testimonialsPageContent] value=#{testimonialsPageContent $ testimonialsPage content}>
+      <textarea rows=5 cols=100 name=testimonialsPage[testimonialsPageContent]>
+        #{testimonialsPageContent $ testimonialsPage content}
+    <p>Drag and drop to reorder the testimonials.</p>
     <ul #testitems>
-      <p>Drag and drop to reorder the testimonials.</p>
       $forall test <- testimonials $ testimonialsPage content
         <li>
           <div>
@@ -47,3 +48,59 @@
             <label for=testimonialsPage[testimonials][][testimonialContent]>Text
             <textarea rows=10 cols=50 name=testimonialsPage[testimonials][][testimonialContent]>
               #{testimonialContent test}
+  <fieldset>
+    <legend>Packages
+    <div>
+      <label for=packagesPage[packagesPageTitle]>Packages page title
+      <input name=packagesPage[packagesPageTitle] value=#{packagesPageTitle $ packagesPage content}>
+    <div>
+      <label for=packagesPage[packagesPageIntroContent]>Packages page intro
+      <textarea rows=5 cols=100 name=packagesPage[packagesPageIntroContent]>
+        #{packagesPageIntroContent $ packagesPage content}
+    <p>Drag and drop to reorder the packages.</p>
+    <ul #packages>
+      $forall package <- packages $ packagesPage content
+        <li>
+          <div>
+            <label for=packagesPage[packages][][packageName]>Name
+            <input name=packagesPage[packages][][packageName] value=#{packageName package}>
+          <div>
+            <label for=packagesPage[packages][][packageDescription]>Description
+            <textarea rows=3 cols=50 name=packagesPage[packages][][packageDescription]>
+              #{packageDescription package}
+    <div>
+      <label for=packagesPage[packagesPageSupplementaryContent]>Packages page supplementary text
+      <textarea rows=5 cols=100 name=packagesPage[packagesPageSupplementaryContent]>
+        #{packagesPageSupplementaryContent $ packagesPage content}
+    <div>
+      <label for=packagesPage[packagesButtonLabel]>Packages button label
+      <input name=packagesPage[packagesButtonLabel] value=#{packagesButtonLabel $ packagesPage content}>
+  <fieldset>
+    <legend>Videos
+    <div>
+      <label for=videosPage[videosPageTitle]>Videos page title
+      <input name=videosPage[videosPageTitle] value=#{videosPageTitle $ videosPage content}>
+    <div>
+      <label for=videosPage[videosPageIntroContent]>Videos page intro
+      <textarea rows=5 cols=100 name=videosPage[videosPageIntroContent]>
+        #{videosPageIntroContent $ videosPage content}
+    <p>Drag and drop to reorder the Instagram videos.</p>
+    <ul #instagram>
+      $forall instaSlug <- instagramSlugs $ videosPage content
+        <li>
+          <div>
+            <label for=videosPage[instagramSlugs][]>Slug
+            <input name=videosPage[instagramSlugs][] value=#{instaSlug}>
+      <div>
+        <label for=videosPage[instagramSlugs][]>Slug
+        <input name=videosPage[instagramSlugs][]>
+    <p>Drag and drop to reorder the Youtube videos.</p>
+    <ul #youtube>
+      $forall ytSlug <- youtubeSlugs $ videosPage content
+        <li>
+          <div>
+            <label for=videosPage[youtubeSlugs][]>Slug
+            <input name=videosPage[youtubeSlugs][] value=#{ytSlug}>
+      <div>
+        <label for=videosPage[youtubeSlugs][]>Slug
+        <input name=videosPage[youtubeSlugs][]>

@@ -11,6 +11,7 @@ data Content =
   Content { homePage :: Homepage
           , testimonialsPage :: TestimonialsPage
           , packagesPage :: PackagesPage
+          , videosPage :: VideosPage
           } deriving (Show, Generic, ToJSON, FromJSON)
 
 data Homepage =
@@ -36,9 +37,9 @@ data Testimonial =
 
 data PackagesPage =
   PackagesPage { packagesPageTitle :: String
-               , packagesIntroContent :: String
+               , packagesPageIntroContent :: String
                , packages :: [Package]
-               , packagesSupplementaryContent :: String
+               , packagesPageSupplementaryContent :: String
                , packagesButtonLabel :: String
                } deriving (Show, Generic, ToJSON, FromJSON)
 
@@ -46,3 +47,10 @@ data Package =
   Package { packageName :: String
           , packageDescription :: String
           } deriving (Show, Generic, ToJSON, FromJSON)
+
+data VideosPage =
+  VideosPage { videosPageTitle :: String
+             , videosPageIntroContent :: String
+             , youtubeSlugs :: [String]
+             , instagramSlugs :: [String]
+             } deriving (Show, Generic, ToJSON, FromJSON)
