@@ -6,15 +6,12 @@ module Internal where
 import Control.Concurrent.STM
 import Control.Monad.Reader
 import Data.Aeson
-import Database.Persist.Sqlite as DB (ConnectionPool)
 import qualified Data.ByteString.Lazy as B
 
 import Content (Content)
 
-
 data Config = Config
-  { getPool :: ConnectionPool
-  , appContent :: Content
+  { appContent :: Content
   } deriving (Show)
 
 newtype WebM a = WebM { runWebM :: ReaderT (TVar Config) IO a }

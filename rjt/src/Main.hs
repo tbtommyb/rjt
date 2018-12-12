@@ -3,21 +3,19 @@
 
 module Main where
 
+import Control.Monad.IO.Class (liftIO)
+import Control.Concurrent.STM
+import Control.Monad.Reader (runReaderT)
+
 import Web.Scotty.Trans
 import Network.Wai (Middleware)
 import Network.Wai.Middleware.Routed
 import Network.Wai.Middleware.HttpAuth
 import Network.Wai.Middleware.Static
-
-import Control.Monad.IO.Class (liftIO)
-import Control.Concurrent.STM
-import Control.Monad.Reader (runReaderT)
+import qualified Data.Text.Lazy as L
+import Data.JsonState
 
 import Content
-
-import qualified Data.Text.Lazy as L
-
-import Database as DB
 import Internal
 
 import Controllers.Homepage (homepageController)
@@ -26,17 +24,13 @@ import Controllers.Testimonials (testimonialsController)
 import Controllers.Packages (packagesController)
 import Controllers.Videos (videosController)
 
-import Data.JsonState
-
-
 main :: IO ()
 main = do
-  pool <- DB.setup "dev.db" 3
   jsonConfig <- liftIO $ loadState "src/config.json" :: IO (Either (Bool, String) Content.Content)
   let content = case jsonConfig of
         Left (_, e) -> error e
         Right s -> s
-  let config = Config { getPool = pool, appContent = content }
+  let config = Config { appContent = content }
   sync <- newTVarIO config
   let runActionToIO m = runReaderT (runWebM m) sync
   scottyT 4000 runActionToIO application
