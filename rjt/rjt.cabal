@@ -18,13 +18,11 @@ executable rjt
   main-is:             Main.hs
   default-language:    Haskell2010
   other-modules:       Views.Layout
-                     , Views.Admin.Users.Users
                      , Views.Admin.EditContent.EditContent
                      , Views.Partials.Header
                      , Views.Partials.Head
                      , Views.Partials.Nav
                      , Views.Partials.Footer
-                     , Views.Pages.Home.About
                      , Views.Pages.Home.Home
                      , Views.Pages.Home.Contact
                      , Views.Pages.Testimonials.Testimonials
@@ -34,11 +32,9 @@ executable rjt
                      , Controllers.Admin
                      , Controllers.Testimonials
                      , Controllers.Packages
-                     , Types
+                     , Controllers.Videos
                      , Content
-                     , Database
                      , Internal
-                     , Models.User
   build-depends:       base >= 4.7 && < 5
                      , scotty
                      , blaze-html
@@ -48,12 +44,8 @@ executable rjt
                      , markdown
                      , aeson
                      , bytestring
-                     , persistent
-                     , persistent-template
-                     , persistent-sqlite
                      , transformers
                      , mtl
-                     , resource-pool
                      , wai-extra
                      , wai
                      , monad-logger
@@ -61,3 +53,4 @@ executable rjt
                      , json-state
                      , stm
                      , wai-middleware-static
+                     , directory

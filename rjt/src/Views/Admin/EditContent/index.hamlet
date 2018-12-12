@@ -12,7 +12,8 @@
       <input name=homePage[title] value=#{title $ homePage content}>
     <div>
       <label for=homePage[profileImgPath]>Profile image path
-      <input name=homePage[profileImgPath] value=#{profileImgPath $ homePage content}>
+      <input .imgSrc name=homePage[profileImgPath] value=#{profileImgPath $ homePage content}>
+      <input type=file>
     <div>
       <label for=homePage[paragraphs]>Intro content
       <textarea rows=15 cols=100 name=homePage[paragraphs]>
@@ -22,7 +23,7 @@
       <textarea rows=5 cols=100 name=homePage[videoParagraphs]>
         #{videoParagraphs $ homePage content}
     <div>
-      <label for=homePage[videoSlug]>Video slug
+      <label for=homePage[videoSlug]>Video slug (Youtube only!)
       <input name=homePage[videoSlug] value=#{videoSlug $ homePage content}>
   <fieldset>
     <legend>Testimonials
@@ -42,9 +43,10 @@
             <input name=testimonialsPage[testimonials][][testimonialName] value=#{testimonialName test}>
             <label for=testimonialsPage[testimonials][][testimonialImgSrc]>Image path
             $maybe imgSrc <- testimonialImgSrc test
-              <input name=testimonialsPage[testimonials][][testimonialImgSrc] value=#{imgSrc}>
+              <input .imgSrc name=testimonialsPage[testimonials][][testimonialImgSrc] value=#{imgSrc}>
             $nothing
-              <input name=testimonialsPage[testimonials][][testimonialImgSrc] value=>
+              <input .imgSrc name=testimonialsPage[testimonials][][testimonialImgSrc] value=>
+            <input type=file>
           <div>
             <label for=testimonialsPage[testimonials][][testimonialContent]>Text
             <textarea rows=10 cols=50 name=testimonialsPage[testimonials][][testimonialContent]>

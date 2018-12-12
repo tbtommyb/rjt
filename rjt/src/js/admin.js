@@ -5,6 +5,28 @@ $(() => {
   });
 });
 
+$(":file").on("change", function(e) {
+  const filepathInput = $(this).siblings(".imgSrc")[0];
+  var file = this.files[0];
+
+  let data = new FormData();
+  data.append("image", file);
+
+  $.ajax({
+    url: "/admin/images",
+    type: "POST",
+    data,
+    processData: false,
+    contentType: false
+  })
+    .done(res => {
+      filepathInput.value = res;
+    })
+    .fail(function() {
+      console.log("An error occurred, the files couldn't be sent!");
+    });
+});
+
 document.getElementById("adminSave").addEventListener("click", e => {
   e.preventDefault();
 
@@ -18,7 +40,6 @@ document.getElementById("adminSave").addEventListener("click", e => {
   data.videosPage.instagramSlugs = data.videosPage.instagramSlugs.filter(
     s => s.length
   );
-  console.log(data);
 
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "/admin/content", true);

@@ -340,3 +340,7 @@ form label {
 #testitems label {
     text-align: left;
 }
+
+#content input[type="file"] {
+    display: inline-block;
+}

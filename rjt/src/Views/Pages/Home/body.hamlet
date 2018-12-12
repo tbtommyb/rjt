@@ -6,7 +6,7 @@
         <h2>#{title content}
   <div .row>
     <div .col-sm-4.col-xs-12>
-      <img .img-responsive.center-block.round.about-img.shadowed src=#{profileImgPath content}>
+      <img .img-responsive.center-block.round.about-img.shadowed src=/img/#{profileImgPath content}>
     <div .col-sm-8.col-xs-12>
       <p>#{markdown def $ L.pack $ paragraphs content}
       <div .btn-holder>
