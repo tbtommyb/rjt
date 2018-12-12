@@ -7,6 +7,7 @@ import Web.Scotty.Trans
 import Network.Wai (Middleware)
 import Network.Wai.Middleware.Routed
 import Network.Wai.Middleware.HttpAuth
+import Network.Wai.Middleware.Static
 
 import Control.Monad.IO.Class (liftIO)
 import Control.Concurrent.STM
@@ -22,7 +23,6 @@ import Internal
 import Controllers.Homepage (homepageController)
 import Controllers.Admin (adminController)
 import Controllers.Testimonials (testimonialsController)
-import Controllers.Static (staticController)
 
 import Data.JsonState
 
@@ -30,9 +30,6 @@ import Data.JsonState
 -- renderPackages = do
 --   content <- liftIO $ Packages.partial "Packages"
 --   html $ renderHtml $ Layout.app "Packages" content
-
--- renderTestimonials :: ActionT L.Text ConfigM ()
--- renderTestimonials = html $ renderHtml $ Layout.app "Testimonials" $ Layout.single "Testimonials" Testimonials.partial
 
 -- renderVideos :: ActionT L.Text ConfigM ()
 -- renderVideos = do
@@ -57,6 +54,7 @@ authorise = basicAuth (\u p -> return $ u == "roland" && p == "pass") "Enter adm
 runMiddlewares :: ScottyT L.Text WebM ()
 runMiddlewares = do
   middleware $ routedMiddleware ("admin" `elem`) authorise
+  middleware $ staticPolicy (noDots >-> addBase "src")
 
 application :: ScottyT L.Text WebM ()
 application = do
@@ -64,7 +62,6 @@ application = do
   homepageController
   adminController
   testimonialsController
-  staticController
       -- S.get "/packages" $ renderPackages
       -- S.get "/videos" $ renderVideos
       -- adminController content

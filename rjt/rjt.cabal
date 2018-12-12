@@ -58,3 +58,4 @@ executable rjt
                      , time-units
                      , json-state
                      , stm
+                     , wai-middleware-static
