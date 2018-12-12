@@ -1,5 +1,5 @@
-<span #result>
 <input #adminSave type=submit value=Save>
+<span #result>
 <p>All long bits of text are Markdown formatted. This allows you to make text bold, add links and so on. Instructions are <a href="https://guides.github.com/features/mastering-markdown/">here</a>.
 <form #content action=/admin/content method=post>
   <fieldset>
