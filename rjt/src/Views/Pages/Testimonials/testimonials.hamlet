@@ -1,10 +1,20 @@
-<section>
-  $forall item <- testimonials content
-    <div .testimonial-item.col-xs-12.col-sm-6>
-      <div .testimonial-item__name>
-        #{testimonialName item}
-      $maybe src <- (testimonialImgSrc item)
-        <a href="/img/#{src}">
-          <img src="/img/#{src}" .img-responsive>
-      <div .testimonial-item__text>
-        <p>#{markdown def $ L.pack $ testimonialContent item}
+<section #testimonials>
+  <div .container>
+    <div .row>
+      <div .col-xs-12.text-center>
+        <h2>#{testimonialsPageTitle content}
+    <div .row>
+      <div .page-intro-text.col-xs-12.col-sm-10.col-sm-offset-1>
+        #{markdown def $ L.pack $ testimonialsPageContent content}
+        <hr>
+    <div .row>
+      <div .testimonial-holder.col-xs-12.col-sm-10.col-sm-offset-1>
+        $forall item <- testimonials content
+          <div .testimonial-item.col-xs-12.col-sm-6>
+            <div .testimonial-item__name>
+              #{testimonialName item}
+            $maybe src <- (testimonialImgSrc item)
+              <a href="/img/#{src}">
+                <img src="/img/#{src}" .img-responsive>
+            <div .testimonial-item__text>
+              <p>#{markdown def $ L.pack $ testimonialContent item}

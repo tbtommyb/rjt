@@ -28,6 +28,9 @@
     <div>
       <label for=testimonialsPage[testimonialsPageTitle]>Testimonials page title
       <input name=testimonialsPage[testimonialsPageTitle] value=#{testimonialsPageTitle $ testimonialsPage content}>
+    <div>
+      <label for=testimonialsPage[testimonialsPageContent]>Testimonials page content
+      <input name=testimonialsPage[testimonialsPageContent] value=#{testimonialsPageContent $ testimonialsPage content}>
     <ul #testitems>
       <p>Drag and drop to reorder the testimonials.</p>
       $forall test <- testimonials $ testimonialsPage content
