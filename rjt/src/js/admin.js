@@ -7,6 +7,9 @@ document.getElementById("adminSave").addEventListener("click", e => {
   e.preventDefault();
 
   const data = $("form#content").serializeObject();
+  data.testimonialsPage.testimonials.forEach(t => {
+    if (t.testimonialImgSrc === "") t.testimonialImgSrc = null;
+  });
 
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "/admin/content", true);
