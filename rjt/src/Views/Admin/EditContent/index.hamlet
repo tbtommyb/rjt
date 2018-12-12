@@ -1,6 +1,7 @@
 <input #adminSave type=submit value=Save>
 <span #result>
 <p>All long bits of text are Markdown formatted. This allows you to make text bold, add links and so on. Instructions are <a href="https://guides.github.com/features/mastering-markdown/">here</a>.
+<p>No changes you make on this page will be stored until you press 'Save'.</p>
 <form #content action=/admin/content method=post>
   <fieldset>
     <legend>Home page
@@ -89,7 +90,7 @@
       <label for=videosPage[videosPageIntroContent]>Videos page intro content
       <textarea rows=5 cols=100 name=videosPage[videosPageIntroContent]>
         #{videosPageIntroContent $ videosPage content}
-    <p>Drag and drop to reorder the Instagram videos.</p>
+    <p>Drag and drop to reorder the Instagram videos. To remove a video, delete its slug and press 'Save'.</p>
     <ul #instagram>
       $forall instaSlug <- instagramSlugs $ videosPage content
         <li>
@@ -99,7 +100,7 @@
       <div>
         <label for=videosPage[instagramSlugs][]>Add new instagram video
         <input name=videosPage[instagramSlugs][]>
-    <p>Drag and drop to reorder the Youtube videos.</p>
+    <p>Drag and drop to reorder the Youtube videos. To remove a video, delete its slug and press 'Save'.</p>
     <ul #youtube>
       $forall ytSlug <- youtubeSlugs $ videosPage content
         <li>
