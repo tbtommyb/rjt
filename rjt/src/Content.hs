@@ -16,7 +16,8 @@ data Content =
 
 data Homepage =
   Homepage { title :: String
-           , tabTitle :: String
+           , tabTitle :: String -- TODO: check if both titles needed
+           , headerImgPath :: String
            , profileImgPath :: String
            , paragraphs :: String
            , videoParagraphs :: String

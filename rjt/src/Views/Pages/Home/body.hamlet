@@ -1,4 +1,12 @@
-^{Header.partial}
+<header style="background-image:url('/img/#{headerImgPath content}')">
+  <div .container>
+    <div .row>
+      <div .col-lg-12>
+        <div .intro-text>
+          <div .intro-text--title>
+            <h1 .text-shadow>RJ
+            <h2 .text-shadow>Transformations
+          <a href="#contact" .btn.enquire-btn>Enquire
 <section #about .success>
   <div .container>
     <div .row>

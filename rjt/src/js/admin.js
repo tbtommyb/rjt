@@ -22,7 +22,7 @@ $(":file").on("change", function(e) {
   })
     .done(res => {
       filepathInput.value = res;
-      let imgSrc = "/img" + res;
+      let imgSrc = "/img/" + res;
       if (previewImage) {
         previewImage.src = imgSrc;
       } else {

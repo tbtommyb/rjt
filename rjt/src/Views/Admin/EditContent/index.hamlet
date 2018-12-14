@@ -12,6 +12,11 @@
       <label for=homePage[title]>Title
       <input name=homePage[title] value=#{title $ homePage content}>
     <div>
+      <label for=homePage[headerImgPath]>Header image path
+      <input .imgSrc name=homePage[headerImgPath] value=#{headerImgPath $ homePage content}>
+      <input type=file>
+      <img src=/img/#{headerImgPath $ homePage content} .preview>
+    <div>
       <label for=homePage[profileImgPath]>Profile image path
       <input .imgSrc name=homePage[profileImgPath] value=#{profileImgPath $ homePage content}>
       <input type=file>

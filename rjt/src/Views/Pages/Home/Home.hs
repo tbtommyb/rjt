@@ -6,7 +6,6 @@ import qualified Data.Text.Lazy as L
 import Text.Hamlet
 import Text.Markdown
 
-import qualified Views.Partials.Header as Header (partial)
 import qualified Views.Pages.Home.Contact as Contact (partial)
 import Content
 
