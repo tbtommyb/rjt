@@ -41,7 +41,7 @@ authorise = basicAuth (\u p -> return $ u == "roland" && p == "pass") "Enter adm
 runMiddlewares :: ScottyT L.Text WebM ()
 runMiddlewares = do
   middleware $ routedMiddleware ("admin" `elem`) authorise
-  middleware $ staticPolicy (noDots >-> addBase "src")
+  middleware $ staticPolicy (noDots >-> addBase "src/static")
 
 application :: ScottyT L.Text WebM ()
 application = do
