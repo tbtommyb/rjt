@@ -17,11 +17,12 @@ import qualified Data.Text.Lazy as L
 
 import Internal (gets, webM, appContent, WebM, updateConfig)
 import Content
+import Views.Layout as Layout
 import Views.Admin.EditContent.EditContent as EditContent
 
 renderEditContent :: Content -> ActionT L.Text WebM ()
 renderEditContent content = do
-  html $ renderHtml $ EditContent.index content
+  html $ renderHtml $ Layout.admin "Admin" (EditContent.partial content)
 
 handleContentUpdate :: Content -> WebM ()
 handleContentUpdate content = do

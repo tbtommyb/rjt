@@ -16,12 +16,13 @@ data Content =
 
 data Homepage =
   Homepage { title :: String
-           , tabTitle :: String -- TODO: check if both titles needed
+           , tabTitle :: String
            , headerImgPath :: String
            , profileImgPath :: String
            , paragraphs :: String
            , videoParagraphs :: String
-           , videoSlug :: Text
+           , videoSlug :: String
+           , contactEmail :: String
            } deriving (Show, Generic, ToJSON, FromJSON)
 
 data TestimonialsPage =

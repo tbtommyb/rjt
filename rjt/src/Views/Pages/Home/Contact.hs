@@ -4,6 +4,8 @@ module Views.Pages.Home.Contact where
 
 import Text.Hamlet
 
+import Content
+
 data FormItem = FormItem { fLabel :: String
                          , fInput :: String
                          , fName :: String
@@ -16,8 +18,8 @@ data TextArea = TextArea { tLabel :: String
                          , tPlaceholder :: String
                          , tMessage :: String
                          } deriving (Show)
-title :: String
-title = "Contact me"
+contactTitle :: String
+contactTitle = "Contact me"
 
 formItems :: [FormItem]
 formItems = [
@@ -32,5 +34,5 @@ textArea = TextArea {tLabel="Message", tName="message", tRows=5, tPlaceholder="E
 button :: String
 button = "Send"
 
-partial :: Html
-partial = $(shamletFile "src/Views/Pages/Home/contact.hamlet")
+partial :: Content.Homepage -> Html
+partial content = $(shamletFile "src/Views/Pages/Home/contact.hamlet")

@@ -1,117 +1,122 @@
-<input #adminSave type=submit value=Save>
-<span #result>
-<p>All long bits of text are Markdown formatted. This allows you to make text bold, add links and so on. Instructions are <a href="https://guides.github.com/features/mastering-markdown/">here</a>.
-<p>No changes you make on this page will be stored until you press 'Save'.</p>
-<form #content action=/admin/content method=post>
-  <fieldset>
-    <legend>Home page
-    <div>
-      <label for=homePage[tabTitle]>Tab title
-      <input name=homePage[tabTitle] value=#{tabTitle $ homePage content}>
-    <div>
-      <label for=homePage[title]>Title
-      <input name=homePage[title] value=#{title $ homePage content}>
-    <div>
-      <label for=homePage[headerImgPath]>Header image path
-      <input .imgSrc name=homePage[headerImgPath] value=#{headerImgPath $ homePage content}>
-      <input type=file>
-      <img src=/img/#{headerImgPath $ homePage content} .preview>
-    <div>
-      <label for=homePage[profileImgPath]>Profile image path
-      <input .imgSrc name=homePage[profileImgPath] value=#{profileImgPath $ homePage content}>
-      <input type=file>
-      <img src=/img/#{profileImgPath $ homePage content} .preview>
-    <div>
-      <label for=homePage[paragraphs]>Intro content
-      <textarea rows=15 cols=100 name=homePage[paragraphs]>
-        #{paragraphs $ homePage content}
-    <div>
-      <label for=homePage[videoParagraphs]>Video intro content
-      <textarea rows=5 cols=100 name=homePage[videoParagraphs]>
-        #{videoParagraphs $ homePage content}
-    <div>
-      <label for=homePage[videoSlug]>Video slug (Youtube only!)
-      <input name=homePage[videoSlug] value=#{videoSlug $ homePage content}>
-  <fieldset>
-    <legend>Testimonials
-    <div>
-      <label for=testimonialsPage[testimonialsPageTitle]>Testimonials page title
-      <input name=testimonialsPage[testimonialsPageTitle] value=#{testimonialsPageTitle $ testimonialsPage content}>
-    <div>
-      <label for=testimonialsPage[testimonialsPageIntroContent]>Testimonials page intro content
-      <textarea rows=5 cols=100 name=testimonialsPage[testimonialsPageIntroContent]>
-        #{testimonialsPageIntroContent $ testimonialsPage content}
-    <p>Drag and drop to reorder the testimonials.</p>
-    <ul #testitems>
-      $forall test <- testimonials $ testimonialsPage content
-        <li>
+<section>
+  <div .container>
+    <input #adminSave type=submit value=Save>
+    <span #result>
+    <p>All long bits of text are Markdown formatted. This allows you to make text bold, add links and so on. Instructions are <a href="https://guides.github.com/features/mastering-markdown/">here</a>.
+    <p>No changes you make on this page will be stored until you press 'Save'.</p>
+    <form #content action=/admin/content method=post>
+      <fieldset>
+        <legend>Home page
+        <div>
+          <label for=homePage[tabTitle]>Tab title
+          <input name=homePage[tabTitle] value=#{tabTitle $ homePage content}>
+        <div>
+          <label for=homePage[title]>Title
+          <input name=homePage[title] value=#{title $ homePage content}>
+        <div>
+          <label for=homePage[contactEmail]>Contact email
+          <input name=homePage[contactEmail] value=#{contactEmail $ homePage content}>
+        <div>
+          <label for=homePage[headerImgPath]>Header image path
+          <input .imgSrc name=homePage[headerImgPath] value=#{headerImgPath $ homePage content}>
+          <input type=file>
+          <img src=/img/#{headerImgPath $ homePage content} .preview>
+        <div>
+          <label for=homePage[profileImgPath]>Profile image path
+          <input .imgSrc name=homePage[profileImgPath] value=#{profileImgPath $ homePage content}>
+          <input type=file>
+          <img src=/img/#{profileImgPath $ homePage content} .preview>
+        <div>
+          <label for=homePage[paragraphs]>Intro content
+          <textarea rows=15 cols=100 name=homePage[paragraphs]>
+            #{paragraphs $ homePage content}
+        <div>
+          <label for=homePage[videoParagraphs]>Video intro content
+          <textarea rows=5 cols=100 name=homePage[videoParagraphs]>
+            #{videoParagraphs $ homePage content}
+        <div>
+          <label for=homePage[videoSlug]>Video slug (Youtube only!)
+          <input name=homePage[videoSlug] value=#{videoSlug $ homePage content}>
+      <fieldset>
+        <legend>Testimonials
+        <div>
+          <label for=testimonialsPage[testimonialsPageTitle]>Testimonials page title
+          <input name=testimonialsPage[testimonialsPageTitle] value=#{testimonialsPageTitle $ testimonialsPage content}>
+        <div>
+          <label for=testimonialsPage[testimonialsPageIntroContent]>Testimonials page intro content
+          <textarea rows=5 cols=100 name=testimonialsPage[testimonialsPageIntroContent]>
+            #{testimonialsPageIntroContent $ testimonialsPage content}
+        <p>Drag and drop to reorder the testimonials.</p>
+        <ul #testitems>
+          $forall test <- testimonials $ testimonialsPage content
+            <li>
+              <div>
+                <label for=testimonialsPage[testimonials][][testimonialName]>Name
+                <input name=testimonialsPage[testimonials][][testimonialName] value=#{testimonialName test}>
+                <label for=testimonialsPage[testimonials][][testimonialImgSrc]>Image path
+                $maybe imgSrc <- testimonialImgSrc test
+                  <input .imgSrc name=testimonialsPage[testimonials][][testimonialImgSrc] value=#{imgSrc}>
+                  <img src=/img/#{imgSrc} .preview>
+                $nothing
+                  <input .imgSrc name=testimonialsPage[testimonials][][testimonialImgSrc] value=>
+                <input type=file>
+              <div>
+                <label for=testimonialsPage[testimonials][][testimonialContent]>Text
+                <textarea rows=10 cols=50 name=testimonialsPage[testimonials][][testimonialContent]>
+                  #{testimonialContent test}
+      <fieldset>
+        <legend>Packages
+        <div>
+          <label for=packagesPage[packagesPageTitle]>Packages page title
+          <input name=packagesPage[packagesPageTitle] value=#{packagesPageTitle $ packagesPage content}>
+        <div>
+          <label for=packagesPage[packagesPageIntroContent]>Packages page intro content
+          <textarea rows=5 cols=100 name=packagesPage[packagesPageIntroContent]>
+            #{packagesPageIntroContent $ packagesPage content}
+        <p>Drag and drop to reorder the packages.</p>
+        <ul #packages>
+          $forall package <- packages $ packagesPage content
+            <li>
+              <div>
+                <label for=packagesPage[packages][][packageName]>Name
+                <input name=packagesPage[packages][][packageName] value=#{packageName package}>
+              <div>
+                <label for=packagesPage[packages][][packageDescription]>Description
+                <textarea rows=3 cols=50 name=packagesPage[packages][][packageDescription]>
+                  #{packageDescription package}
+        <div>
+          <label for=packagesPage[packagesPageSupplementaryContent]>Packages page supplementary text
+          <textarea rows=5 cols=100 name=packagesPage[packagesPageSupplementaryContent]>
+            #{packagesPageSupplementaryContent $ packagesPage content}
+        <div>
+          <label for=packagesPage[packagesButtonLabel]>Packages button label
+          <input name=packagesPage[packagesButtonLabel] value=#{packagesButtonLabel $ packagesPage content}>
+      <fieldset>
+        <legend>Videos
+        <div>
+          <label for=videosPage[videosPageTitle]>Videos page title
+          <input name=videosPage[videosPageTitle] value=#{videosPageTitle $ videosPage content}>
+        <div>
+          <label for=videosPage[videosPageIntroContent]>Videos page intro content
+          <textarea rows=5 cols=100 name=videosPage[videosPageIntroContent]>
+            #{videosPageIntroContent $ videosPage content}
+        <p>Drag and drop to reorder the Instagram videos. To remove a video, delete its slug and press 'Save'.</p>
+        <ul #instagram>
+          $forall instaSlug <- instagramSlugs $ videosPage content
+            <li>
+              <div>
+                <label for=videosPage[instagramSlugs][]>Slug
+                <input name=videosPage[instagramSlugs][] value=#{instaSlug}>
           <div>
-            <label for=testimonialsPage[testimonials][][testimonialName]>Name
-            <input name=testimonialsPage[testimonials][][testimonialName] value=#{testimonialName test}>
-            <label for=testimonialsPage[testimonials][][testimonialImgSrc]>Image path
-            $maybe imgSrc <- testimonialImgSrc test
-              <input .imgSrc name=testimonialsPage[testimonials][][testimonialImgSrc] value=#{imgSrc}>
-              <img src=/img/#{imgSrc} .preview>
-            $nothing
-              <input .imgSrc name=testimonialsPage[testimonials][][testimonialImgSrc] value=>
-            <input type=file>
+            <label for=videosPage[instagramSlugs][]>Add new instagram video
+            <input name=videosPage[instagramSlugs][]>
+        <p>Drag and drop to reorder the Youtube videos. To remove a video, delete its slug and press 'Save'.</p>
+        <ul #youtube>
+          $forall ytSlug <- youtubeSlugs $ videosPage content
+            <li>
+              <div>
+                <label for=videosPage[youtubeSlugs][]>Slug
+                <input name=videosPage[youtubeSlugs][] value=#{ytSlug}>
           <div>
-            <label for=testimonialsPage[testimonials][][testimonialContent]>Text
-            <textarea rows=10 cols=50 name=testimonialsPage[testimonials][][testimonialContent]>
-              #{testimonialContent test}
-  <fieldset>
-    <legend>Packages
-    <div>
-      <label for=packagesPage[packagesPageTitle]>Packages page title
-      <input name=packagesPage[packagesPageTitle] value=#{packagesPageTitle $ packagesPage content}>
-    <div>
-      <label for=packagesPage[packagesPageIntroContent]>Packages page intro content
-      <textarea rows=5 cols=100 name=packagesPage[packagesPageIntroContent]>
-        #{packagesPageIntroContent $ packagesPage content}
-    <p>Drag and drop to reorder the packages.</p>
-    <ul #packages>
-      $forall package <- packages $ packagesPage content
-        <li>
-          <div>
-            <label for=packagesPage[packages][][packageName]>Name
-            <input name=packagesPage[packages][][packageName] value=#{packageName package}>
-          <div>
-            <label for=packagesPage[packages][][packageDescription]>Description
-            <textarea rows=3 cols=50 name=packagesPage[packages][][packageDescription]>
-              #{packageDescription package}
-    <div>
-      <label for=packagesPage[packagesPageSupplementaryContent]>Packages page supplementary text
-      <textarea rows=5 cols=100 name=packagesPage[packagesPageSupplementaryContent]>
-        #{packagesPageSupplementaryContent $ packagesPage content}
-    <div>
-      <label for=packagesPage[packagesButtonLabel]>Packages button label
-      <input name=packagesPage[packagesButtonLabel] value=#{packagesButtonLabel $ packagesPage content}>
-  <fieldset>
-    <legend>Videos
-    <div>
-      <label for=videosPage[videosPageTitle]>Videos page title
-      <input name=videosPage[videosPageTitle] value=#{videosPageTitle $ videosPage content}>
-    <div>
-      <label for=videosPage[videosPageIntroContent]>Videos page intro content
-      <textarea rows=5 cols=100 name=videosPage[videosPageIntroContent]>
-        #{videosPageIntroContent $ videosPage content}
-    <p>Drag and drop to reorder the Instagram videos. To remove a video, delete its slug and press 'Save'.</p>
-    <ul #instagram>
-      $forall instaSlug <- instagramSlugs $ videosPage content
-        <li>
-          <div>
-            <label for=videosPage[instagramSlugs][]>Slug
-            <input name=videosPage[instagramSlugs][] value=#{instaSlug}>
-      <div>
-        <label for=videosPage[instagramSlugs][]>Add new instagram video
-        <input name=videosPage[instagramSlugs][]>
-    <p>Drag and drop to reorder the Youtube videos. To remove a video, delete its slug and press 'Save'.</p>
-    <ul #youtube>
-      $forall ytSlug <- youtubeSlugs $ videosPage content
-        <li>
-          <div>
-            <label for=videosPage[youtubeSlugs][]>Slug
-            <input name=videosPage[youtubeSlugs][] value=#{ytSlug}>
-      <div>
-        <label for=videosPage[youtubeSlugs][]>Add new youtube video
-        <input name=videosPage[youtubeSlugs][]>
+            <label for=videosPage[youtubeSlugs][]>Add new youtube video
+            <input name=videosPage[youtubeSlugs][]>

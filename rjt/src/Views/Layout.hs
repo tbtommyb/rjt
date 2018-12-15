@@ -11,11 +11,11 @@ import Text.Hamlet
 appBuilder :: Html -> Html -> Html -> Html -> Html
 appBuilder head nav body footer = $(shamletFile "src/Views/layout.hamlet")
 
+adminBuilder :: Html -> Html -> Html -> Html -> Html
+adminBuilder head nav body footer = $(shamletFile "src/Views/admin.hamlet")
+
 app :: String -> Html -> Html
 app title content = appBuilder (Head.partial title) Nav.partial content Footer.partial
 
-single :: String -> Html -> Html
-single title content = $(shamletFile "src/Views/single.hamlet")
-
 admin :: String -> Html -> Html
-admin title content = appBuilder (Head.partial title) Nav.admin content Footer.partial
+admin title content = adminBuilder (Head.partial title) Nav.partial content Footer.partial

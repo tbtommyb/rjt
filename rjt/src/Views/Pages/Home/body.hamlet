@@ -24,4 +24,4 @@
       <div .col-sm-8-col-sm-offset-2.col-xs-8.col-xs-offset-2>
         <div style="position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden">
           <iframe src="//www.youtube.com/embed/#{videoSlug content}" style="position:absolute;top:0;left:0;width:100%;height:100%" allowfullscreen frameborder=0>
-^{Contact.partial}
+^{Contact.partial content}

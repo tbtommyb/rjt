@@ -2,10 +2,10 @@
   <div .container>
     <div .row>
       <div .col-lg-12.text-center>
-        <h2>#{title}
+        <h2>#{contactTitle}
   <div .row>
     <div .col-md-8.col-sm-10.col-md-offset-2.col-sm-offset-1>
-      <form action="//formspree.io/FAKE_EMAIL" method=POST name=sentMessage #contactForm novalidate>
+      <form action="//formspree.io/#{ contactEmail content }" method=POST name=sentMessage #contactForm novalidate>
         $forall item <- formItems
           <div .row.control-group>
             <div .form-group.col-xs-12.floating-label-form-group.controls>
