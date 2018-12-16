@@ -30,7 +30,7 @@ handleContentUpdate content = do
 
 handleUpload :: String -> FileInfo B.ByteString -> IO ()
 handleUpload dir fi = do
-  liftIO $ B.writeFile ("src" </> dir </> (BS.unpack (fileName fi))) (fileContent fi)
+  liftIO $ B.writeFile ("src" </> "static" </> dir </> (BS.unpack (fileName fi))) (fileContent fi)
 
 adminController :: ScottyT L.Text WebM ()
 adminController = do
