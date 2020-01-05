@@ -11,7 +11,6 @@ collections:
       - name: "testimonials"
         label: "Testimonials"
         file: "data/testimonials.yml"
-        extension: "yml"
         fields:
           - label: "Items"
             name: "items"
