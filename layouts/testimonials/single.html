@@ -36,9 +36,7 @@
               </a>
               {{ end }}
               <div class="testimonial-item__text">
-                {{ range .paras }}
-                <p>{{ . }}</p>
-                {{ end }}
+                {{ .paras | markdownify }}
               </div>
             </div>
             {{ end }}
