@@ -10,7 +10,7 @@ collections:
     files:
       - name: "testimonials"
         label: "Testimonials"
-        file: "data/testimonials.yml"
+        file: "data/testimonials.yaml"
         fields:
           - label: "Items"
             name: "items"
