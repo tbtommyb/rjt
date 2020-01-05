@@ -10,8 +10,8 @@ collections:
     files:
       - name: "testimonials"
         label: "Testimonials"
-        file: "data/testimonials.yaml"
-        extension: "yaml"
+        file: "data/testimonials.yml"
+        extension: "yml"
         fields:
           - label: "Items"
             name: "items"
@@ -19,6 +19,4 @@ collections:
             fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Image", name: "img", widget: "image"}
-              - label: "Text"
-                name: "paras"
-                widget: "list"
+              - {label: "Text", name: "paras", widget: "markdown"}
