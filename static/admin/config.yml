@@ -3,3 +3,21 @@ backend:
   branch: master
 media_folder: "static/img/uploads"
 public_folder: "/img/uploads"
+collections:
+  - label: "Content"
+    name: "content"
+    files:
+      - name: "testimonials"
+        label: "Testimonials"
+        file: "data/testimonials.yml"
+        extension: "yml"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - label: "Text"
+                name: "paras"
+                widget: "list"
