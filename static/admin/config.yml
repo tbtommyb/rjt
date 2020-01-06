@@ -17,5 +17,5 @@ collections:
             widget: "list"
             fields:
               - {label: "Name", name: "name", widget: "string"}
-              - {label: "Image", name: "img", widget: "image"}
+              - {label: "Image", name: "img", widget: "image", required: "false"}
               - {label: "Text", name: "paras", widget: "markdown"}
