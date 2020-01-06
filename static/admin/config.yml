@@ -35,3 +35,25 @@ collections:
             required: false
             fields:
               - {label: "Video tag", name: "tag", widget: "string"}
+  - label: "Home page"
+    name: "home"
+    files:
+      - name: "config"
+        label: "Home page config"
+        file: "config.toml"
+        fields:
+          - label: "languagecode"
+            name: "Language code"
+            widget: "hidden"
+            default: "en-uk"
+          - label: "title"
+            name: "Title"
+            widget: "string"
+          - label: "baseurl"
+            name: "Base URL"
+            widget: "hidden"
+            default: "https://www.rjtransformations.co.uk/"
+          - label: "theme"
+            name: "Theme"
+            widget: "hidden"
+            default: "hugo-freelancer-theme"
