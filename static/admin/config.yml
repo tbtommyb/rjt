@@ -27,9 +27,11 @@ collections:
             name: "instagram"
             widget: "list"
             required: false
-            field: "string"
+            fields:
+              - {label: "Video tag", name: "tag", widget: "string"}
           - label: "Youtube"
             name: "youtube"
             widget: "list"
             required: false
-            field: "string"
+            fields:
+              - {label: "Video tag", name: "tag", widget: "string"}
