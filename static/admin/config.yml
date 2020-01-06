@@ -133,9 +133,11 @@ collections:
               - label: "Custom CSS files"
                 name: "custom_css"
                 widget: "list"
+                required: false
               - label: "Custom JS files"
                 name: "custom_js"
                 widget: "list"
+                required: false
           - label: "Internal config (ignore)"
             name: markup
             widget: object
