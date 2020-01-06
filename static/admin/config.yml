@@ -42,18 +42,123 @@ collections:
         label: "Home page config"
         file: "config.toml"
         fields:
-          - label: "languagecode"
-            name: "Language code"
+          - label: "Internal config"
+            name: markup
+            widget: object
+            fields:
+              - name: goldmark
+                widget: object
+                fields:
+                  - name: renderer
+                    widget: object
+                    fields:
+                      - name: unsafe
+                        widget: hidden
+                        default: true
+          - label: "Language code"
+            name: "languageCode"
             widget: "hidden"
             default: "en-uk"
-          - label: "title"
-            name: "Title"
+          - label: "Title (appears in tab)"
+            name: "title"
             widget: "string"
-          - label: "baseurl"
-            name: "Base URL"
+          - label: "Base URL"
+            name: "baseURL"
             widget: "hidden"
             default: "https://www.rjtransformations.co.uk/"
-          - label: "theme"
-            name: "Theme"
+          - label: "Theme"
+            name: "theme"
             widget: "hidden"
             default: "hugo-freelancer-theme"
+          - label: "Menus"
+            name: "menu"
+            widget: "object"
+            fields:
+              - label: "Nav bar"
+                widget: "list"
+                name: "main"
+                fields:
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Path", name: "url", widget: "string"}
+                  - {label: "Ordering", name: "weight", widget: "number"}
+          - label: "Content"
+            name: "params"
+            widget: "object"
+            fields:
+              - label: "Website description"
+                name: "description"
+                widget: "hidden"
+                default: "Roland Johnson personal trainer"
+              - label: "Contact email"
+                name: "email"
+                widget: "string"
+              - label: "Website creator"
+                name: "name"
+                widget: "hidden"
+                default: "Roland Johnson"
+              - label: "Custom CSS files"
+                name: "custom_css"
+                widget: "list"
+              - label: "Custom JS files"
+                name: "custom_js"
+                widget: "list"
+              - label: "Brand"
+                name: "navigation"
+                widget: object
+                fields:
+                  - {label: "Name (appears top left)", name: "brand", widget: "string" }
+              - label: "About section"
+                name: "about"
+                widget: object
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Image", name: "image", widget: "image"}
+                  - {label: "Content", name: "content", widget: "markdown"}
+                  - {label: "Video content", name: "video_content", widget: "markdown"}
+                  - {label: "Video tag", name: "tag", widget: "string"}
+                  - label: "Buttons"
+                    name: "buttons"
+                    widget: "list"
+                    allow_add: false
+                    fields:
+                      - { label: "Path", name: "path", widget: "string" }
+                      - { label: "Label", name: "label", widget: "string" }
+              - label: "Contact form"
+                name: "contact"
+                widget: object
+                fields:
+                  - label: "Title"
+                    name: "title"
+                    widget: "string"
+                  - label: "Form"
+                    name: "form"
+                    widget: "object"
+                    fields:
+                      - label: "Button"
+                        name: "button"
+                        widget: "object"
+                        fields:
+                          - {label: "Button text", name: "text", widget: string }
+                      - label: "Email"
+                        name: "email"
+                        widget: "object"
+                        fields:
+                          - {label: "Text", name: "text", widget: string }
+                          - {label: "Error message", name: "error", widget: string }
+                      - label: "Name"
+                        name: "name"
+                        widget: "object"
+                        fields:
+                          - {label: "Text", name: "text", widget: string }
+                          - {label: "Error message", name: "error", widget: string }
+                      - label: "Message"
+                        name: "message"
+                        widget: "object"
+                        fields:
+                          - {label: "Text", name: "text", widget: string }
+                          - {label: "Error message", name: "error", widget: string }
+                      - label: "Phone"
+                        name: "phone"
+                        widget: "object"
+                        fields:
+                          - {label: "Text", name: "text", widget: string }

@@ -12,18 +12,15 @@
             <img class="img-responsive center-block round about-img shadowed" src="{{ .Site.Params.about.image}}"/>
         </div>
         <div class="col-sm-8 col-xs-12">
-            {{ range .Site.Params.about.paragraphs }}
-            <p>{{ . | markdownify }}</p>
-            {{ end }}
+            {{ .Site.Params.about.content | markdownify }}
             <div class="btn-holder">
-              <a href="/packages" class="btn para-btn dark-btn">What I offer</a>
-              <a href="/testimonials" class="btn para-btn dark-btn">What my clients say</a>
+              {{ range .Site.Params.about.buttons }}
+                <a href={{ .path }} class="btn para-btn dark-btn">{{ .label }}</a>
+              {{ end }}
             </div>
-            {{ range .Site.Params.about.video_paras }}
-            <p>{{ . | markdownify }}</p>
-            {{ end }}
+            {{ .Site.Params.about.video_content | markdownify }}
             <div class="col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-              {{ partial "youtube.html" "rOzmNGRi1rg" }}
+              {{ partial "youtube.html" .Site.Params.about.video_tag }}
             </div>
         </div>
     </div>
