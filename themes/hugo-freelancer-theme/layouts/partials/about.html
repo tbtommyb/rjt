@@ -12,13 +12,13 @@
             <img class="img-responsive center-block round about-img shadowed" src="{{ .Site.Params.about.image}}"/>
         </div>
         <div class="col-sm-8 col-xs-12">
-            {{ .Site.Params.about.content | markdownify }}
+            <p>{{ .Site.Params.about.content | markdownify }}</p>
             <div class="btn-holder">
               {{ range .Site.Params.about.buttons }}
                 <a href={{ .path }} class="btn para-btn dark-btn">{{ .label }}</a>
               {{ end }}
             </div>
-            {{ .Site.Params.about.video_content | markdownify }}
+            <p>{{ .Site.Params.about.video_content | markdownify }}</p>
             <div class="col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
               {{ partial "youtube.html" .Site.Params.about.video_tag }}
             </div>
