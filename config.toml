@@ -1,82 +1,85 @@
-languageCode = "en-uk"
 title = "RJ Transformations | Roland Johnson Personal Trainer"
 baseURL = "https://www.rjtransformations.co.uk/"
+languageCode = "en-uk"
 theme = "hugo-freelancer-theme"
 
+[menu]
+
 [[menu.main]]
-  name = "About"
-  url = "/index.html#about"
+name = "About"
+url = "/index.html#about"
+
 [[menu.main]]
-  name = "Packages"
-  url = "/packages"
+name = "Packages"
+url = "/packages"
+
 [[menu.main]]
-  name = "Testimonials"
-  url = "/testimonials"
+name = "Testimonials"
+url = "/testimonials"
+
 [[menu.main]]
-  name = "Videos"
-  url = "/videos"
+name = "Videos"
+url = "/videos"
+
 [[menu.main]]
-  name = "Contact"
-  url = "/index.html#contact"
+name = "Contact"
+url = "/index.html#contact"
+
 [[menu.main]]
-  name = "Blog"
-  url = "https://medium.com/@rolandjohnson_75946"
+name = "Blog"
+url = "https://medium.com/@rolandjohnson_75946"
 
 [params]
+custom_css = ["css/custom.css"]
+custom_js = []
+description = "Roland Johnson personal trainer"
+email = "rjtransformations@outlook.com"
+name = "Roland Johnson"
 
-  name = "Roland Johnson"
-  description = "Roland Johnson personal trainer"
+[params.about]
+content = "Do you want to be leaner? Fitter? Stronger? I'm here to help you achieve your goals.\n\nAs your personal trainer, I'll guide you through a series of positive changes and make sure they stay with you for the long-term. When you train with me you'll push boundaries you didn't even know you had.\n\nWith my structured plans, every session is fun and goal-orientated, leaving you knowing you've worked hard — and smart.\n\nGet a taster of my training and fitness advice on [my blog](https://medium.com/@rolandjohnson_75946). I offer one-to-one personal training and fitness advice in Liverpool Street, East London and personalised online training and diet packages to clients around the world.\nCheck out what my clients say and get in touch with me for a free consultation to start your journey."
+image = "img/about.jpg"
+title = "About me"
+video_content = "I became a personal trainer because a great coach helped me overcome difficulties and achieve my goals. Watch this video to see my story and what I can do for you:"
+video_tag = "rOzmNGRi1rg"
 
-  email = "rjtransformations@outlook.com"
+[[params.about.buttons]]
+label = "What I offer"
+path = "/packages"
 
-  # Custom assets
-  custom_css = ["css/custom.css"]
-  custom_js  = []
+[[params.about.buttons]]
+label = "What my clients say"
+path = "/testimonials"
 
-  [params.navigation]
-    brand = "RJ Transformations"
+[params.contact]
+title = "Contact me"
 
-  [params.about]
-    title = "About me"
-    image = "img/about.jpg"
-    content = "Do you want to be leaner? Fitter? Stronger? I'm here to help you achieve your goals.\nAs your personal trainer, I'll guide you through a series of positive changes and make sure they stay with you for the long-term. When you train with me you'll push boundaries you didn't even know you had.\nWith my structured plans, every session is fun and goal-orientated, leaving you knowing you've worked hard — and smart.\nGet a taster of my training and fitness advice on [my blog](https://medium.com/@rolandjohnson_75946). I offer one-to-one personal training and fitness advice in Liverpool Street, East London and personalised online training and diet packages to clients around the world.\nCheck out what my clients say and get in touch with me for a free consultation to start your journey."
-    video_content = "I became a personal trainer because a great coach helped me overcome difficulties and achieve my goals. Watch this video to see my story and what I can do for you:"
-    video_tag = "rOzmNGRi1rg"
-    buttons = [
-      { path = "/packages", label = "What I offer" },
-      { path = "/testimonials", label = "What my clients say" }
-    ]
+[params.contact.form]
 
-  [params.contact]
-    title = "Contact me"
+[params.contact.form.button]
+text = "Send"
 
-    # 'error' defines error messages for invalid inputs
-    [params.contact.form.name]
-      text = "Name"
-      error = "Please enter your name."
+[params.contact.form.email]
+error = "Please enter your email address."
+text = "Email address"
 
-    [params.contact.form.email]
-      text = "Email address"
-      error = "Please enter your email address."
+[params.contact.form.message]
+error = "Please enter a message."
+text = "Message"
 
-    [params.contact.form.phone]
-      text = "Phone number (optional)"
+[params.contact.form.name]
+error = "Please enter your name."
+text = "Name"
 
-    [params.contact.form.message]
-      text = "Message"
-      error = "Please enter a message."
+[params.contact.form.phone]
+text = "Phone number (optional)"
 
-    [params.contact.form.button]
-      text = "Send"
+[params.navigation]
+brand = "RJ Transformations"
 
-  [params.footer]
+[markup]
 
-    [params.footer.social]
-      title = "Connect with me"
-
-      [[params.footer.social.networks]]
-        icon = "fa-instagram"
-        link = "https://www.instagram.com/rjtransformations/"
+[markup.goldmark]
 
 [markup.goldmark.renderer]
 unsafe = true
