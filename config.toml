@@ -6,29 +6,34 @@ theme = "hugo-freelancer-theme"
 [menu]
 
 [[menu.main]]
-  name = "About"
-  url = "/index.html#about"
-  weight = 1
+name = "About"
+url = "/index.html#about"
+weight = 1
+
 [[menu.main]]
-  name = "Packages"
-  url = "/packages"
-  weight = 2
+name = "Packages"
+url = "/packages"
+weight = 2
+
 [[menu.main]]
-  name = "Testimonials"
-  url = "/testimonials"
-  weight = 3
+name = "Testimonials"
+url = "/testimonials"
+weight = 3
+
 [[menu.main]]
-  name = "Videos"
-  url = "/videos"
-  weight = 4
+name = "Personal Training"
+url = "/personal training"
+weight = 4
+
 [[menu.main]]
-  name = "Contact"
-  url = "/index.html#contact"
-  weight = 5
+name = "Contact"
+url = "/index.html#contact"
+weight = 5
+
 [[menu.main]]
-  name = "Blog"
-  url = "https://medium.com/@rolandjohnson_75946"
-  weight = 6
+name = "Blog"
+url = "https://medium.com/@rolandjohnson_75946"
+weight = 6
 
 [params]
 custom_css = ["css/custom.css"]
