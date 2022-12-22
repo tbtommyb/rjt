@@ -11,8 +11,8 @@ url = "/index.html#about"
 weight = 1
 
 [[menu.main]]
-name = "Packages"
-url = "/packages"
+name = "Personal Training"
+url = "/personal training"
 weight = 2
 
 [[menu.main]]
